@@ -286,8 +286,20 @@ td { padding: 1rem; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme]) .theme-toggle .ic-sun { display: inline; } :root:not([data-theme]) .theme-toggle .ic-moon { display: none; } }
 @media (max-width: 420px) { .nav .nav-partners, .nav .nav-roomy { display: none; } }
 @media (min-width: 421px) and (max-width: 720px) { .nav .nav-partners { display: inline; } }
+
+/* Правки 13-го разбора по Carbon */
+.btn { text-align: start; }
+.nav a { display: flex; align-items: center; height: 48px; }
+.skip { position: absolute; left: -9999px; top: 0; z-index: 100; }
+.skip:focus { left: 0; height: 48px; display: flex; align-items: center; padding: 0 1rem; border: 4px solid var(--focus); background: var(--bg); color: var(--text); outline: none; }
+.summary { padding: 1rem; }
+.compare > div { padding: 1rem; }
+th { padding: .9375rem 1rem; }
+@media (max-width: 671px) { .mail .copy { margin-left: -1rem; } }
+@media (min-width: 1056px) { .hero .wrap, .intro-grid, .final-grid { gap: 2rem; } }
 </style>
 
+<a class="skip" href="#main">Перейти к содержимому</a>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="index.html">Atrium <span>· Атриум</span></a>
@@ -301,7 +313,7 @@ td { padding: 1rem; }
   </div>
 </header>
 
-<main id="top">
+<main id="main">
   <section class="hero">
     <div class="wrap">
       <div>
@@ -370,7 +382,7 @@ td { padding: 1rem; }
     <div class="wrap it-link">
       <p>Технические подробности, безопасность, требования ФСТЭК и сроки для закупки мы собрали на отдельной странице. Её можно просто переслать вашему ИТ-директору.</p>
       <div class="btns">
-      <button class="btn btn-tertiary share-it" type="button">Скопировать ссылку для ИТ-директора</button>
+      <button class="btn btn-tertiary share-it" type="button">Скопировать ссылку для ИТ</button>
       <a class="more" href="it.html">Открыть страницу для ИТ
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
       </div>
