@@ -43,6 +43,7 @@
   --tag-plan-bg: #e0e0e0;     /* $tag-background-gray */
   --tag-plan-text: #161616;   /* $tag-color-gray */
   --why-bg: #f4f4f4;
+  --border-strongish: #c6c6c6; /* $border-subtle-01 */
   --check: #198038;           /* $support-success */
   --sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   --mono: 'IBM Plex Mono', Menlo, 'Courier New', monospace;
@@ -52,14 +53,14 @@
   --link: #78a9ff; --btn: #0f62fe; --btn-hover: #0050e6; --tertiary: #ffffff; --tertiary-on: #161616; --tertiary-hover: #f4f4f4; --on-color: #ffffff;
   --focus: #ffffff; --focus-inset: #161616; --band: #0043ce; --band-border: #4589ff;
   --inverse-bg: #393939; --inverse-layer: #6f6f6f; --inverse-text: #f4f4f4; --inverse-text-2: #c6c6c6; --inverse-link: #78a9ff;
-  --tag-ok-bg: #044317; --tag-ok-text: #6fdc8c; --tag-plan-bg: #393939; --tag-plan-text: #e0e0e0; --check: #42be65; --why-bg: #262626;
+  --tag-ok-bg: #0e6027; --tag-ok-text: #a7f0ba; --tag-plan-bg: #525252; --tag-plan-text: #f4f4f4; --check: #42be65; --border-strongish: #525252; --why-bg: #262626;
   color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #161616; --layer: #262626; --layer-accent: #393939; --border: #393939; --text: #f4f4f4; --text-2: #c6c6c6;
   --link: #78a9ff; --btn: #0f62fe; --btn-hover: #0050e6; --tertiary: #ffffff; --tertiary-on: #161616; --tertiary-hover: #f4f4f4; --on-color: #ffffff;
   --focus: #ffffff; --focus-inset: #161616; --band: #0043ce; --band-border: #4589ff;
   --inverse-bg: #393939; --inverse-layer: #6f6f6f; --inverse-text: #f4f4f4; --inverse-text-2: #c6c6c6; --inverse-link: #78a9ff;
-  --tag-ok-bg: #044317; --tag-ok-text: #6fdc8c; --tag-plan-bg: #393939; --tag-plan-text: #e0e0e0; --check: #42be65; --why-bg: #262626;
+  --tag-ok-bg: #0e6027; --tag-ok-text: #a7f0ba; --tag-plan-bg: #525252; --tag-plan-text: #f4f4f4; --check: #42be65; --border-strongish: #525252; --why-bg: #262626;
   color-scheme: dark }
 
 * { box-sizing: border-box; }
@@ -226,6 +227,29 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .it-link p { color: var(--text-2); max-width: 60ch; font-size: 1.125rem; }
 .page-intro { padding-block: 4rem 3rem; border-bottom: 1px solid var(--border); }
 .page-intro h1 { font-size: clamp(2.25rem, 4vw, 3.75rem); line-height: 1.1; max-width: 22ch; margin-bottom: 1.5rem; }
+
+/* === Сверено с исходниками Carbon v11 (@carbon/type, @carbon/themes, @carbon/styles), 30.09.2026 === */
+/* Шрифтовые токены: fluid-heading-05 для h1 и финала, fluid-heading-04 для h2 разделов, fluid-paragraph-01 для лида, body-02 для вводных абзацев */
+.hero h1, .page-intro h1, .final h2, .compare .big { font-size: 2rem; line-height: 1.25; font-weight: 400; letter-spacing: 0; }
+.sec h2, .partners h2, .band h2 { font-size: 1.75rem; line-height: 1.28572; font-weight: 400; letter-spacing: 0; }
+.lead { font-size: 1.5rem; line-height: 1.334; font-weight: 300; }
+.sec-head p, .it-link p, .start .body p { font-size: 1rem; line-height: 1.5; }
+@media (min-width: 42rem) { .hero h1, .page-intro h1, .final h2, .compare .big { font-size: 2.25rem; line-height: 1.22; font-weight: 300; } }
+@media (min-width: 66rem) { .hero h1, .page-intro h1, .final h2, .compare .big { font-size: 2.625rem; line-height: 1.19; } .lead { font-size: 1.75rem; line-height: 1.28572; } }
+@media (min-width: 82rem) { .hero h1, .page-intro h1, .final h2, .compare .big { font-size: 3rem; line-height: 1.17; } .sec h2, .partners h2, .band h2 { font-size: 2rem; line-height: 1.25; } }
+@media (min-width: 99rem) { .hero h1, .page-intro h1, .final h2, .compare .big { font-size: 3.75rem; } .lead { font-size: 2rem; line-height: 1.25; } .wrap { padding-inline: 2.5rem; } }
+/* Data table: строки на $layer, шапка $layer-accent heading-compact-01, ячейки body-compact-01 $text-secondary, разделители $border-subtle-01, без внешней рамки, строка 48px */
+.tbl { border: 0; }
+table { font-size: .875rem; line-height: 1.42857; letter-spacing: .16px; } /* body-01: в ячейках текст переносится */
+th { background: var(--layer-accent); color: var(--text); font-weight: 600; padding: .9375rem 1rem; }
+td { background: var(--layer); color: var(--text-2); padding: .9375rem 1rem; border-top: 0; border-bottom: 1px solid var(--border-strongish); }
+/* Ссылки Carbon: без подчёркивания, подчёркивание при наведении и фокусе; ссылки в тексте остаются подчёркнутыми */
+@media (max-width: 671px) { td { border-bottom: 0; } tr { background: var(--layer); border-bottom: 1px solid var(--border-strongish); } tr + tr { border-top: 0; } }
+.more, .nav a { text-decoration: none; }
+.more:hover, .more:focus-visible { text-decoration: underline; }
+.more { display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: 0 1rem; font-size: 16px; text-decoration: none; }
+.more svg { width: 16px; height: 16px; fill: currentColor; }
+.btns .more { align-self: center; }
 </style>
 </head>
 <body>
@@ -253,8 +277,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div class="btns">
         <a class="btn btn-primary" href="mailto:s.shvyrev@ro.ru?subject=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%20%D0%90%D1%82%D1%80%D0%B8%D1%83%D0%BC%D0%B0">Договориться о показе
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
-        <a class="btn btn-tertiary" href="index.html">На главную
-          <svg viewBox="0 0 16 16" aria-hidden="true" style="transform: scaleX(-1)"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
+        <a class="more" href="index.html"><svg viewBox="0 0 16 16" aria-hidden="true" style="transform: scaleX(-1)"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg>
+          На главную</a>
       </div>
       </div>
       <aside class="summary" aria-label="Коротко">
@@ -385,7 +409,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div>
         <h2>Покажем Атриум на вашей задаче</h2>
         <p class="lead">Напишите, какие модели вы запускаете и где. Ответим на вопросы вашей службы безопасности.</p>
-        <a class="btn btn-primary" href="mailto:s.shvyrev@ro.ru?subject=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%20%D0%90%D1%82%D1%80%D0%B8%D1%83%D0%BC%D0%B0">Договориться о показе
+        <a class="btn btn-tertiary" href="mailto:s.shvyrev@ro.ru?subject=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%20%D0%90%D1%82%D1%80%D0%B8%D1%83%D0%BC%D0%B0">Договориться о показе
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
         <div class="mail">
           <span>Почта: <a id="c-mail" href="mailto:s.shvyrev@ro.ru">s.shvyrev@ro.ru</a></span>
