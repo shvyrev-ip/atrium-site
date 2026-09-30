@@ -19,7 +19,7 @@
   --bg: #ffffff;              /* $background */
   --layer: #f4f4f4;           /* $layer-01 */
   --layer-accent: #e0e0e0;    /* $layer-accent-01 */
-  --border: #e0e0e0;          /* $border-subtle-01 */
+  --border: #e0e0e0;          /* $border-subtle-00 */
   --text: #161616;            /* $text-primary */
   --text-2: #525252;          /* $text-secondary */
   --link: #0f62fe;            /* $link-primary */
@@ -31,6 +31,10 @@
   --on-color: #ffffff;        /* $text-on-color */
   --focus: #0f62fe;           /* $focus */
   --focus-inset: #ffffff;     /* $focus-inset */
+  --link-hover: #0043ce;      /* $link-primary-hover */
+  --btn-active: #002d9c;      /* $button-primary-active */
+  --tertiary-active: #002d9c; /* $button-tertiary-active */
+  --bg-hover: rgba(141, 141, 141, .12); /* $background-hover */
   --band: #0f62fe;
   --band-border: #4589ff;
   --inverse-bg: #161616;
@@ -44,23 +48,22 @@
   --tag-plan-text: #161616;   /* $tag-color-gray */
   --why-bg: #f4f4f4;
   --border-strongish: #c6c6c6; /* $border-subtle-01 */
-  --check: #198038;           /* $support-success */
   --sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   --mono: 'IBM Plex Mono', Menlo, 'Courier New', monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #161616; --layer: #262626; --layer-accent: #393939; --border: #393939; --text: #f4f4f4; --text-2: #c6c6c6;
   --link: #78a9ff; --btn: #0f62fe; --btn-hover: #0050e6; --tertiary: #ffffff; --tertiary-on: #161616; --tertiary-hover: #f4f4f4; --on-color: #ffffff;
-  --focus: #ffffff; --focus-inset: #161616; --band: #0043ce; --band-border: #4589ff;
+  --focus: #ffffff; --focus-inset: #161616; --link-hover: #a6c8ff; --btn-active: #002d9c; --tertiary-active: #c6c6c6; --bg-hover: rgba(141, 141, 141, .16); --band: #0043ce; --band-border: #4589ff;
   --inverse-bg: #393939; --inverse-layer: #6f6f6f; --inverse-text: #f4f4f4; --inverse-text-2: #c6c6c6; --inverse-link: #78a9ff;
-  --tag-ok-bg: #0e6027; --tag-ok-text: #a7f0ba; --tag-plan-bg: #525252; --tag-plan-text: #f4f4f4; --check: #42be65; --border-strongish: #525252; --why-bg: #262626;
+  --tag-ok-bg: #0e6027; --tag-ok-text: #a7f0ba; --tag-plan-bg: #525252; --tag-plan-text: #f4f4f4; --border-strongish: #525252; --why-bg: #262626;
   color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #161616; --layer: #262626; --layer-accent: #393939; --border: #393939; --text: #f4f4f4; --text-2: #c6c6c6;
   --link: #78a9ff; --btn: #0f62fe; --btn-hover: #0050e6; --tertiary: #ffffff; --tertiary-on: #161616; --tertiary-hover: #f4f4f4; --on-color: #ffffff;
-  --focus: #ffffff; --focus-inset: #161616; --band: #0043ce; --band-border: #4589ff;
+  --focus: #ffffff; --focus-inset: #161616; --link-hover: #a6c8ff; --btn-active: #002d9c; --tertiary-active: #c6c6c6; --bg-hover: rgba(141, 141, 141, .16); --band: #0043ce; --band-border: #4589ff;
   --inverse-bg: #393939; --inverse-layer: #6f6f6f; --inverse-text: #f4f4f4; --inverse-text-2: #c6c6c6; --inverse-link: #78a9ff;
-  --tag-ok-bg: #0e6027; --tag-ok-text: #a7f0ba; --tag-plan-bg: #525252; --tag-plan-text: #f4f4f4; --check: #42be65; --border-strongish: #525252; --why-bg: #262626;
+  --tag-ok-bg: #0e6027; --tag-ok-text: #a7f0ba; --tag-plan-bg: #525252; --tag-plan-text: #f4f4f4; --border-strongish: #525252; --why-bg: #262626;
   color-scheme: dark }
 
 * { box-sizing: border-box; }
@@ -250,6 +253,36 @@ td { background: var(--layer); color: var(--text-2); padding: .9375rem 1rem; bor
 .more { display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: 0 1rem; font-size: 16px; text-decoration: none; }
 .more svg { width: 16px; height: 16px; fill: currentColor; }
 .btns .more { align-self: center; }
+
+/* === Состояния и мелочи по Carbon (сверка 12-го разбора): button/_button.scss, link/_link.scss, data-table, tag, ui-shell header, @carbon/type body-01 === */
+.btn { position: relative; justify-content: flex-start; gap: 0; line-height: 1.375; padding: .8125rem 3.9375rem .8125rem .9375rem; }
+.btn svg { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; }
+@media (min-width: 481px) { .btn { max-width: 20rem; } }
+.btn-primary:active { background: var(--btn-active); }
+.btn-tertiary:focus-visible { background: var(--tertiary); color: var(--tertiary-on); }
+.btn-tertiary:active { background: var(--tertiary-active); color: var(--tertiary-on); }
+.more { padding: 0; line-height: 1.375; }
+.more svg { width: 20px; height: 20px; }
+.btns .more { margin-left: 1.5rem; }
+@media (max-width: 480px) { .btns .more { margin-left: 0; margin-top: .5rem; } }
+a:hover, .more:hover { color: var(--link-hover); }
+.btn:hover { color: var(--on-color); }
+.btn-tertiary:hover { color: var(--tertiary-on); }
+th { line-height: 1.28572; letter-spacing: .16px; padding: 1rem; }
+td { padding: 1rem; }
+@media (max-width: 671px) { td { padding: .25rem 1rem; } td:first-child { padding-top: 1rem; } td:last-child { padding-bottom: 1rem; } }
+.tag { line-height: 1.33333; letter-spacing: .32px; }
+.step p, .note, .shot figcaption, .nav a, footer, .next span, .pgrid p, .legend, .copy, .metric p, .share-fallback { line-height: 1.42857; letter-spacing: .16px; }
+.band { padding-block: 3rem 0; }
+.nav a:hover { background: var(--bg-hover); }
+.copy { border: 0; background: transparent; padding: .4375rem 1rem; }
+.copy:hover { background: var(--bg-hover); }
+/* Колонки кратны 16-колоночной 2x Grid */
+@media (min-width: 1056px) {
+  .hero .wrap { grid-template-columns: minmax(0, 7fr) minmax(0, 9fr); }
+  .intro-grid, .final-grid { grid-template-columns: minmax(0, 10fr) minmax(0, 6fr); }
+}
+@media (min-width: 901px) { .sec-head, .start { grid-template-columns: minmax(0, 5fr) minmax(0, 11fr); } }
 </style>
 </head>
 <body>
