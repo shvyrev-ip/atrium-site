@@ -12,9 +12,19 @@
 <meta property="og:url" content="https://shvyrev-ip.github.io/atrium-site/it.html">
 <meta property="og:image" content="https://shvyrev-ip.github.io/atrium-site/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%230f62fe%22/%3E%3Ctext x=%2216%22 y=%2223%22 font-family=%22Arial%22 font-size=%2220%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3EA%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400;600&display=swap">
 <style>
+/* IBM Plex со своего сервера (пакет @ibm/plex, лицензия OFL — fonts/LICENSE-IBM-Plex.txt): сайт не ходит к сторонним серверам */
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/IBMPlexSans-Light-Cyrillic.woff2') format('woff2'); unicode-range: U+0400-045F, U+0472-0473, U+0490-049D, U+04A0-04A5, U+04AA-04AB, U+04AE-04B3, U+04B6-04BB, U+04C0-04C2, U+04CF-04D9, U+04DC-04DF, U+04E2-04E9, U+04EE-04F5, U+04F8-04F9; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/IBMPlexSans-Light-Latin1.woff2') format('woff2'); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/IBMPlexSans-Light-Pi.woff2') format('woff2'); unicode-range: U+0E3F, U+2032-2033, U+2070, U+2075-2079, U+2080-2081, U+2083, U+2085-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/IBMPlexSans-Regular-Cyrillic.woff2') format('woff2'); unicode-range: U+0400-045F, U+0472-0473, U+0490-049D, U+04A0-04A5, U+04AA-04AB, U+04AE-04B3, U+04B6-04BB, U+04C0-04C2, U+04CF-04D9, U+04DC-04DF, U+04E2-04E9, U+04EE-04F5, U+04F8-04F9; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/IBMPlexSans-Regular-Latin1.woff2') format('woff2'); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/IBMPlexSans-Regular-Pi.woff2') format('woff2'); unicode-range: U+0E3F, U+2032-2033, U+2070, U+2075-2079, U+2080-2081, U+2083, U+2085-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/IBMPlexSans-SemiBold-Cyrillic.woff2') format('woff2'); unicode-range: U+0400-045F, U+0472-0473, U+0490-049D, U+04A0-04A5, U+04AA-04AB, U+04AE-04B3, U+04B6-04BB, U+04C0-04C2, U+04CF-04D9, U+04DC-04DF, U+04E2-04E9, U+04EE-04F5, U+04F8-04F9; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/IBMPlexSans-SemiBold-Latin1.woff2') format('woff2'); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/IBMPlexSans-SemiBold-Pi.woff2') format('woff2'); unicode-range: U+0E3F, U+2032-2033, U+2070, U+2075-2079, U+2080-2081, U+2083, U+2085-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/IBMPlexMono-Regular-Cyrillic.woff2') format('woff2'); unicode-range: U+0400-045F, U+0472-0473, U+0490-049D, U+04A0-04A5, U+04AA-04AB, U+04AE-04B3, U+04B6-04BB, U+04C0-04C2, U+04CF-04D9, U+04DC-04DF, U+04E2-04E9, U+04EE-04F5, U+04F8-04F9; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/IBMPlexMono-Regular-Latin1.woff2') format('woff2'); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
 /* Layout: Carbon 2x Grid — max 1584px, поля 16px на телефоне и 32px шире; плоские плитки, 1px разделители, одна синяя полоса как акцент */
 :root {
   --bg: #ffffff;              /* $background */
@@ -36,6 +46,9 @@
   --btn-active: #002d9c;      /* $button-primary-active */
   --tertiary-active: #002d9c; /* $button-tertiary-active */
   --bg-hover: rgba(141, 141, 141, .12); /* $background-hover */
+  --bg-active: rgba(141, 141, 141, .5); /* $background-active */
+  --tip-bg: #393939; /* $background-inverse */
+  --tip-text: #ffffff; /* $text-inverse */
   --band: #0f62fe;
   --band-border: #4589ff;
   --inverse-bg: #161616;
@@ -55,14 +68,14 @@
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #161616; --layer: #262626; --layer-accent: #393939; --border: #393939; --text: #f4f4f4; --text-2: #c6c6c6;
   --link: #78a9ff; --btn: #0f62fe; --btn-hover: #0050e6; --tertiary: #ffffff; --tertiary-on: #161616; --tertiary-hover: #f4f4f4; --on-color: #ffffff;
-  --focus: #ffffff; --focus-inset: #161616; --link-hover: #a6c8ff; --btn-active: #002d9c; --tertiary-active: #c6c6c6; --bg-hover: rgba(141, 141, 141, .16); --band: #0043ce; --band-border: #4589ff;
+  --focus: #ffffff; --focus-inset: #161616; --link-hover: #a6c8ff; --btn-active: #002d9c; --tertiary-active: #c6c6c6; --bg-hover: rgba(141, 141, 141, .16); --bg-active: rgba(141, 141, 141, .4); --tip-bg: #f4f4f4; --tip-text: #161616; --band: #0043ce; --band-border: #4589ff;
   --inverse-bg: #393939; --inverse-layer: #6f6f6f; --inverse-text: #f4f4f4; --inverse-text-2: #c6c6c6; --inverse-link: #78a9ff;
   --tag-ok-bg: #0e6027; --tag-ok-text: #a7f0ba; --tag-plan-bg: #525252; --tag-plan-text: #f4f4f4; --border-strongish: #525252; --why-bg: #262626;
   color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #161616; --layer: #262626; --layer-accent: #393939; --border: #393939; --text: #f4f4f4; --text-2: #c6c6c6;
   --link: #78a9ff; --btn: #0f62fe; --btn-hover: #0050e6; --tertiary: #ffffff; --tertiary-on: #161616; --tertiary-hover: #f4f4f4; --on-color: #ffffff;
-  --focus: #ffffff; --focus-inset: #161616; --link-hover: #a6c8ff; --btn-active: #002d9c; --tertiary-active: #c6c6c6; --bg-hover: rgba(141, 141, 141, .16); --band: #0043ce; --band-border: #4589ff;
+  --focus: #ffffff; --focus-inset: #161616; --link-hover: #a6c8ff; --btn-active: #002d9c; --tertiary-active: #c6c6c6; --bg-hover: rgba(141, 141, 141, .16); --bg-active: rgba(141, 141, 141, .4); --tip-bg: #f4f4f4; --tip-text: #161616; --band: #0043ce; --band-border: #4589ff;
   --inverse-bg: #393939; --inverse-layer: #6f6f6f; --inverse-text: #f4f4f4; --inverse-text-2: #c6c6c6; --inverse-link: #78a9ff;
   --tag-ok-bg: #0e6027; --tag-ok-text: #a7f0ba; --tag-plan-bg: #525252; --tag-plan-text: #f4f4f4; --border-strongish: #525252; --why-bg: #262626;
   color-scheme: dark }
@@ -306,6 +319,19 @@ td { padding: 1rem; }
 th { padding: .9375rem 1rem; }
 @media (max-width: 671px) { .mail .copy { margin-left: -1rem; } }
 @media (min-width: 1056px) { .hero .wrap, .intro-grid, .final-grid { gap: 2rem; } }
+
+/* Правки 14-го разбора */
+.theme-toggle { color: var(--text-2); position: relative; transition: background-color 110ms cubic-bezier(0.2, 0, 0.38, 0.9); }
+.theme-toggle:hover, .theme-toggle:active { color: var(--text); }
+.theme-toggle:active, .nav a:active { background: var(--bg-active); }
+.theme-toggle::after { content: attr(aria-label); position: absolute; top: calc(100% + 8px); right: 0; white-space: nowrap; background: var(--tip-bg); color: var(--tip-text); font-size: .75rem; line-height: 1.33333; letter-spacing: .32px; padding: .5rem 1rem; border-radius: 2px; opacity: 0; pointer-events: none; transition: opacity 110ms; z-index: 20; }
+.theme-toggle:hover::after, .theme-toggle:focus-visible::after { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .theme-toggle, .theme-toggle::after { transition: none; } }
+.btn, .copy { transition: background-color 70ms cubic-bezier(0, 0, 0.38, 0.9); }
+.step h3, .gives h3, .cols3 h3, .pgrid h3, .models-h, .next-h, .summary-h, .band h3, .sub { line-height: 1.4; }
+.copy { padding-block: .375rem; line-height: 1.25rem; }
+.copy-note { font-size: .875rem; line-height: 1.42857; letter-spacing: .16px; color: var(--text-2); min-height: 1.25rem; }
+@media (min-width: 1056px) { .tbl, .models, .roadmap { max-width: 75%; } }
 </style>
 </head>
 <body>
@@ -320,7 +346,7 @@ th { padding: .9375rem 1rem; }
       <a class="nav-keep nav-roomy" href="#ready">Закупка</a>
       <a class="nav-cta" href="#contact">Связаться</a>
     </nav>
-    <button class="theme-toggle" type="button" aria-label="Включить светлую тему"><svg class="ic-sun" viewBox="0 0 32 32" aria-hidden="true"><path d="M15 2H17V7H15z"/><path d="M21.668 6.854H26.626V8.854H21.668z" transform="rotate(-45 24.147 7.853)"/><path d="M25 15H30V17H25z"/><path d="M23.147 21.668H25.147V26.626H23.147z" transform="rotate(-45 24.147 24.146)"/><path d="M15 25H17V30H15z"/><path d="M5.375 23.147H10.333V25.147H5.375z" transform="rotate(-45 7.853 24.146)"/><path d="M2 15H7V17H2z"/><path d="M6.854 5.375H8.854V10.333H6.854z" transform="rotate(-45 7.854 7.853)"/><path d="M16,12a4,4,0,1,1-4,4,4.0045,4.0045,0,0,1,4-4m0-2a6,6,0,1,0,6,6,6,6,0,0,0-6-6Z"/></svg><svg class="ic-moon" viewBox="0 0 32 32" aria-hidden="true"><path d="M13.5025,5.4136A15.0755,15.0755,0,0,0,25.096,23.6082a11.1134,11.1134,0,0,1-7.9749,3.3893c-.1385,0-.2782.0051-.4178,0A11.0944,11.0944,0,0,1,13.5025,5.4136M14.98,3a1.0024,1.0024,0,0,0-.1746.0156A13.0959,13.0959,0,0,0,16.63,28.9973c.1641.006.3282,0,.4909,0a13.0724,13.0724,0,0,0,10.702-5.5556,1.0094,1.0094,0,0,0-.7833-1.5644A13.08,13.08,0,0,1,15.8892,4.38,1.0149,1.0149,0,0,0,14.98,3Z"/></svg></button>
+    <button class="theme-toggle" type="button" aria-label="Переключить тему"><svg class="ic-sun" viewBox="0 0 32 32" aria-hidden="true"><path d="M15 2H17V7H15z"/><path d="M21.668 6.854H26.626V8.854H21.668z" transform="rotate(-45 24.147 7.853)"/><path d="M25 15H30V17H25z"/><path d="M23.147 21.668H25.147V26.626H23.147z" transform="rotate(-45 24.147 24.146)"/><path d="M15 25H17V30H15z"/><path d="M5.375 23.147H10.333V25.147H5.375z" transform="rotate(-45 7.853 24.146)"/><path d="M2 15H7V17H2z"/><path d="M6.854 5.375H8.854V10.333H6.854z" transform="rotate(-45 7.854 7.853)"/><path d="M16,12a4,4,0,1,1-4,4,4.0045,4.0045,0,0,1,4-4m0-2a6,6,0,1,0,6,6,6,6,0,0,0-6-6Z"/></svg><svg class="ic-moon" viewBox="0 0 32 32" aria-hidden="true"><path d="M13.5025,5.4136A15.0755,15.0755,0,0,0,25.096,23.6082a11.1134,11.1134,0,0,1-7.9749,3.3893c-.1385,0-.2782.0051-.4178,0A11.0944,11.0944,0,0,1,13.5025,5.4136M14.98,3a1.0024,1.0024,0,0,0-.1746.0156A13.0959,13.0959,0,0,0,16.63,28.9973c.1641.006.3282,0,.4909,0a13.0724,13.0724,0,0,0,10.702-5.5556,1.0094,1.0094,0,0,0-.7833-1.5644A13.08,13.08,0,0,1,15.8892,4.38,1.0149,1.0149,0,0,0,14.98,3Z"/></svg></button>
   </div>
 </header>
 
@@ -363,8 +389,8 @@ th { padding: .9375rem 1rem; }
       </ol>
       <h3 class="models-h">Какие модели подходят</h3>
       <ul class="models">
-        <li><span>Обычные модели машинного обучения: прогнозы, оценки, классификация</span><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></li>
-        <li><span>Языковые модели: запускаются, проверяем на нашем сервере</span><span class="tag plan"><span class="sr-only">Статус: </span>в проверке</span></li>
+        <li><span>Обычные модели машинного обучения: прогнозы, оценки, классификация</span><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></li>
+        <li><span>Языковые модели: запускаются, проверяем на нашем сервере</span><span class="tag plan"><span class="sr-only">Статус: </span>В проверке</span></li>
       </ul>
       <p class="lead-note">Работает на серверах с видеокартами и без них.</p>
         </div>
@@ -394,16 +420,16 @@ th { padding: .9375rem 1rem; }
         <table>
           <thead><tr><th scope="col">Что</th><th scope="col">Как</th><th scope="col">Статус</th></tr></thead>
           <tbody>
-            <tr><td>Где работает</td><td>В Kubernetes на ваших Linux-серверах. Интернет не нужен</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
-            <tr><td>Вход пользователей</td><td>Встроенный вход, у каждого свои роли</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
-            <tr><td>Каталог пользователей компании</td><td>Подключение к вашему AD или LDAP</td><td><span class="tag plan"><span class="sr-only">Статус: </span>план: I кв. 2027</span></td></tr>
-            <tr><td>Как программы обращаются к модели</td><td>По HTTPS-адресу, который выдаёт Атриум. REST, открытый стандартный протокол для моделей</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
-            <tr><td>Кто может обратиться к модели</td><td>Только с токеном доступа. Без токена — отказ. Есть лимиты на число и размер запросов</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
-            <tr><td>Закрытие модели внутри кластера</td><td>Сетевая политика: к модели можно только через шлюз</td><td><span class="tag plan"><span class="sr-only">Статус: </span>план: IV кв. 2026</span></td></tr>
-            <tr><td>Форматы моделей</td><td>scikit-learn проверен. XGBoost, LightGBM, ONNX, PyTorch и TensorFlow проверяем</td><td><span class="tag plan"><span class="sr-only">Статус: </span>в проверке</span></td></tr>
-            <tr><td>Хранилище файлов моделей</td><td>Сейчас хранилище в составе Атриума. Подключение вашего S3-совместимого хранилища в работе</td><td><span class="tag plan"><span class="sr-only">Статус: </span>в работе</span></td></tr>
-                        <tr><td>Выгрузка журнала</td><td>Передача в вашу систему мониторинга (SIEM)</td><td><span class="tag plan"><span class="sr-only">Статус: </span>план: 2027</span></td></tr>
-            <tr><td>Серверы для пробы</td><td>Три машины, по 8 ядер и 32&nbsp;ГБ памяти каждая. Уточним по замерам</td><td><span class="tag plan"><span class="sr-only">Статус: </span>ориентир</span></td></tr>
+            <tr><td>Где работает</td><td>В Kubernetes на ваших Linux-серверах. Интернет не нужен</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
+            <tr><td>Вход пользователей</td><td>Встроенный вход, у каждого свои роли</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
+            <tr><td>Каталог пользователей компании</td><td>Подключение к вашему AD или LDAP</td><td><span class="tag plan"><span class="sr-only">Статус: </span>План: I кв. 2027</span></td></tr>
+            <tr><td>Как программы обращаются к модели</td><td>По HTTPS-адресу, который выдаёт Атриум. REST, открытый стандартный протокол для моделей</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
+            <tr><td>Кто может обратиться к модели</td><td>Только с токеном доступа. Без токена — отказ. Есть лимиты на число и размер запросов</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
+            <tr><td>Закрытие модели внутри кластера</td><td>Сетевая политика: к модели можно только через шлюз</td><td><span class="tag plan"><span class="sr-only">Статус: </span>План: IV кв. 2026</span></td></tr>
+            <tr><td>Форматы моделей</td><td>scikit-learn проверен. XGBoost, LightGBM, ONNX, PyTorch и TensorFlow проверяем</td><td><span class="tag plan"><span class="sr-only">Статус: </span>В проверке</span></td></tr>
+            <tr><td>Хранилище файлов моделей</td><td>Сейчас хранилище в составе Атриума. Подключение вашего S3-совместимого хранилища в работе</td><td><span class="tag plan"><span class="sr-only">Статус: </span>В работе</span></td></tr>
+                        <tr><td>Выгрузка журнала</td><td>Передача в вашу систему мониторинга (SIEM)</td><td><span class="tag plan"><span class="sr-only">Статус: </span>План: 2027</span></td></tr>
+            <tr><td>Серверы для пробы</td><td>Три машины, по 8 ядер и 32&nbsp;ГБ памяти каждая. Уточним по замерам</td><td><span class="tag plan"><span class="sr-only">Статус: </span>Ориентир</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -420,10 +446,10 @@ th { padding: .9375rem 1rem; }
         <table>
           <thead><tr><th scope="col">Что проверяет служба безопасности</th><th scope="col">Как в Атриуме</th><th scope="col">Статус</th></tr></thead>
           <tbody>
-            <tr><td>Команды отделены друг от друга</td><td>Каждая команда работает в своём пространстве и не видит чужого</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
-            <tr><td>У каждого только нужные права</td><td>Кто может смотреть, а кто запускать, задаёт администратор</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
-            <tr><td>Всё записывается</td><td>Журнал: кто, что и когда сделал</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
-            <tr><td>Контроль ИИ-помощников, которые сами выполняют действия</td><td>Права и история для них, как для моделей</td><td><span class="tag plan"><span class="sr-only">Статус: </span>план: 2027</span></td></tr>
+            <tr><td>Команды отделены друг от друга</td><td>Каждая команда работает в своём пространстве и не видит чужого</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
+            <tr><td>У каждого только нужные права</td><td>Кто может смотреть, а кто запускать, задаёт администратор</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
+            <tr><td>Всё записывается</td><td>Журнал: кто, что и когда сделал</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
+            <tr><td>Контроль ИИ-помощников, которые сами выполняют действия</td><td>Права и история для них, как для моделей</td><td><span class="tag plan"><span class="sr-only">Статус: </span>План: 2027</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -438,11 +464,11 @@ th { padding: .9375rem 1rem; }
         <p>Что нужно, чтобы купить Атриум по правилам крупной компании или госзаказчика, и когда это будет.</p>
       </div>
       <ul class="roadmap">
-        <li><span>Ставим на ваши Linux-серверы вместе с вашими специалистами</span><span class="tag ok"><span class="sr-only">Срок: </span>есть</span></li>
-        <li><span>Установка на закрытые серверы в один шаг</span><span class="tag plan"><span class="sr-only">Срок: </span>план: ноябрь 2026</span></li>
-        <li><span>Работа на российских операционных системах</span><span class="tag plan"><span class="sr-only">Срок: </span>план: I квартал 2027</span></li>
-        <li><span>Сертификация ФСТЭК</span><span class="tag plan"><span class="sr-only">Срок: </span>срок уточняем</span></li>
-        <li><span>Включение в реестр российских программ</span><span class="tag plan"><span class="sr-only">Срок: </span>план: I квартал 2027</span></li>
+        <li><span>Ставим на ваши Linux-серверы вместе с вашими специалистами</span><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></li>
+        <li><span>Установка на закрытые серверы в один шаг</span><span class="tag plan"><span class="sr-only">Статус: </span>План: ноябрь 2026</span></li>
+        <li><span>Работа на российских операционных системах</span><span class="tag plan"><span class="sr-only">Статус: </span>План: I кв. 2027</span></li>
+        <li><span>Сертификация ФСТЭК</span><span class="tag plan"><span class="sr-only">Статус: </span>Срок уточняем</span></li>
+        <li><span>Включение в реестр российских программ</span><span class="tag plan"><span class="sr-only">Статус: </span>План: I кв. 2027</span></li>
       </ul>
     </div>
   </section>
@@ -471,7 +497,7 @@ th { padding: .9375rem 1rem; }
         <div class="mail">
           <span>Почта: <a id="c-mail" href="mailto:s.shvyrev@ro.ru">s.shvyrev@ro.ru</a></span>
           <button class="copy" type="button" data-copy="c-mail">Скопировать адрес</button>
-          <span class="sr-only" role="status" aria-live="polite" id="copy-status"></span>
+          <span class="copy-note" role="status" aria-live="polite" id="copy-status"></span>
         </div>
       </div>
       <div>
@@ -497,12 +523,13 @@ th { padding: .9375rem 1rem; }
   var root = document.documentElement, b = document.querySelector('.theme-toggle'); if (!b) return;
   try { var saved = localStorage.getItem('atrium-theme'); if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved); } catch (e) {}
   function current() { var t = root.getAttribute('data-theme'); if (t) return t; return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
-  function label() { b.setAttribute('aria-label', current() === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему'); b.title = b.getAttribute('aria-label'); }
+  function label() { b.setAttribute('aria-label', current() === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему'); }
   label();
   b.addEventListener('click', function () {
     var next = current() === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem('atrium-theme', next); } catch (e) {}
+    var sys = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if (next === sys) { root.removeAttribute('data-theme'); try { localStorage.removeItem('atrium-theme'); } catch (e) {} }
+    else { root.setAttribute('data-theme', next); try { localStorage.setItem('atrium-theme', next); } catch (e) {} }
     label();
   });
 })();
@@ -513,7 +540,7 @@ document.querySelectorAll('.copy').forEach(function (b) {
   b.addEventListener('click', function () {
     var el = document.getElementById(b.dataset.copy);
     var text = el.textContent.trim();
-    function say(msg) { b.textContent = msg; status.textContent = msg; setTimeout(function () { b.textContent = label; status.textContent = ''; }, 2500); }
+    function say(msg) { status.textContent = msg; setTimeout(function () { status.textContent = ''; }, 2500); }
     function fallback() {
       var r = document.createRange(); r.selectNodeContents(el);
       var s = getSelection(); s.removeAllRanges(); s.addRange(r);
