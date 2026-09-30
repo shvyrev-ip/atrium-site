@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Атриум для ИТ-отдела и службы безопасности: как работает, безопасность, сроки для закупки.">
+<title>Атриум для ИТ и безопасности</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400;600&display=swap">
+<style>
+/* Layout: Carbon 2x Grid — max 1584px, поля 16px на телефоне и 32px шире; плоские плитки, 1px разделители, одна синяя полоса как акцент */
+:root {
+  --bg: #ffffff;              /* $background */
+  --layer: #f4f4f4;           /* $layer-01 */
+  --layer-accent: #e0e0e0;    /* $layer-accent-01 */
+  --border: #e0e0e0;          /* $border-subtle-01 */
+  --text: #161616;            /* $text-primary */
+  --text-2: #525252;          /* $text-secondary */
+  --link: #0f62fe;            /* $link-primary */
+  --btn: #0f62fe;             /* $button-primary */
+  --btn-hover: #0050e6;       /* $button-primary-hover */
+  --tertiary: #0f62fe;        /* $button-tertiary */
+  --tertiary-on: #ffffff;
+  --tertiary-hover: #0050e6; /* $button-tertiary-hover */
+  --on-color: #ffffff;        /* $text-on-color */
+  --focus: #0f62fe;           /* $focus */
+  --focus-inset: #ffffff;     /* $focus-inset */
+  --band: #0f62fe;
+  --band-border: #4589ff;
+  --inverse-bg: #161616;
+  --inverse-layer: #393939;
+  --inverse-text: #f4f4f4;
+  --inverse-text-2: #c6c6c6;
+  --inverse-link: #78a9ff;
+  --tag-ok-bg: #a7f0ba;       /* $tag-background-green */
+  --tag-ok-text: #0e6027;     /* $tag-color-green */
+  --tag-plan-bg: #e0e0e0;     /* $tag-background-gray */
+  --tag-plan-text: #161616;   /* $tag-color-gray */
+  --why-bg: #f4f4f4;
+  --check: #198038;           /* $support-success */
+  --sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'IBM Plex Mono', Menlo, 'Courier New', monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #161616; --layer: #262626; --layer-accent: #393939; --border: #393939; --text: #f4f4f4; --text-2: #c6c6c6;
+  --link: #78a9ff; --btn: #0f62fe; --btn-hover: #0050e6; --tertiary: #ffffff; --tertiary-on: #161616; --tertiary-hover: #f4f4f4; --on-color: #ffffff;
+  --focus: #ffffff; --focus-inset: #161616; --band: #0043ce; --band-border: #4589ff;
+  --inverse-bg: #393939; --inverse-layer: #6f6f6f; --inverse-text: #f4f4f4; --inverse-text-2: #c6c6c6; --inverse-link: #78a9ff;
+  --tag-ok-bg: #044317; --tag-ok-text: #6fdc8c; --tag-plan-bg: #393939; --tag-plan-text: #e0e0e0; --check: #42be65; --why-bg: #262626;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #161616; --layer: #262626; --layer-accent: #393939; --border: #393939; --text: #f4f4f4; --text-2: #c6c6c6;
+  --link: #78a9ff; --btn: #0f62fe; --btn-hover: #0050e6; --tertiary: #ffffff; --tertiary-on: #161616; --tertiary-hover: #f4f4f4; --on-color: #ffffff;
+  --focus: #ffffff; --focus-inset: #161616; --band: #0043ce; --band-border: #4589ff;
+  --inverse-bg: #393939; --inverse-layer: #6f6f6f; --inverse-text: #f4f4f4; --inverse-text-2: #c6c6c6; --inverse-link: #78a9ff;
+  --tag-ok-bg: #044317; --tag-ok-text: #6fdc8c; --tag-plan-bg: #393939; --tag-plan-text: #e0e0e0; --check: #42be65; --why-bg: #262626;
+  color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.5; margin: 0; }
+a { color: var(--link); text-underline-offset: 3px; }
+::selection { background: var(--btn); color: var(--on-color); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+.btn:focus-visible { box-shadow: inset 0 0 0 3px var(--focus-inset); }
+a:not(.btn):focus-visible, .copy:focus-visible { outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.wrap { max-width: 1584px; margin: 0 auto; padding-inline: 1rem; }
+@media (min-width: 672px) { .wrap { padding-inline: 2rem; } }
+h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 300; }
+p { margin: 0; }
+
+/* Шапка */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-bottom: 1px solid var(--border); }
+.top .wrap { display: flex; align-items: center; gap: 2rem; height: 48px; }
+.brand { font-weight: 600; font-size: 14px; letter-spacing: .16px; color: var(--text); text-decoration: none; }
+.brand span { font-weight: 400; }
+.nav { display: flex; margin-left: auto; }
+.nav a { color: var(--text-2); text-decoration: none; font-size: 14px; padding: 0 1rem; line-height: 48px; }
+.nav a:hover { color: var(--text); background: var(--layer); }
+.nav .nav-cta { color: var(--link); }
+@media (max-width: 720px) { .nav a:not(.nav-cta):not(.nav-partners):not(.nav-keep) { display: none; } .brand span { display: none; } .nav a { padding: 0 .75rem; } .nav .nav-cta { padding-right: 0; } }
+
+/* Кнопки Carbon, размер Large expressive: 48px, подпись 16px */
+.btns { display: flex; flex-wrap: wrap; gap: 1px; }
+.btn { display: inline-flex; align-items: center; justify-content: space-between; gap: 4rem; min-height: 48px; padding: 12px 1rem; font-size: 16px; line-height: 1.5; text-decoration: none; border: 0; color: var(--on-color); cursor: pointer; font-family: inherit; }
+.btn svg { width: 16px; height: 16px; fill: currentColor; flex: none; }
+.btn-primary { background: var(--btn); }
+.btn-primary:hover { background: var(--btn-hover); }
+.btn-tertiary { background: transparent; color: var(--tertiary); box-shadow: inset 0 0 0 1px var(--tertiary); }
+.btn-tertiary:hover { background: var(--tertiary-hover); color: var(--tertiary-on); }
+.btn-tertiary:focus-visible { box-shadow: inset 0 0 0 3px var(--focus-inset); }
+@media (max-width: 480px) { .btn { width: 100%; } }
+
+/* Первый экран */
+.hero { padding-block: 5rem 4rem; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 3rem; align-items: center; }
+@media (min-width: 1056px) { .hero .wrap { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); } }
+.hero h1 { font-size: clamp(2.5rem, 4.4vw, 4.5rem); line-height: 1.08; letter-spacing: -.5px; max-width: 18ch; margin-bottom: 2rem; }
+.lead { font-size: clamp(1.125rem, 1.6vw, 1.5rem); line-height: 1.45; color: var(--text-2); max-width: 44ch; margin-bottom: 2.5rem; }
+.shot { margin: 0; min-width: 0; }
+.shot img { display: block; width: 100%; height: auto; border: 1px solid var(--border); }
+.shot figcaption { font-size: 14px; color: var(--text-2); margin-top: .5rem; }
+
+/* Синяя полоса: три боли */
+.band { background: var(--band); color: var(--on-color); padding-block: 3.5rem 0; }
+.band h2 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); line-height: 1.2; margin-bottom: 2.5rem; }
+.band .cells { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.band .cell { padding: 2rem 2rem 3rem 0; border-top: 1px solid var(--band-border); min-width: 0; }
+.band .cell + .cell { padding-left: 2rem; border-left: 1px solid var(--band-border); }
+@media (max-width: 900px) { .band .cell { padding-right: 0; } .band .cell + .cell { padding-left: 0; border-left: 0; } }
+.band h3 { font-size: 1.25rem; line-height: 1.4; font-weight: 400; margin-bottom: 1rem; }
+.band p { max-width: 40ch; }
+
+/* Секции */
+.sec { padding-block: 5rem; border-bottom: 1px solid var(--border); }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2rem; margin-bottom: 3rem; }
+@media (max-width: 900px) { .sec-head { grid-template-columns: 1fr; gap: 1rem; } }
+.sec h2, .partners h2 { font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.15; }
+.sec-head p { color: var(--text-2); font-size: 1.125rem; max-width: 60ch; align-self: end; }
+
+/* Шаги: настоящая последовательность, поэтому нумеруем */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.step { background: var(--bg); padding: 1.5rem 1.5rem 2.5rem; min-width: 0; }
+.step .n { font-family: var(--mono); font-size: 14px; color: var(--text-2); margin-bottom: 3rem; }
+@media (max-width: 671px) { .step .n { margin-bottom: 1rem; } .step { padding-bottom: 1.5rem; } }
+.step h3 { font-size: 1.25rem; font-weight: 400; margin-bottom: .5rem; }
+.step p { color: var(--text-2); font-size: 14px; }
+
+.compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.compare > div { padding: 1.5rem 1.5rem 2rem; min-width: 0; display: grid; gap: .75rem; align-content: start; }
+.compare .was { background: var(--bg); } .compare .now { background: var(--layer); }
+.compare .lbl { font-size: 14px; color: var(--text-2); }
+.compare .big { font-size: clamp(2rem, 3.4vw, 3rem); font-weight: 300; line-height: 1.1; }
+.compare .now .big { color: var(--text); font-weight: 400; }
+.compare p:last-child { color: var(--text-2); }
+.note { margin-top: 1.5rem; font-size: 14px; color: var(--text-2); max-width: 70ch; }
+
+/* Таблица: на телефоне строки становятся карточками */
+.tbl { border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; background: var(--layer-accent); font-weight: 600; padding: 1rem; }
+td { padding: 1rem; border-top: 1px solid var(--border); vertical-align: top; }
+td:first-child { width: 34%; }
+td:last-child, th:last-child { width: 1%; white-space: nowrap; }
+.tag { display: inline-flex; align-items: center; height: 24px; padding: 0 .5rem; border-radius: 1rem; font-size: 12px; line-height: 1; white-space: nowrap; }
+.tag.ok { background: var(--tag-ok-bg); color: var(--tag-ok-text); }
+.tag.plan { background: var(--tag-plan-bg); color: var(--tag-plan-text); }
+@media (max-width: 671px) {
+  thead { display: none; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  tr + tr { border-top: 1px solid var(--border); }
+  td { border-top: 0; }
+  td:first-child { width: 100%; font-weight: 600; padding-bottom: .25rem; }
+  td { padding-block: .25rem; } tr { padding-block: .75rem; }
+  td:nth-child(2) { color: var(--text-2); }
+  td:last-child { width: 100%; }
+}
+.models-h { font-size: 1.25rem; font-weight: 400; margin-block: 3rem 1rem; }
+.models { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.models li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: center; padding-block: 1rem; border-bottom: 1px solid var(--border); }
+.roadmap { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.roadmap li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; padding-block: 1rem; border-bottom: 1px solid var(--border); align-items: baseline; }
+
+/* Сравнение */
+.why { background: var(--why-bg); border-bottom: 0; }
+.cols3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 2rem; }
+.cols3 > div { border-top: 1px solid var(--text); padding-top: 1rem; min-width: 0; }
+.cols3 h3 { font-size: 1.25rem; font-weight: 400; margin-bottom: .75rem; }
+.cols3 p { color: var(--text-2); }
+
+/* Интеграторам — тёмный блок */
+.partners { --focus: #ffffff; --focus-inset: #161616; background: var(--inverse-bg); color: var(--inverse-text); padding-block: 5rem; border-block: 1px solid var(--inverse-layer); }
+.partners .sec-head p { color: var(--inverse-text-2); }
+.pgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 2rem; margin-bottom: 3rem; }
+.pgrid > div { border-top: 1px solid var(--inverse-layer); padding-top: 1rem; min-width: 0; }
+.pgrid h3 { font-size: 1.25rem; font-weight: 400; margin-bottom: .5rem; }
+.pgrid p { color: var(--inverse-text-2); font-size: 14px; }
+.partners a:not(.btn) { color: var(--inverse-link); }
+
+/* Финал */
+.final { padding-block: 6rem; }
+.final h2 { font-size: clamp(2.25rem, 4vw, 3.75rem); line-height: 1.1; max-width: 20ch; margin-bottom: 1.5rem; }
+.final .lead { margin-bottom: 2.5rem; }
+.final-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 3rem; }
+@media (min-width: 1056px) { .final-grid { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: end; } }
+.next-h { font-size: 1.25rem; font-weight: 400; margin-bottom: 1rem; }
+.next { list-style: none; margin: 0; padding: 0; counter-reset: n; border-top: 1px solid var(--border); }
+.next li { counter-increment: n; display: grid; grid-template-columns: 2rem minmax(0, 1fr); padding-block: 1rem; border-bottom: 1px solid var(--border); }
+.next li::before { content: counter(n); font-family: var(--mono); font-size: 14px; color: var(--text-2); grid-row: span 2; }
+.next b { font-weight: 600; } .next span { color: var(--text-2); font-size: 14px; }
+.mail { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; margin-top: 1.5rem; font-size: 1.125rem; }
+.copy { font: inherit; font-size: 14px; background: none; color: var(--link); border: 1px solid var(--border); padding: .25rem .75rem; min-height: 32px; cursor: pointer; }
+.copy:hover { background: var(--layer); }
+@media (max-width: 671px) { .copy { min-height: 48px; } }
+footer { padding-block: 2rem 3rem; font-size: 14px; color: var(--text-2); border-top: 1px solid var(--border); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+@media (prefers-reduced-motion: no-preference) { .btn, .nav a, .copy { transition: background-color 110ms cubic-bezier(0.2, 0, 0.38, 0.9); } }
+
+/* Главная для владельца */
+.gives { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 2rem; }
+.gives > div { border-top: 1px solid var(--text); padding-top: 1rem; min-width: 0; }
+.gives h3 { font-size: 1.25rem; font-weight: 400; margin-bottom: .75rem; }
+.gives p { color: var(--text-2); }
+.start { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2rem; }
+@media (max-width: 900px) { .start { grid-template-columns: 1fr; } }
+.start .body { display: grid; gap: 1rem; max-width: 65ch; }
+.start .body p { font-size: 1.125rem; }
+.start .body .muted { color: var(--text-2); font-size: 1rem; }
+.it-link { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.it-link p { color: var(--text-2); max-width: 60ch; font-size: 1.125rem; }
+.page-intro { padding-block: 4rem 3rem; border-bottom: 1px solid var(--border); }
+.page-intro h1 { font-size: clamp(2.25rem, 4vw, 3.75rem); line-height: 1.1; max-width: 22ch; margin-bottom: 1.5rem; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">Atrium <span>· Атриум</span></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#how">Как работает</a>
+      <a href="#tech">Подробности</a>
+      <a class="nav-keep" href="#security">Безопасность</a>
+      <a href="#ready">Закупка</a>
+      <a class="nav-cta" href="#contact">Связаться</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-intro">
+    <div class="wrap">
+      <h1>Атриум для ИТ и безопасности</h1>
+      <p class="lead">Атриум — программа для запуска и учёта ИИ-моделей на серверах вашей компании: права, журнал, адреса для программ. Здесь — как он устроен, что с безопасностью и когда будут документы для закупки.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="mailto:s.shvyrev@ro.ru?subject=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%20%D0%90%D1%82%D1%80%D0%B8%D1%83%D0%BC%D0%B0">Договориться о показе
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
+        <a class="btn btn-tertiary" href="index.html">На главную
+          <svg viewBox="0 0 16 16" aria-hidden="true" style="transform: scaleX(-1)"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Как работает</h2>
+        <p>Работа с моделями идёт в браузере, без ручных настроек. Четыре шага.</p>
+      </div>
+      <ol class="steps">
+        <li class="step"><p class="n" aria-hidden="true">1</p><h3>Добавьте модель</h3><p>Укажите, где лежит файл модели. Она появится в общем списке.</p></li>
+        <li class="step"><p class="n" aria-hidden="true">2</p><h3>Атриум проверит файл</h3><p>Если файла нет или он не читается, вы узнаете сразу, а не после запуска.</p></li>
+        <li class="step"><p class="n" aria-hidden="true">3</p><h3>Запустите</h3><p>Одна кнопка. Остановить и запустить снова тоже одной кнопкой.</p></li>
+        <li class="step"><p class="n" aria-hidden="true">4</p><h3>Подключите программы</h3><p>Модель получает адрес, по которому к ней обращаются ваши программы.</p></li>
+      </ol>
+      <h3 class="models-h">Какие модели подходят</h3>
+      <ul class="models">
+        <li><span>Обычные модели машинного обучения: прогнозы, оценки, классификация</span><span class="tag ok"><span class="sr-only">Статус: </span>проверено</span></li>
+        <li><span>Языковые модели: запускаются, проверяем на нашем сервере</span><span class="tag plan"><span class="sr-only">Статус: </span>в проверке</span></li>
+      </ul>
+      <p class="note">Работает на серверах с видеокартами и без них.</p>
+        </div>
+  </section>
+
+  <section class="sec" id="proof">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Запуск модели: было и стало</h2>
+        <p>Контроль остаётся у ИТ: права и журнал. А командам не нужно ждать.</p>
+      </div>
+      <div class="compare">
+        <div class="was"><p class="lbl">Было</p><p class="big">2–3 недели</p><p>Заявка в ИТ, согласования, ручная настройка сервера. Типичный срок из нашего опыта.</p></div>
+        <div class="now"><p class="lbl">С Атриумом</p><p class="big">В тот же день</p><p>ИТ один раз задаёт права, дальше команды запускают модели сами. Сама операция занимает секунды: добавить модель за 7&nbsp;с, запустить за 20&nbsp;с, остановить за 10&nbsp;с.</p></div>
+      </div>
+      <p class="note">Замеры на нашем тестовом сервере в сентябре 2026 года: три обычные машины без видеокарт, небольшая модель. Большая языковая модель запускается дольше: время зависит от её размера и ваших серверов.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="tech">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Технические подробности</h2>
+        <p>Коротко о том, на чём Атриум работает и как встраивается в вашу инфраструктуру.</p>
+      </div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th scope="col">Что</th><th scope="col">Как</th><th scope="col">Статус</th></tr></thead>
+          <tbody>
+            <tr><td>Где работает</td><td>В Kubernetes на ваших Linux-серверах. Интернет не нужен</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
+            <tr><td>Вход пользователей</td><td>Встроенный вход, у каждого свои роли</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
+            <tr><td>Каталог пользователей компании</td><td>Подключение к вашему AD или LDAP</td><td><span class="sr-only">Статус: </span><span class="tag plan">в планах</span></td></tr>
+            <tr><td>Как программы обращаются к модели</td><td>По HTTPS-адресу, который выдаёт Атриум. REST, открытый стандартный протокол для моделей</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
+            <tr><td>Кто может обратиться к модели</td><td>Только с токеном доступа. Без токена — отказ. Есть лимиты на число и размер запросов</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
+            <tr><td>Закрытие модели внутри кластера</td><td>Сетевая политика: к модели можно только через шлюз</td><td><span class="sr-only">Статус: </span><span class="tag plan">в планах</span></td></tr>
+            <tr><td>Форматы моделей</td><td>scikit-learn проверен. XGBoost, LightGBM, ONNX, PyTorch, TensorFlow и языковые модели проверяем</td><td><span class="sr-only">Статус: </span><span class="tag plan">в проверке</span></td></tr>
+            <tr><td>Хранилище файлов моделей</td><td>Ваше S3-совместимое хранилище</td><td><span class="sr-only">Статус: </span><span class="tag plan">в работе</span></td></tr>
+                        <tr><td>Выгрузка журнала</td><td>Передача в вашу систему мониторинга (SIEM)</td><td><span class="sr-only">Статус: </span><span class="tag plan">в планах</span></td></tr>
+            <tr><td>Серверы для пробы</td><td>Три машины, ориентир по 8 ядер и 32&nbsp;ГБ памяти каждая</td><td><span class="sr-only">Статус: </span><span class="tag plan">уточняем</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="security">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Безопасность</h2>
+        <p>Те же вопросы задаст ваша служба безопасности. Три из них Атриум закрывает уже сейчас.</p>
+      </div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th scope="col">Что проверяет служба безопасности</th><th scope="col">Как в Атриуме</th><th scope="col">Статус</th></tr></thead>
+          <tbody>
+            <tr><td>Команды отделены друг от друга</td><td>Каждая команда работает в своём пространстве и не видит чужого</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
+            <tr><td>У каждого только нужные права</td><td>Кто может смотреть, а кто запускать, задаёт администратор</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
+            <tr><td>Всё записывается</td><td>Журнал: кто, что и когда сделал</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
+            <tr><td>Контроль ИИ-помощников, которые сами выполняют действия</td><td>Права и история для них, как для моделей</td><td><span class="sr-only">Статус: </span><span class="tag plan">в планах</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Приказ ФСТЭК России № 117 требует защищать ИИ в государственных системах, а по проекту изменений с 1 марта 2027 года требования расширят. Сертификата ФСТЭК у Атриума пока нет.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="ready">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Сроки для закупки</h2>
+        <p>Что нужно, чтобы купить Атриум по правилам крупной компании или госзаказчика, и когда это будет.</p>
+      </div>
+      <ul class="roadmap">
+        <li><span>Ставим на ваши Linux-серверы вместе с вашими специалистами</span><span class="tag ok"><span class="sr-only">Срок: </span>уже сейчас</span></li>
+        <li><span>Установка на закрытые серверы в один шаг</span><span class="tag plan"><span class="sr-only">Срок: </span>ноябрь 2026</span></li>
+        <li><span>Работа на российских операционных системах</span><span class="tag plan"><span class="sr-only">Срок: </span>I квартал 2027</span></li>
+        <li><span>Включение в реестр российских программ</span><span class="tag plan"><span class="sr-only">Срок: </span>I квартал 2027</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec why">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Почему не собрать самим</h2>
+        <p>Можно. Вот что для этого придётся сделать и потом поддерживать.</p>
+      </div>
+      <div class="cols3">
+        <div><h3>Собрать запуск</h3><p>Связать хранилище, серверы, проверку файлов и адреса, по которым программы обращаются к моделям.</p></div>
+        <div><h3>Написать права и журнал</h3><p>Пространства команд, роли, запись каждого действия. Без этого служба безопасности не пропустит.</p></div>
+        <div><h3>Поддерживать</h3><p>Обновлять десяток программ и отвечать за поломки. В Атриуме это делаем мы, авторы продукта.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="contact">
+    <div class="wrap final-grid">
+      <div>
+        <h2>Покажем Атриум на вашей задаче</h2>
+        <p class="lead">Напишите, какие модели вы запускаете и где. Ответим на вопросы вашей службы безопасности.</p>
+        <a class="btn btn-primary" href="mailto:s.shvyrev@ro.ru?subject=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%20%D0%90%D1%82%D1%80%D0%B8%D1%83%D0%BC%D0%B0">Договориться о показе
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
+        <div class="mail">
+          <span>Почта: <a id="c-mail" href="mailto:s.shvyrev@ro.ru">s.shvyrev@ro.ru</a></span>
+          <button class="copy" type="button" data-copy="c-mail">Скопировать адрес</button>
+          <span class="sr-only" role="status" aria-live="polite" id="copy-status"></span>
+        </div>
+      </div>
+      <div>
+        <h3 class="next-h">Что будет дальше</h3>
+        <ol class="next">
+          <li><b>Ответим за рабочий день</b><span>и договоримся о времени.</span></li>
+          <li><b>Покажем Атриум по видео</b><span>30–40 минут, на примере вашей задачи.</span></li>
+          <li><b>Бесплатная проба на три месяца</b><span>для первых клиентов, на ваших серверах.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span><a href="index.html#partners">Условия для интеграторов</a></span><span>Atrium · Атриум · 2026</span><span>Приказ ФСТЭК России № 117 от 11.04.2025; проект изменений: по сообщению ComNews от 26.08.2026.</span></div>
+</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(function (b) {
+  var label = b.textContent;
+  var status = document.getElementById('copy-status');
+  b.addEventListener('click', function () {
+    var el = document.getElementById(b.dataset.copy);
+    var text = el.textContent.trim();
+    function say(msg) { b.textContent = msg; status.textContent = msg; setTimeout(function () { b.textContent = label; status.textContent = ''; }, 2500); }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      say('Адрес выделен: нажмите Ctrl+C (на Mac — ⌘C)');
+    }
+    try { navigator.clipboard.writeText(text).then(function () { say('Скопировано'); }, fallback); } catch (e) { fallback(); }
+  });
+});
+
+</script>
+</body>
+</html>
