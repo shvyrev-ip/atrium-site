@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="description" content="Атриум — свой ИИ на своих серверах: никто не отключит и не поменяет правила.">
+<meta property="og:type" content="website"><meta property="og:title" content="Атриум — свой ИИ на своих серверах"><meta property="og:description" content="Никто не отключит и не поменяет правила. Все модели компании в одном месте и внутри вашего контура."><meta property="og:url" content="https://shvyrev-ip.github.io/atrium-site/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%230f62fe%22/%3E%3Ctext x=%2216%22 y=%2223%22 font-family=%22Arial%22 font-size=%2220%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3EA%3C/text%3E%3C/svg%3E">
 <title>Atrium · Атриум — свой ИИ на своих серверах</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400;600&display=swap">
@@ -68,7 +70,7 @@ p { margin: 0; }
 /* Шапка */
 .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-bottom: 1px solid var(--border); }
 .top .wrap { display: flex; align-items: center; gap: 2rem; height: 48px; }
-.brand { font-weight: 600; font-size: 14px; letter-spacing: .16px; color: var(--text); text-decoration: none; }
+.brand { display: inline-block; line-height: 48px; font-weight: 600; font-size: 14px; letter-spacing: .16px; color: var(--text); text-decoration: none; }
 .brand span { font-weight: 400; }
 .nav { display: flex; margin-left: auto; }
 .nav a { color: var(--text-2); text-decoration: none; font-size: 14px; padding: 0 1rem; line-height: 48px; }
@@ -209,6 +211,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .start .body p { font-size: 1.125rem; }
 .start .body .muted { color: var(--text-2); font-size: 1rem; }
 .it-link { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.more { display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: 0 1rem; font-size: 16px; text-decoration: none; }
+.more svg { width: 16px; height: 16px; fill: currentColor; }
 .it-link p { color: var(--text-2); max-width: 60ch; font-size: 1.125rem; }
 .page-intro { padding-block: 4rem 3rem; border-bottom: 1px solid var(--border); }
 .page-intro h1 { font-size: clamp(2.25rem, 4vw, 3.75rem); line-height: 1.1; max-width: 22ch; margin-bottom: 1.5rem; }
@@ -274,7 +278,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       </div>
       <div class="gives">
         <div><h3>Своё</h3><p>Модели и данные остаются на ваших серверах. Доступ к ним есть только у ваших людей.</p></div>
-        <div><h3>Под контролем</h3><p>Одно место, где видно все модели, кто их запустил и у кого доступ. Каждое действие записывается.</p></div>
+        <div><h3>Под контролем</h3><p>Каждое действие записывается. Журнал можно показать любой проверке.</p></div>
         <div><h3>Быстро для команд</h3><p>ИТ один раз задаёт права, дальше команды запускают модели сами, в тот же день.</p></div>
       </div>
     </div>
@@ -296,7 +300,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <p>Технические подробности, безопасность, требования ФСТЭК и сроки для закупки мы собрали на отдельной странице. Её можно просто переслать вашему ИТ-директору.</p>
       <div class="btns">
       <button class="btn btn-tertiary share-it" type="button">Скопировать ссылку для ИТ-директора</button>
-      <a class="btn btn-tertiary" href="it.html">Для ИТ и безопасности
+      <a class="more" href="it.html">Открыть страницу для ИТ
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
       </div>
       <span class="sr-only" role="status" aria-live="polite" id="share-status"></span>
