@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="description" content="Атриум — свой ИИ на своих серверах: никто не отключит и не поменяет правила.">
-<meta property="og:type" content="website"><meta property="og:title" content="Атриум — свой ИИ на своих серверах"><meta property="og:description" content="Никто не отключит и не поменяет правила. Все модели компании в одном месте и внутри вашего контура."><meta property="og:url" content="https://shvyrev-ip.github.io/atrium-site/">
+<meta property="og:type" content="website"><meta property="og:title" content="Атриум — свой ИИ на своих серверах"><meta property="og:description" content="Никто не отключит и не поменяет правила. Все модели компании в одном месте и внутри вашего контура."><meta property="og:url" content="https://shvyrev-ip.github.io/atrium-site/"><meta property="og:image" content="https://shvyrev-ip.github.io/atrium-site/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%230f62fe%22/%3E%3Ctext x=%2216%22 y=%2223%22 font-family=%22Arial%22 font-size=%2220%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3EA%3C/text%3E%3C/svg%3E">
 <title>Atrium · Атриум — свой ИИ на своих серверах</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -211,6 +211,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .start .body p { font-size: 1.125rem; }
 .start .body .muted { color: var(--text-2); font-size: 1rem; }
 .it-link { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.share-fallback { flex-basis: 100%; font-size: 14px; color: var(--text-2); word-break: break-all; }
 .more { display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: 0 1rem; font-size: 16px; text-decoration: none; }
 .more svg { width: 16px; height: 16px; fill: currentColor; }
 .it-link p { color: var(--text-2); max-width: 60ch; font-size: 1.125rem; }
@@ -304,6 +305,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
       </div>
       <span class="sr-only" role="status" aria-live="polite" id="share-status"></span>
+      <p class="share-fallback" id="share-fallback" hidden>Скопируйте ссылку: <span id="share-url"></span></p>
     </div>
   </section>
 
@@ -393,7 +395,8 @@ document.querySelectorAll('.copy').forEach(function (b) {
   var label = b.textContent, st = document.getElementById('share-status');
   var url = new URL('it.html', location.href).href;
   function say(m) { b.textContent = m; st.textContent = m; setTimeout(function () { b.textContent = label; st.textContent = ''; }, 2500); }
-  function copy() { try { navigator.clipboard.writeText(url).then(function () { say('Ссылка скопирована'); }, function () { say(url); }); } catch (e) { say(url); } }
+  function fail() { var f = document.getElementById('share-fallback'), u = document.getElementById('share-url'); u.textContent = url; f.hidden = false; var r = document.createRange(); r.selectNodeContents(u); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); say('Не удалось скопировать'); }
+  function copy() { try { navigator.clipboard.writeText(url).then(function () { say('Ссылка скопирована'); }, fail); } catch (e) { fail(); } }
   b.addEventListener('click', function () {
     if (navigator.share && matchMedia('(max-width: 671px)').matches) {
       navigator.share({ title: 'Атриум для ИТ и безопасности', url: url }).catch(copy);

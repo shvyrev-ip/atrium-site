@@ -9,6 +9,7 @@
 <meta property="og:title" content="Атриум для ИТ и безопасности">
 <meta property="og:description" content="Как устроен Атриум, что с безопасностью и когда будут документы для закупки.">
 <meta property="og:url" content="https://shvyrev-ip.github.io/atrium-site/it.html">
+<meta property="og:image" content="https://shvyrev-ip.github.io/atrium-site/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%230f62fe%22/%3E%3Ctext x=%2216%22 y=%2223%22 font-family=%22Arial%22 font-size=%2220%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400;600&display=swap">
@@ -83,7 +84,8 @@ p { margin: 0; }
 .nav a { color: var(--text-2); text-decoration: none; font-size: 14px; padding: 0 1rem; line-height: 48px; }
 .nav a:hover { color: var(--text); background: var(--layer); }
 .nav .nav-cta { color: var(--link); }
-@media (max-width: 720px) { .nav a:not(.nav-cta):not(.nav-partners):not(.nav-keep) { display: none; } .brand span { display: none; } .nav a { padding: 0 .75rem; } .nav .nav-cta { padding-right: 0; } }
+@media (max-width: 720px) { .nav a:not(.nav-cta):not(.nav-partners):not(.nav-keep) { display: none; } .brand span { display: none; } .top .wrap { gap: 1rem; } .nav a { padding: 0 .5rem; } .nav .nav-cta { padding-right: 0; } }
+@media (max-width: 359px) { .nav .nav-roomy { display: none; } }
 
 /* Кнопки Carbon, размер Large expressive: 48px, подпись 16px */
 .btns { display: flex; flex-wrap: wrap; gap: 1px; }
@@ -142,8 +144,13 @@ p { margin: 0; }
 
 /* Таблица: на телефоне строки становятся карточками */
 .tbl { border: 1px solid var(--border); max-width: 60rem; }
-.legend { font-size: 14px; color: var(--text-2); margin-top: 1rem; max-width: 70ch; }
-.lead-note { font-size: 1.125rem; margin-top: 1.5rem; }
+.legend { font-size: 14px; color: var(--text-2); }
+.intro-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+@media (min-width: 1056px) { .intro-grid { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: start; } }
+.bounds { color: var(--text-2); max-width: 60ch; margin-bottom: 2rem; }
+.summary { background: var(--layer); padding: 1.5rem; display: grid; gap: .75rem; align-content: start; }
+.summary-h { font-size: 1.25rem; font-weight: 400; }
+.lead-note { margin-top: 1.5rem; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
 th { text-align: left; background: var(--layer-accent); font-weight: 600; padding: 1rem; }
 td { padding: 1rem; border-top: 1px solid var(--border); vertical-align: top; }
@@ -163,6 +170,7 @@ td:last-child, th:last-child { width: 1%; white-space: nowrap; }
   td:last-child { width: 100%; }
 }
 .models-h { font-size: 1.25rem; font-weight: 400; margin-block: 3rem 1rem; }
+.models, .roadmap { max-width: 60rem; }
 .models { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
 .models li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: center; padding-block: 1rem; border-bottom: 1px solid var(--border); }
 .roadmap { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
@@ -228,7 +236,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <a href="#how">Как работает</a>
       <a href="#tech">Подробности</a>
       <a class="nav-keep" href="#security">Безопасность</a>
-      <a class="nav-keep" href="#ready">Закупка</a>
+      <a class="nav-keep nav-roomy" href="#ready">Закупка</a>
       <a class="nav-cta" href="#contact">Связаться</a>
     </nav>
   </div>
@@ -237,13 +245,25 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 <main>
   <section class="page-intro">
     <div class="wrap">
+      <div class="intro-grid">
+      <div>
       <h1>Атриум для ИТ и безопасности</h1>
       <p class="lead">Атриум — программа для запуска и учёта ИИ-моделей на серверах вашей компании: права, журнал, адреса для программ. Здесь — как он устроен, что с безопасностью и когда будут документы для закупки.</p>
+      <p class="bounds">Программу под задачу делает ваш ИТ-отдел или интегратор. Качество ответов моделей Атриум пока не оценивает.</p>
       <div class="btns">
         <a class="btn btn-primary" href="mailto:s.shvyrev@ro.ru?subject=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%20%D0%90%D1%82%D1%80%D0%B8%D1%83%D0%BC%D0%B0">Договориться о показе
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
         <a class="btn btn-tertiary" href="index.html">На главную
           <svg viewBox="0 0 16 16" aria-hidden="true" style="transform: scaleX(-1)"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
+      </div>
+      </div>
+      <aside class="summary" aria-label="Коротко">
+        <h2 class="summary-h">Коротко</h2>
+        <p><b>Уже есть:</b> права и роли, журнал действий, изоляция команд, доступ к модели по токену.</p>
+        <p><b>Дальше:</b> подключение AD/LDAP, выгрузка журнала в SIEM, работа на российских ОС, сертификация ФСТЭК.</p>
+        <p class="legend">Статусы на странице. «Есть»: работает сейчас. «В работе»: делаем сейчас. «В проверке»: работает, проверяем на нашем сервере. «План»: срок-ориентир. «Ориентир» и «срок уточняем»: точной цифры или даты пока нет.</p>
+        <p><a href="#tech">Технические подробности</a> · <a href="#security">Безопасность</a> · <a href="#ready">Сроки</a></p>
+      </aside>
       </div>
     </div>
   </section>
@@ -262,7 +282,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       </ol>
       <h3 class="models-h">Какие модели подходят</h3>
       <ul class="models">
-        <li><span>Обычные модели машинного обучения: прогнозы, оценки, классификация</span><span class="tag ok"><span class="sr-only">Статус: </span>проверено</span></li>
+        <li><span>Обычные модели машинного обучения: прогнозы, оценки, классификация</span><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></li>
         <li><span>Языковые модели: запускаются, проверяем на нашем сервере</span><span class="tag plan"><span class="sr-only">Статус: </span>в проверке</span></li>
       </ul>
       <p class="lead-note">Работает на серверах с видеокартами и без них.</p>
@@ -293,20 +313,19 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <table>
           <thead><tr><th scope="col">Что</th><th scope="col">Как</th><th scope="col">Статус</th></tr></thead>
           <tbody>
-            <tr><td>Где работает</td><td>В Kubernetes на ваших Linux-серверах. Интернет не нужен</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
-            <tr><td>Вход пользователей</td><td>Встроенный вход, у каждого свои роли</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
-            <tr><td>Каталог пользователей компании</td><td>Подключение к вашему AD или LDAP</td><td><span class="sr-only">Статус: </span><span class="tag plan">план: I кв. 2027</span></td></tr>
-            <tr><td>Как программы обращаются к модели</td><td>По HTTPS-адресу, который выдаёт Атриум. REST, открытый стандартный протокол для моделей</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
-            <tr><td>Кто может обратиться к модели</td><td>Только с токеном доступа. Без токена — отказ. Есть лимиты на число и размер запросов</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
-            <tr><td>Закрытие модели внутри кластера</td><td>Сетевая политика: к модели можно только через шлюз</td><td><span class="sr-only">Статус: </span><span class="tag plan">план: IV кв. 2026</span></td></tr>
-            <tr><td>Форматы моделей</td><td>scikit-learn проверен. XGBoost, LightGBM, ONNX, PyTorch и TensorFlow проверяем</td><td><span class="sr-only">Статус: </span><span class="tag plan">в проверке</span></td></tr>
-            <tr><td>Хранилище файлов моделей</td><td>Сейчас хранилище в составе Атриума. Подключение вашего S3-совместимого хранилища в работе</td><td><span class="sr-only">Статус: </span><span class="tag plan">в работе</span></td></tr>
-                        <tr><td>Выгрузка журнала</td><td>Передача в вашу систему мониторинга (SIEM)</td><td><span class="sr-only">Статус: </span><span class="tag plan">план: 2027</span></td></tr>
-            <tr><td>Серверы для пробы</td><td>Три машины, ориентир по 8 ядер и 32&nbsp;ГБ памяти каждая. Уточним по замерам</td><td><span class="sr-only">Статус: </span><span class="tag plan">в работе</span></td></tr>
+            <tr><td>Где работает</td><td>В Kubernetes на ваших Linux-серверах. Интернет не нужен</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
+            <tr><td>Вход пользователей</td><td>Встроенный вход, у каждого свои роли</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
+            <tr><td>Каталог пользователей компании</td><td>Подключение к вашему AD или LDAP</td><td><span class="tag plan"><span class="sr-only">Статус: </span>план: I кв. 2027</span></td></tr>
+            <tr><td>Как программы обращаются к модели</td><td>По HTTPS-адресу, который выдаёт Атриум. REST, открытый стандартный протокол для моделей</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
+            <tr><td>Кто может обратиться к модели</td><td>Только с токеном доступа. Без токена — отказ. Есть лимиты на число и размер запросов</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
+            <tr><td>Закрытие модели внутри кластера</td><td>Сетевая политика: к модели можно только через шлюз</td><td><span class="tag plan"><span class="sr-only">Статус: </span>план: IV кв. 2026</span></td></tr>
+            <tr><td>Форматы моделей</td><td>scikit-learn проверен. XGBoost, LightGBM, ONNX, PyTorch и TensorFlow проверяем</td><td><span class="tag plan"><span class="sr-only">Статус: </span>в проверке</span></td></tr>
+            <tr><td>Хранилище файлов моделей</td><td>Сейчас хранилище в составе Атриума. Подключение вашего S3-совместимого хранилища в работе</td><td><span class="tag plan"><span class="sr-only">Статус: </span>в работе</span></td></tr>
+                        <tr><td>Выгрузка журнала</td><td>Передача в вашу систему мониторинга (SIEM)</td><td><span class="tag plan"><span class="sr-only">Статус: </span>план: 2027</span></td></tr>
+            <tr><td>Серверы для пробы</td><td>Три машины, по 8 ядер и 32&nbsp;ГБ памяти каждая. Уточним по замерам</td><td><span class="tag plan"><span class="sr-only">Статус: </span>ориентир</span></td></tr>
           </tbody>
         </table>
       </div>
-      <p class="legend">Статусы. «Есть»: работает сейчас. «В работе»: делаем сейчас. «В проверке»: работает, проверяем на нашем сервере. «План»: со сроком.</p>
     </div>
   </section>
 
@@ -320,10 +339,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <table>
           <thead><tr><th scope="col">Что проверяет служба безопасности</th><th scope="col">Как в Атриуме</th><th scope="col">Статус</th></tr></thead>
           <tbody>
-            <tr><td>Команды отделены друг от друга</td><td>Каждая команда работает в своём пространстве и не видит чужого</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
-            <tr><td>У каждого только нужные права</td><td>Кто может смотреть, а кто запускать, задаёт администратор</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
-            <tr><td>Всё записывается</td><td>Журнал: кто, что и когда сделал</td><td><span class="sr-only">Статус: </span><span class="tag ok">есть</span></td></tr>
-            <tr><td>Контроль ИИ-помощников, которые сами выполняют действия</td><td>Права и история для них, как для моделей</td><td><span class="sr-only">Статус: </span><span class="tag plan">план: 2027</span></td></tr>
+            <tr><td>Команды отделены друг от друга</td><td>Каждая команда работает в своём пространстве и не видит чужого</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
+            <tr><td>У каждого только нужные права</td><td>Кто может смотреть, а кто запускать, задаёт администратор</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
+            <tr><td>Всё записывается</td><td>Журнал: кто, что и когда сделал</td><td><span class="tag ok"><span class="sr-only">Статус: </span>есть</span></td></tr>
+            <tr><td>Контроль ИИ-помощников, которые сами выполняют действия</td><td>Права и история для них, как для моделей</td><td><span class="tag plan"><span class="sr-only">Статус: </span>план: 2027</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -338,11 +357,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <p>Что нужно, чтобы купить Атриум по правилам крупной компании или госзаказчика, и когда это будет.</p>
       </div>
       <ul class="roadmap">
-        <li><span>Ставим на ваши Linux-серверы вместе с вашими специалистами</span><span class="tag ok"><span class="sr-only">Срок: </span>уже сейчас</span></li>
-        <li><span>Установка на закрытые серверы в один шаг</span><span class="tag plan"><span class="sr-only">Срок: </span>ноябрь 2026</span></li>
-        <li><span>Работа на российских операционных системах</span><span class="tag plan"><span class="sr-only">Срок: </span>I квартал 2027</span></li>
+        <li><span>Ставим на ваши Linux-серверы вместе с вашими специалистами</span><span class="tag ok"><span class="sr-only">Срок: </span>есть</span></li>
+        <li><span>Установка на закрытые серверы в один шаг</span><span class="tag plan"><span class="sr-only">Срок: </span>план: ноябрь 2026</span></li>
+        <li><span>Работа на российских операционных системах</span><span class="tag plan"><span class="sr-only">Срок: </span>план: I квартал 2027</span></li>
         <li><span>Сертификация ФСТЭК</span><span class="tag plan"><span class="sr-only">Срок: </span>срок уточняем</span></li>
-        <li><span>Включение в реестр российских программ</span><span class="tag plan"><span class="sr-only">Срок: </span>I квартал 2027</span></li>
+        <li><span>Включение в реестр российских программ</span><span class="tag plan"><span class="sr-only">Срок: </span>план: I квартал 2027</span></li>
       </ul>
     </div>
   </section>
@@ -387,7 +406,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 </main>
 
 <footer>
-  <div class="wrap"><span><a href="index.html#partners">Условия для интеграторов</a></span><span>Atrium · Атриум · 2026</span></div>
+  <div class="wrap"><span>Atrium · Атриум · 2026</span><span><a href="index.html#partners">Условия для интеграторов</a></span></div>
   <div class="wrap sources"><span>Приказ ФСТЭК России № 117 от 11.04.2025; проект изменений: по сообщению ComNews от 26.08.2026.</span></div>
 </footer>
 
