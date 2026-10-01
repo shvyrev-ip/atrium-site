@@ -1,8 +1,5 @@
 <!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Атриум для ИТ-отдела и службы безопасности: как работает, безопасность, сроки для закупки.">
 <title>Атриум для ИТ и безопасности</title>
 <script>try{var t=localStorage.getItem("atrium-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
@@ -11,517 +8,471 @@
 <meta property="og:description" content="Как устроен Атриум, что с безопасностью и когда будут документы для закупки.">
 <meta property="og:url" content="https://shvyrev-ip.github.io/atrium-site/it.html">
 <meta property="og:image" content="https://shvyrev-ip.github.io/atrium-site/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%230f62fe%22/%3E%3Ctext x=%2216%22 y=%2223%22 font-family=%22Arial%22 font-size=%2220%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 26 26%22%3E%3Crect x=%221%22 y=%221%22 width=%2224%22 height=%2224%22 rx=%226%22 fill=%22%230f62fe%22/%3E%3Cpath d=%22M8 20V12a5 5 0 0 1 10 0v8%22 fill=%22none%22 stroke=%22white%22 stroke-width=%222.4%22/%3E%3C/svg%3E">
+<meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111315" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="fonts/Onest-Cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-/* IBM Plex со своего сервера (пакет @ibm/plex, лицензия OFL — fonts/LICENSE-IBM-Plex.txt): сайт не ходит к сторонним серверам */
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/IBMPlexSans-Light-Cyrillic.woff2') format('woff2'); unicode-range: U+0400-045F, U+0472-0473, U+0490-049D, U+04A0-04A5, U+04AA-04AB, U+04AE-04B3, U+04B6-04BB, U+04C0-04C2, U+04CF-04D9, U+04DC-04DF, U+04E2-04E9, U+04EE-04F5, U+04F8-04F9; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/IBMPlexSans-Light-Latin1.woff2') format('woff2'); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/IBMPlexSans-Light-Pi.woff2') format('woff2'); unicode-range: U+0E3F, U+2032-2033, U+2070, U+2075-2079, U+2080-2081, U+2083, U+2085-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/IBMPlexSans-Regular-Cyrillic.woff2') format('woff2'); unicode-range: U+0400-045F, U+0472-0473, U+0490-049D, U+04A0-04A5, U+04AA-04AB, U+04AE-04B3, U+04B6-04BB, U+04C0-04C2, U+04CF-04D9, U+04DC-04DF, U+04E2-04E9, U+04EE-04F5, U+04F8-04F9; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/IBMPlexSans-Regular-Latin1.woff2') format('woff2'); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/IBMPlexSans-Regular-Pi.woff2') format('woff2'); unicode-range: U+0E3F, U+2032-2033, U+2070, U+2075-2079, U+2080-2081, U+2083, U+2085-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/IBMPlexSans-SemiBold-Cyrillic.woff2') format('woff2'); unicode-range: U+0400-045F, U+0472-0473, U+0490-049D, U+04A0-04A5, U+04AA-04AB, U+04AE-04B3, U+04B6-04BB, U+04C0-04C2, U+04CF-04D9, U+04DC-04DF, U+04E2-04E9, U+04EE-04F5, U+04F8-04F9; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/IBMPlexSans-SemiBold-Latin1.woff2') format('woff2'); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/IBMPlexSans-SemiBold-Pi.woff2') format('woff2'); unicode-range: U+0E3F, U+2032-2033, U+2070, U+2075-2079, U+2080-2081, U+2083, U+2085-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11; }
-@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/IBMPlexMono-Regular-Cyrillic.woff2') format('woff2'); unicode-range: U+0400-045F, U+0472-0473, U+0490-049D, U+04A0-04A5, U+04AA-04AB, U+04AE-04B3, U+04B6-04BB, U+04C0-04C2, U+04CF-04D9, U+04DC-04DF, U+04E2-04E9, U+04EE-04F5, U+04F8-04F9; }
-@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/IBMPlexMono-Regular-Latin1.woff2') format('woff2'); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
-/* Layout: Carbon 2x Grid — max 1584px, поля 16px на телефоне и 32px шире; плоские плитки, 1px разделители, одна синяя полоса как акцент */
+/* Общие стили — из главной (home.src.html), вставляет build.py */
+/* Onest (OFL, fonts/LICENSE-Onest-OFL.txt) и IBM Plex Mono со своего сервера: сайт не ходит на чужие серверы */
+@font-face { font-family:'Onest'; font-style:normal; font-weight:400 600; font-display:swap; src:url(fonts/Onest-Cyrillic.woff2) format('woff2'); unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family:'Onest'; font-style:normal; font-weight:400 600; font-display:swap; src:url(fonts/Onest-Latin.woff2) format('woff2'); unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family:'IBM Plex Mono'; font-style:normal; font-weight:400; font-display:swap; src:url(fonts/IBMPlexMono-Regular-Cyrillic.woff2) format('woff2'); unicode-range:U+0400-045F, U+0472-0473, U+0490-049D, U+04A0-04A5, U+04AA-04AB, U+04AE-04B3, U+04B6-04BB, U+04C0-04C2, U+04CF-04D9, U+04DC-04DF, U+04E2-04E9, U+04EE-04F5, U+04F8-04F9; }
+@font-face { font-family:'IBM Plex Mono'; font-style:normal; font-weight:400; font-display:swap; src:url(fonts/IBMPlexMono-Regular-Latin1.woff2) format('woff2'); unicode-range:U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+FB01-FB02; }
+/* Design read: B2B-лендинг платформы запуска моделей для владельцев и ИТ компаний 300-1500 человек.
+   Логика подачи как у страниц запуска моделей у облачных платформ: категория, что исчезает, доказательства.
+   Светлая чертёжная сетка, один акцент (синий продукта #0f62fe). Dials: V5 M3 D4.
+   Скругления: кнопки 999px, блоки 14px, мелкие элементы 6px. */
 :root {
-  --bg: #ffffff;              /* $background */
-  --layer: #f4f4f4;           /* $layer-01 */
-  --layer-accent: #e0e0e0;    /* $layer-accent-01 */
-  --border: #e0e0e0;          /* $border-subtle-00 */
-  --text: #161616;            /* $text-primary */
-  --text-2: #525252;          /* $text-secondary */
-  --link: #0f62fe;            /* $link-primary */
-  --btn: #0f62fe;             /* $button-primary */
-  --btn-hover: #0050e6;       /* $button-primary-hover */
-  --tertiary: #0f62fe;        /* $button-tertiary */
-  --tertiary-on: #ffffff;
-  --tertiary-hover: #0050e6; /* $button-tertiary-hover */
-  --on-color: #ffffff;        /* $text-on-color */
-  --focus: #0f62fe;           /* $focus */
-  --focus-inset: #ffffff;     /* $focus-inset */
-  --link-hover: #0043ce;      /* $link-primary-hover */
-  --btn-active: #002d9c;      /* $button-primary-active */
-  --tertiary-active: #002d9c; /* $button-tertiary-active */
-  --bg-hover: rgba(141, 141, 141, .12); /* $background-hover */
-  --bg-active: rgba(141, 141, 141, .5); /* $background-active */
-  --tip-bg: #393939; /* $background-inverse */
-  --tip-text: #ffffff; /* $text-inverse */
-  --band: #0f62fe;
-  --band-border: #4589ff;
-  --inverse-bg: #161616;
-  --inverse-layer: #393939;
-  --inverse-text: #f4f4f4;
-  --inverse-text-2: #c6c6c6;
-  --inverse-link: #78a9ff;
-  --tag-ok-bg: #a7f0ba;       /* $tag-background-green */
-  --tag-ok-text: #0e6027;     /* $tag-color-green */
-  --tag-plan-bg: #e0e0e0;     /* $tag-background-gray */
-  --tag-plan-text: #161616;   /* $tag-color-gray */
-  --why-bg: #f4f4f4;
-  --border-strongish: #c6c6c6; /* $border-subtle-01 */
-  --sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-  --mono: 'IBM Plex Mono', Menlo, 'Courier New', monospace;
+  color-scheme: light dark;
+  --bg:#fbfbfa; --bg2:#f3f4f3; --panel:#ffffff; --text:#15171a; --text2:#545b64; --line:#e4e6e8; --line2:#d3d7db;
+  --brand:#0f62fe; --brand-hover:#0050e6; --on-brand:#ffffff;
+  --accent-text:#0043ce; --accent-soft:#edf3ff;
+  --mono:'IBM Plex Mono', ui-monospace, monospace;
+  --shot-shadow:0 -12px 30px -18px rgba(20,30,50,.18);
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #161616; --layer: #262626; --layer-accent: #393939; --border: #393939; --text: #f4f4f4; --text-2: #c6c6c6;
-  --link: #78a9ff; --btn: #0f62fe; --btn-hover: #0050e6; --tertiary: #ffffff; --tertiary-on: #161616; --tertiary-hover: #f4f4f4; --on-color: #ffffff;
-  --focus: #ffffff; --focus-inset: #161616; --link-hover: #a6c8ff; --btn-active: #002d9c; --tertiary-active: #c6c6c6; --bg-hover: rgba(141, 141, 141, .16); --bg-active: rgba(141, 141, 141, .4); --tip-bg: #f4f4f4; --tip-text: #161616; --band: #0043ce; --band-border: #4589ff;
-  --inverse-bg: #393939; --inverse-layer: #6f6f6f; --inverse-text: #f4f4f4; --inverse-text-2: #c6c6c6; --inverse-link: #78a9ff;
-  --tag-ok-bg: #0e6027; --tag-ok-text: #a7f0ba; --tag-plan-bg: #525252; --tag-plan-text: #f4f4f4; --border-strongish: #525252; --why-bg: #262626;
-  color-scheme: dark } }
-:root[data-theme="dark"] {
-  --bg: #161616; --layer: #262626; --layer-accent: #393939; --border: #393939; --text: #f4f4f4; --text-2: #c6c6c6;
-  --link: #78a9ff; --btn: #0f62fe; --btn-hover: #0050e6; --tertiary: #ffffff; --tertiary-on: #161616; --tertiary-hover: #f4f4f4; --on-color: #ffffff;
-  --focus: #ffffff; --focus-inset: #161616; --link-hover: #a6c8ff; --btn-active: #002d9c; --tertiary-active: #c6c6c6; --bg-hover: rgba(141, 141, 141, .16); --bg-active: rgba(141, 141, 141, .4); --tip-bg: #f4f4f4; --tip-text: #161616; --band: #0043ce; --band-border: #4589ff;
-  --inverse-bg: #393939; --inverse-layer: #6f6f6f; --inverse-text: #f4f4f4; --inverse-text-2: #c6c6c6; --inverse-link: #78a9ff;
-  --tag-ok-bg: #0e6027; --tag-ok-text: #a7f0ba; --tag-plan-bg: #525252; --tag-plan-text: #f4f4f4; --border-strongish: #525252; --why-bg: #262626;
-  color-scheme: dark }
+  --bg:#111315; --bg2:#16191c; --panel:#1a1d21; --text:#eef0f2; --text2:#a3abb4; --line:#272b30; --line2:#353a40;
+  --accent-text:#78a9ff; --accent-soft:#16213a; --shot-shadow:none; } }
+:root[data-theme="dark"] { color-scheme:dark;
+  --bg:#111315; --bg2:#16191c; --panel:#1a1d21; --text:#eef0f2; --text2:#a3abb4; --line:#272b30; --line2:#353a40;
+  --accent-text:#78a9ff; --accent-soft:#16213a; --shot-shadow:none; }
+:root[data-theme="light"] { color-scheme:light; }
+* { box-sizing:border-box; margin:0; }
+html { scroll-padding-top:80px; -webkit-text-size-adjust:100%; }
+body { background:var(--bg); color:var(--text); font-family:'Onest',system-ui,sans-serif; font-size:17px; line-height:1.5; -webkit-font-smoothing:antialiased; touch-action:manipulation; -webkit-tap-highlight-color:transparent; }
+a { color:inherit; }
+:focus-visible { outline:2px solid var(--brand); outline-offset:3px; border-radius:6px; }
+.sr { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.skip { position:absolute; left:-999px; top:8px; background:var(--panel); padding:10px 16px; border-radius:6px; z-index:20; }
+.skip:focus { left:8px; outline:2px solid var(--brand); outline-offset:2px; }
+h1, h2, h3 { text-wrap:balance; font-weight:600; letter-spacing:-.025em; }
+.w { max-width:1200px; margin:0 auto; padding:0 32px; }
+/* чертёжная рамка: линии по внешнему краю колонки, блоки внутри с отступом */
+.frame { position:relative; }
+.frame::before, .frame::after { content:""; position:absolute; top:0; bottom:0; width:1px; background:var(--line); pointer-events:none; }
+.frame::before { left:max(12px, calc(50% - 600px)); } .frame::after { right:max(12px, calc(50% - 600px)); }
+.rule { border-top:1px dashed var(--line2); }
 
-* { box-sizing: border-box; }
-body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.5; margin: 0; }
-a { color: var(--link); text-underline-offset: 3px; }
-::selection { background: var(--btn); color: var(--on-color); }
-:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
-.btn:focus-visible { box-shadow: inset 0 0 0 3px var(--focus-inset); }
-a:not(.btn):focus-visible, .copy:focus-visible { outline-offset: 2px; }
-.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.wrap { max-width: 1584px; margin: 0 auto; padding-inline: 1rem; }
-@media (min-width: 672px) { .wrap { padding-inline: 2rem; } }
-h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 300; }
-p { margin: 0; }
+/* шапка */
+.top { position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+.top .w { height:64px; display:flex; align-items:center; gap:32px; }
+.brand { display:flex; align-items:center; gap:10px; min-height:44px; font-weight:600; font-size:18px; text-decoration:none; }
+.brand svg { width:26px; height:26px; }
+.nav { display:flex; gap:28px; margin-left:auto; }
+.nav a { color:var(--text2); text-decoration:none; font-size:15px; padding:10px 0; }
+.nav a:hover { color:var(--text); }
+.pill { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:10px 18px; border-radius:999px; font:inherit; font-size:15px; font-weight:500; color:var(--text); text-decoration:none; border:1px solid var(--line2); background:var(--panel); cursor:pointer; transition:background-color .15s, border-color .15s; }
+.pill:hover { border-color:var(--text2); }
+.pill.primary { background:var(--brand); color:var(--on-brand); border-color:var(--brand); }
+.pill.primary:hover { background:var(--brand-hover); border-color:var(--brand-hover); }
+.pill.big { min-height:52px; padding:14px 26px; font-size:16px; }
+.pill svg { width:18px; height:18px; fill:currentColor; flex:none; }
+.theme { flex:none; width:44px; height:44px; display:inline-grid; place-items:center; border-radius:999px; border:1px solid var(--line2); background:var(--panel); color:var(--text2); cursor:pointer; transition:color .15s, border-color .15s; }
+.theme:hover { color:var(--text); border-color:var(--text2); }
+.theme svg { width:20px; height:20px; fill:currentColor; }
+.theme .ic-sun { display:none; }
+:root[data-theme="dark"] .theme .ic-sun { display:block; } :root[data-theme="dark"] .theme .ic-moon { display:none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) .theme .ic-sun { display:block; } :root:not([data-theme]) .theme .ic-moon { display:none; } }
+.status { min-height:1.5em; font-size:14px; color:var(--text2); }
 
-/* Шапка */
-.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-bottom: 1px solid var(--border); }
-.top .wrap { display: flex; align-items: center; gap: 2rem; height: 48px; }
-.brand { display: inline-block; line-height: 48px; font-weight: 600; font-size: 14px; letter-spacing: .16px; color: var(--text); text-decoration: none; }
-.brand span { font-weight: 400; }
-.nav { display: flex; margin-left: auto; }
-.nav a { color: var(--text-2); text-decoration: none; font-size: 14px; padding: 0 1rem; line-height: 48px; }
-.nav a:hover { color: var(--text); background: var(--layer); }
-.nav .nav-cta { color: var(--link); }
-@media (max-width: 720px) { .nav a:not(.nav-cta):not(.nav-partners):not(.nav-keep) { display: none; } .brand span { display: none; } .top .wrap { gap: 1rem; } .nav a { padding: 0 .5rem; } .nav .nav-cta { padding-right: 0; } }
-@media (max-width: 359px) { .nav .nav-roomy, .nav .nav-keep { display: none; } }
+/* первый экран */
+.hero { text-align:center; padding:80px 32px 0; }
+.for { display:inline-block; font-size:15px; color:var(--accent-text); padding:6px 12px; border:1px dashed color-mix(in srgb, var(--brand) 50%, transparent); border-radius:6px; background:var(--accent-soft); }
+.hero h1 { margin:24px auto 0; font-size:clamp(36px, 5vw, 62px); line-height:1.06; max-width:20ch; }
+.hero .lead { margin:22px auto 0; font-size:19px; color:var(--text2); max-width:46ch; }
+.hero .ctas { margin-top:36px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.shot { margin:60px auto 0; max-width:1080px; padding:0 32px; }
+.shot .win { border:1px solid var(--line2); border-bottom:0; border-radius:14px 14px 0 0; overflow:hidden; background:var(--panel); height:420px; box-shadow:var(--shot-shadow); }
+.shot img { display:block; width:100%; height:auto; }
 
-/* Кнопки Carbon, размер Large expressive: 48px, подпись 16px */
-.btns { display: flex; flex-wrap: wrap; gap: 1px; }
-.btn { display: inline-flex; align-items: center; justify-content: space-between; gap: 4rem; min-height: 48px; padding: 12px 1rem; font-size: 16px; line-height: 1.5; text-decoration: none; border: 0; color: var(--on-color); cursor: pointer; font-family: inherit; }
-.btn svg { width: 16px; height: 16px; fill: currentColor; flex: none; }
-.btn-primary { background: var(--btn); }
-.btn-primary:hover { background: var(--btn-hover); }
-.btn-tertiary { background: transparent; color: var(--tertiary); box-shadow: inset 0 0 0 1px var(--tertiary); }
-.btn-tertiary:hover { background: var(--tertiary-hover); color: var(--tertiary-on); }
-.btn-tertiary:focus-visible { box-shadow: inset 0 0 0 3px var(--focus-inset); }
-@media (max-width: 480px) { .btn { width: 100%; } }
+/* три довода: первый шире */
+.trio { display:grid; grid-template-columns:1.5fr 1fr 1fr; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.trio > div { padding:32px 28px; min-width:0; }
+.trio > div + div { border-left:1px solid var(--line); }
+.trio svg { width:24px; height:24px; fill:var(--accent-text); }
+.trio h3 { margin-top:16px; font-size:18px; letter-spacing:-.01em; }
+.trio .lead3 h3 { font-size:24px; line-height:1.2; }
+.trio p { margin-top:6px; color:var(--text2); font-size:16px; }
 
-/* Первый экран */
-.hero { padding-block: 5rem 4rem; }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 3rem; align-items: center; }
-@media (min-width: 1056px) { .hero .wrap { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); } }
-.hero h1 { font-size: clamp(2.5rem, 4.4vw, 4.5rem); line-height: 1.08; letter-spacing: -.5px; max-width: 18ch; margin-bottom: 2rem; }
-.lead { font-size: clamp(1.125rem, 1.6vw, 1.5rem); line-height: 1.45; color: var(--text-2); max-width: 44ch; margin-bottom: 2.5rem; }
-.shot { margin: 0; min-width: 0; }
-.shot img { display: block; width: 100%; height: auto; border: 1px solid var(--border); }
-.shot figcaption { font-size: 14px; color: var(--text-2); margin-top: .5rem; }
+section.s { padding-block:112px; }
+.head { max-width:760px; }
+.head h2 { font-size:clamp(30px, 3.6vw, 44px); line-height:1.1; }
+.head p { margin-top:16px; color:var(--text2); font-size:18px; }
 
-/* Синяя полоса: три боли */
-.band { background: var(--band); color: var(--on-color); padding-block: 3.5rem 0; }
-.band h2 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); line-height: 1.2; margin-bottom: 2.5rem; }
-.band .cells { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
-.band .cell { padding: 2rem 2rem 3rem 0; border-top: 1px solid var(--band-border); min-width: 0; }
-.band .cell + .cell { padding-left: 2rem; border-left: 1px solid var(--band-border); }
-@media (max-width: 900px) { .band .cell { padding-right: 0; } .band .cell + .cell { padding-left: 0; border-left: 0; } }
-.band h3 { font-size: 1.25rem; line-height: 1.4; font-weight: 400; margin-bottom: 1rem; }
-.band p { max-width: 40ch; }
+/* скорость: крупные цифры + честная пропорция */
+.speed { margin-top:56px; display:grid; grid-template-columns:4fr 8fr; gap:20px; }
+.nums { display:grid; gap:20px; }
+.num { border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:24px 26px; }
+.num b { display:block; font-weight:600; font-size:56px; line-height:1; letter-spacing:-.04em; color:var(--accent-text); }
+.num span { display:block; margin-top:10px; color:var(--text2); font-size:15.5px; }
+.race { border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:30px 30px 24px; display:flex; flex-direction:column; justify-content:center; }
+.lane + .lane { margin-top:30px; }
+.lane .lbl { display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:12px; }
+.lane .lbl b { font-weight:500; }
+.lane .lbl span { font-family:var(--mono); font-size:14px; color:var(--text2); font-variant-numeric:tabular-nums; white-space:nowrap; }
+.track { display:flex; gap:4px; min-height:44px; }
+.track i { display:flex; align-items:center; padding:6px 10px; font-style:normal; font-size:13.5px; line-height:1.25; border-radius:6px; min-width:0; }
+.old i { background:var(--bg2); color:var(--text2); border:1px solid var(--line); }
+.new { align-items:center; gap:12px; }
+.new i { flex:none; width:5%; min-width:20px; height:44px; background:var(--brand); padding:0; }
+.new em { font-style:normal; font-size:14.5px; font-weight:500; }
+.race .src { margin-top:22px; font-size:13px; color:var(--text2); }
 
-/* Секции */
-.sec { padding-block: 5rem; border-bottom: 1px solid var(--border); }
-.sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2rem; margin-bottom: 3rem; }
-@media (max-width: 900px) { .sec-head { grid-template-columns: 1fr; gap: 1rem; } }
-.sec h2, .partners h2 { font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.15; }
-.sec-head p { color: var(--text-2); font-size: 1.125rem; max-width: 60ch; align-self: end; }
+/* контроль: текст + настоящий журнал */
+.control { margin-top:56px; display:grid; grid-template-columns:6fr 5fr; gap:56px; align-items:center; }
+.control ul { list-style:none; padding:0; border-top:1px solid var(--line); }
+.control li { padding:22px 0; border-bottom:1px solid var(--line); }
+.control li h3 { font-size:19px; letter-spacing:-.01em; }
+.control li p { margin-top:4px; color:var(--text2); }
+.log { border:1px solid var(--line2); border-radius:14px; overflow:hidden; background:var(--panel); }
+.log img { display:block; width:100%; height:auto; }
 
-/* Шаги: настоящая последовательность, поэтому нумеруем */
-.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-.step { background: var(--bg); padding: 1.5rem 1.5rem 2.5rem; min-width: 0; }
-.step .n { font-family: var(--mono); font-size: 14px; color: var(--text-2); margin-bottom: 3rem; }
-@media (max-width: 671px) { .step .n { margin-bottom: 1rem; } .step { padding-bottom: 1.5rem; } }
-.step h3 { font-size: 1.25rem; font-weight: 400; margin-bottom: .5rem; }
-.step p { color: var(--text-2); font-size: 14px; }
+/* сценарии */
+.bento { margin-top:56px; display:grid; grid-template-columns:5fr 7fr; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--panel); }
+.bento .intro { padding:30px; border-right:1px solid var(--line); background:var(--bg2); display:flex; flex-direction:column; justify-content:space-between; gap:24px; min-width:0; }
+.bento .intro h3 { font-size:26px; line-height:1.15; }
+.bento .intro p { margin-top:10px; color:var(--text2); }
+.bento .intro .who { font-size:14.5px; color:var(--text2); border-top:1px dashed var(--line2); padding-top:16px; margin-top:0; }
+.bento .intro .who b { color:var(--text); font-weight:500; }
+.cases { display:grid; grid-template-columns:1fr 1fr; }
+.cases > div { padding:26px 28px; min-width:0; }
+.cases > div:nth-child(odd) { border-right:1px solid var(--line); }
+.cases > div:nth-child(-n+2) { border-bottom:1px solid var(--line); }
+.cases svg { width:28px; height:28px; fill:var(--accent-text); }
+.cases h3 { margin-top:14px; font-size:17px; letter-spacing:-.01em; }
+.cases p { margin-top:6px; color:var(--text2); font-size:15.5px; }
 
-.compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-.compare > div { padding: 1.5rem 1.5rem 2rem; min-width: 0; display: grid; gap: .75rem; align-content: start; }
-.compare .was { background: var(--bg); } .compare .now { background: var(--layer); }
-.compare .lbl { font-size: 14px; color: var(--text-2); }
-.compare .big { font-size: clamp(2rem, 3.4vw, 3rem); font-weight: 300; line-height: 1.1; }
-.compare .now .big { color: var(--text); font-weight: 400; }
-.compare p:last-child { color: var(--text-2); }
-.note { margin-top: 1.5rem; font-size: 14px; color: var(--text-2); max-width: 70ch; }
+/* почему сейчас */
+.why { display:grid; grid-template-columns:5fr 7fr; gap:56px; align-items:start; }
+.why h2 { font-size:clamp(30px, 3.6vw, 44px); line-height:1.1; }
+.why ol { list-style:none; padding:0; border-top:1px solid var(--line); counter-reset:w; }
+.why li { display:grid; grid-template-columns:56px 1fr; gap:8px; padding:24px 0; border-bottom:1px solid var(--line); counter-increment:w; }
+.why li::before { content:counter(w, decimal-leading-zero); font-family:var(--mono); font-size:14px; color:var(--accent-text); padding-top:3px; }
+.why h3 { font-size:19px; letter-spacing:-.01em; }
+.why p { margin-top:4px; color:var(--text2); }
 
-/* Таблица: на телефоне строки становятся карточками */
-.tbl { border: 1px solid var(--border); max-width: 60rem; }
-.legend { font-size: 14px; color: var(--text-2); }
-.intro-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
-@media (min-width: 1056px) { .intro-grid { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: start; } }
-.bounds { color: var(--text-2); max-width: 60ch; margin-bottom: 2rem; }
-.summary { background: var(--layer); padding: 1.5rem; display: grid; gap: .75rem; align-content: start; }
-.summary-h { font-size: 1.25rem; font-weight: 400; }
-.lead-note { margin-top: 1.5rem; }
-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-th { text-align: left; background: var(--layer-accent); font-weight: 600; padding: 1rem; }
-td { padding: 1rem; border-top: 1px solid var(--border); vertical-align: top; }
-td:first-child { width: 34%; }
-td:last-child, th:last-child { width: 1%; white-space: nowrap; }
-.tag { display: inline-flex; align-items: center; height: 24px; padding: 0 .5rem; border-radius: 1rem; font-size: 12px; line-height: 1; white-space: nowrap; }
-.tag.ok { background: var(--tag-ok-bg); color: var(--tag-ok-text); }
-.tag.plan { background: var(--tag-plan-bg); color: var(--tag-plan-text); }
-@media (max-width: 671px) {
-  thead { display: none; }
-  table, tbody, tr, td { display: block; width: 100%; }
-  tr + tr { border-top: 1px solid var(--border); }
-  td { border-top: 0; }
-  td:first-child { width: 100%; font-weight: 600; padding-bottom: .25rem; }
-  td { padding-block: .25rem; } tr { padding-block: .75rem; }
-  td:nth-child(2) { color: var(--text-2); }
-  td:last-child { width: 100%; }
+/* начать: полоса для ИТ + шаги */
+.itband { margin-top:48px; display:flex; gap:32px; align-items:center; justify-content:space-between; flex-wrap:wrap; border:1px solid color-mix(in srgb, var(--brand) 28%, var(--line)); border-radius:14px; background:var(--accent-soft); padding:28px 30px; }
+.itband h3 { font-size:22px; line-height:1.2; }
+.itband p { margin-top:6px; color:var(--text2); max-width:52ch; }
+.itband .row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+.steps { list-style:none; padding:0; margin-top:56px; display:grid; grid-template-columns:repeat(3, 1fr); position:relative; }
+.steps::before { content:""; position:absolute; top:19px; left:0; right:0; border-top:1px dashed var(--line2); }
+.steps li { position:relative; padding-right:32px; }
+.steps .n { width:40px; height:40px; border-radius:999px; display:grid; place-items:center; font-family:var(--mono); font-size:14px; background:var(--bg); border:1px solid var(--line2); }
+.steps h3 { margin-top:20px; font-size:19px; letter-spacing:-.01em; }
+.steps p { margin-top:6px; color:var(--text2); }
+
+/* интеграторам: строка условий */
+.partners .head { max-width:none; display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; }
+.partners .head > div { max-width:640px; }
+.terms { margin-top:40px; list-style:none; padding:0; display:flex; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.terms li { flex:1; padding:22px 24px 22px 0; min-width:0; }
+.terms li + li { padding-left:24px; border-left:1px solid var(--line); }
+.terms h3 { font-size:17px; letter-spacing:-.01em; }
+.terms p { margin-top:4px; color:var(--text2); font-size:15.5px; }
+
+/* финал: насыщенный синий в обеих темах */
+.final { margin:0 16px 16px; border-radius:14px; background:var(--brand); color:var(--on-brand); text-align:center; padding:96px 24px; }
+.final :focus-visible { outline-color:var(--on-brand); }
+.final h2 { font-size:clamp(32px, 4.4vw, 56px); line-height:1.05; }
+.final p { margin:18px auto 0; max-width:44ch; font-size:18px; }
+.final .ctas { margin-top:36px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.final .pill { background:var(--on-brand); color:#0b3fb8; border-color:transparent; }
+.final .pill:hover { background:#e6eeff; }
+.final .pill.ghost { background:transparent; color:var(--on-brand); border-color:rgba(255,255,255,.5); }
+.final .pill.ghost:hover { background:rgba(255,255,255,.12); border-color:var(--on-brand); }
+.final .mail { margin-top:22px; font-family:var(--mono); font-size:14px; }
+.final .status { color:var(--on-brand); min-height:0; margin-top:8px; }
+footer { padding:20px 0 32px; font-size:14px; color:var(--text2); }
+footer .w { display:flex; gap:8px 24px; flex-wrap:wrap; justify-content:space-between; align-items:center; }
+footer nav { display:flex; gap:20px; flex-wrap:wrap; }
+footer a { text-decoration:none; display:inline-block; padding:12px 0; } footer a:hover { text-decoration:underline; }
+
+@media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+@media (max-width: 1000px) {
+  .nav { gap:20px; } .top .cta-top { display:none; }
 }
-.models-h { font-size: 1.25rem; font-weight: 400; margin-block: 3rem 1rem; }
-.models, .roadmap { max-width: 60rem; }
-.models { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
-.models li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: center; padding-block: 1rem; border-bottom: 1px solid var(--border); }
-.roadmap { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
-.roadmap li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; padding-block: 1rem; border-bottom: 1px solid var(--border); align-items: baseline; }
-
-/* Сравнение */
-.why { background: var(--why-bg); border-bottom: 0; }
-.cols3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 2rem; }
-.cols3 > div { border-top: 1px solid var(--text); padding-top: 1rem; min-width: 0; }
-.cols3 h3 { font-size: 1.25rem; font-weight: 400; margin-bottom: .75rem; }
-.cols3 p { color: var(--text-2); }
-
-/* Интеграторам — тёмный блок */
-.partners { --focus: #ffffff; --focus-inset: #161616; background: var(--inverse-bg); color: var(--inverse-text); padding-block: 5rem; border-block: 1px solid var(--inverse-layer); }
-.partners .sec-head p { color: var(--inverse-text-2); }
-.pgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 2rem; margin-bottom: 3rem; }
-.pgrid > div { border-top: 1px solid var(--inverse-layer); padding-top: 1rem; min-width: 0; }
-.pgrid h3 { font-size: 1.25rem; font-weight: 400; margin-bottom: .5rem; }
-.pgrid p { color: var(--inverse-text-2); font-size: 14px; }
-.partners a:not(.btn) { color: var(--inverse-link); }
-
-/* Финал */
-.final { padding-block: 6rem; }
-.final h2 { font-size: clamp(2.25rem, 4vw, 3.75rem); line-height: 1.1; max-width: 20ch; margin-bottom: 1.5rem; }
-.final .lead { margin-bottom: 2.5rem; }
-.final-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 3rem; }
-@media (min-width: 1056px) { .final-grid { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: end; } }
-.next-h { font-size: 1.25rem; font-weight: 400; margin-bottom: 1rem; }
-.next { list-style: none; margin: 0; padding: 0; counter-reset: n; border-top: 1px solid var(--border); }
-.next li { counter-increment: n; display: grid; grid-template-columns: 2rem minmax(0, 1fr); padding-block: 1rem; border-bottom: 1px solid var(--border); }
-.next li::before { content: counter(n); font-family: var(--mono); font-size: 14px; color: var(--text-2); grid-row: span 2; }
-.next b { font-weight: 600; } .next span { color: var(--text-2); font-size: 14px; }
-.mail { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; margin-top: 1.5rem; font-size: 1.125rem; }
-.copy { font: inherit; font-size: 14px; background: none; color: var(--link); border: 1px solid var(--border); padding: .25rem .75rem; min-height: 32px; cursor: pointer; }
-.copy:hover { background: var(--layer); }
-@media (max-width: 671px) { .copy { min-height: 48px; } }
-footer { padding-block: 2rem 3rem; font-size: 14px; color: var(--text-2); border-top: 1px solid var(--border); }
-footer .sources { margin-top: .75rem; }
-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
-@media (prefers-reduced-motion: no-preference) { .btn, .nav a, .copy { transition: background-color 110ms cubic-bezier(0.2, 0, 0.38, 0.9); } }
-
-/* Главная для владельца */
-.gives { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 2rem; }
-.gives > div { border-top: 1px solid var(--text); padding-top: 1rem; min-width: 0; }
-.gives h3 { font-size: 1.25rem; font-weight: 400; margin-bottom: .75rem; }
-.gives p { color: var(--text-2); }
-.start { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2rem; }
-@media (max-width: 900px) { .start { grid-template-columns: 1fr; } }
-.start .body { display: grid; gap: 1rem; max-width: 65ch; }
-.start .body p { font-size: 1.125rem; }
-.start .body .muted { color: var(--text-2); font-size: 1rem; }
-.it-link { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
-.it-link p { color: var(--text-2); max-width: 60ch; font-size: 1.125rem; }
-.page-intro { padding-block: 4rem 3rem; border-bottom: 1px solid var(--border); }
-.page-intro h1 { font-size: clamp(2.25rem, 4vw, 3.75rem); line-height: 1.1; max-width: 22ch; margin-bottom: 1.5rem; }
-
-/* === Сверено с исходниками Carbon v11 (@carbon/type, @carbon/themes, @carbon/styles), 30.09.2026 === */
-/* Шрифтовые токены: fluid-heading-05 для h1 и финала, fluid-heading-04 для h2 разделов, fluid-paragraph-01 для лида, body-02 для вводных абзацев */
-.hero h1, .page-intro h1, .final h2, .compare .big { font-size: 2rem; line-height: 1.25; font-weight: 400; letter-spacing: 0; }
-.sec h2, .partners h2, .band h2 { font-size: 1.75rem; line-height: 1.28572; font-weight: 400; letter-spacing: 0; }
-.lead { font-size: 1.5rem; line-height: 1.334; font-weight: 300; }
-.sec-head p, .it-link p, .start .body p { font-size: 1rem; line-height: 1.5; }
-@media (min-width: 42rem) { .hero h1, .page-intro h1, .final h2, .compare .big { font-size: 2.25rem; line-height: 1.22; font-weight: 300; } }
-@media (min-width: 66rem) { .hero h1, .page-intro h1, .final h2, .compare .big { font-size: 2.625rem; line-height: 1.19; } .lead { font-size: 1.75rem; line-height: 1.28572; } }
-@media (min-width: 82rem) { .hero h1, .page-intro h1, .final h2, .compare .big { font-size: 3rem; line-height: 1.17; } .sec h2, .partners h2, .band h2 { font-size: 2rem; line-height: 1.25; } }
-@media (min-width: 99rem) { .hero h1, .page-intro h1, .final h2, .compare .big { font-size: 3.75rem; } .lead { font-size: 2rem; line-height: 1.25; } .wrap { padding-inline: 2.5rem; } }
-/* Data table: строки на $layer, шапка $layer-accent heading-compact-01, ячейки body-compact-01 $text-secondary, разделители $border-subtle-01, без внешней рамки, строка 48px */
-.tbl { border: 0; }
-table { font-size: .875rem; line-height: 1.42857; letter-spacing: .16px; } /* body-01: в ячейках текст переносится */
-th { background: var(--layer-accent); color: var(--text); font-weight: 600; padding: .9375rem 1rem; }
-td { background: var(--layer); color: var(--text-2); padding: .9375rem 1rem; border-top: 0; border-bottom: 1px solid var(--border-strongish); }
-/* Ссылки Carbon: без подчёркивания, подчёркивание при наведении и фокусе; ссылки в тексте остаются подчёркнутыми */
-@media (max-width: 671px) { td { border-bottom: 0; } tr { background: var(--layer); border-bottom: 1px solid var(--border-strongish); } tr + tr { border-top: 0; } }
-.more, .nav a { text-decoration: none; }
-.more:hover, .more:focus-visible { text-decoration: underline; }
-.more { display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: 0 1rem; font-size: 16px; text-decoration: none; }
-.more svg { width: 16px; height: 16px; fill: currentColor; }
-.btns .more { align-self: center; }
-
-/* === Состояния и мелочи по Carbon (сверка 12-го разбора): button/_button.scss, link/_link.scss, data-table, tag, ui-shell header, @carbon/type body-01 === */
-.btn { position: relative; justify-content: flex-start; gap: 0; line-height: 1.375; padding: .8125rem 3.9375rem .8125rem .9375rem; }
-.btn svg { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; }
-@media (min-width: 481px) { .btn { max-width: 20rem; } }
-.btn-primary:active { background: var(--btn-active); }
-.btn-tertiary:focus-visible { background: var(--tertiary); color: var(--tertiary-on); }
-.btn-tertiary:active { background: var(--tertiary-active); color: var(--tertiary-on); }
-.more { padding: 0; line-height: 1.375; }
-.more svg { width: 20px; height: 20px; }
-.btns .more { margin-left: 1.5rem; }
-@media (max-width: 480px) { .btns .more { margin-left: 0; margin-top: .5rem; } }
-a:hover, .more:hover { color: var(--link-hover); }
-.btn:hover { color: var(--on-color); }
-.btn-tertiary:hover { color: var(--tertiary-on); }
-th { line-height: 1.28572; letter-spacing: .16px; padding: 1rem; }
-td { padding: 1rem; }
-@media (max-width: 671px) { td { padding: .25rem 1rem; } td:first-child { padding-top: 1rem; } td:last-child { padding-bottom: 1rem; } }
-.tag { line-height: 1.33333; letter-spacing: .32px; }
-.step p, .note, .shot figcaption, .nav a, footer, .next span, .pgrid p, .legend, .copy, .metric p, .share-fallback { line-height: 1.42857; letter-spacing: .16px; }
-.band { padding-block: 3rem 0; }
-.nav a:hover { background: var(--bg-hover); }
-.copy { border: 0; background: transparent; padding: .4375rem 1rem; }
-.copy:hover { background: var(--bg-hover); }
-/* Колонки кратны 16-колоночной 2x Grid */
-@media (min-width: 1056px) {
-  .hero .wrap { grid-template-columns: minmax(0, 7fr) minmax(0, 9fr); }
-  .intro-grid, .final-grid { grid-template-columns: minmax(0, 10fr) minmax(0, 6fr); }
+@media (max-width: 900px) {
+  .w { padding:0 20px; }
+  .frame::before, .frame::after { display:none; }
+  .top .w { height:auto; flex-wrap:wrap; gap:0 16px; padding-top:6px; }
+  .theme { margin-left:auto; }
+  .nav { order:3; width:100%; margin:0 -20px; padding:0 20px; overflow-x:auto; gap:20px; scrollbar-width:none; border-top:1px solid var(--line); }
+  .nav a { white-space:nowrap; padding:12px 0; }
+  .hero { padding:44px 20px 0; text-align:left; }
+  .hero h1, .hero .lead { margin-left:0; }
+  .hero .ctas { flex-direction:column; }
+  .shot { padding:0 20px; margin-top:40px; }
+  .shot .win { height:auto; border-radius:14px 14px 0 0; }
+  .trio { grid-template-columns:minmax(0,1fr); }
+  .trio > div + div { border-left:0; border-top:1px solid var(--line); }
+  .trio > div { padding:26px 0; }
+  section.s { padding-block:72px; }
+  .speed, .control, .bento, .cases, .why { grid-template-columns:minmax(0,1fr); }
+  .nums { grid-template-columns:1fr 1fr; gap:12px; }
+  .num { padding:18px; } .num b { font-size:36px; }
+  .race { padding:22px 18px; }
+  .old { flex-wrap:wrap; } .old i { flex:1 1 40% !important; min-height:40px; }
+  .lane .lbl { flex-direction:column; gap:2px; }
+  .control { gap:28px; }
+  .bento .intro { border-right:0; border-bottom:1px solid var(--line); }
+  .cases > div:nth-child(odd) { border-right:0; }
+  .cases > div:not(:last-child) { border-bottom:1px solid var(--line); }
+  .why { gap:24px; }
+  .itband { padding:22px 20px; } .itband .row { width:100%; } .itband .pill { flex:1 1 auto; }
+  .steps { grid-template-columns:minmax(0,1fr); gap:28px; }
+  .steps::before { top:0; bottom:0; left:19px; right:auto; border-top:0; border-left:1px dashed var(--line2); }
+  .steps li { padding:0 0 0 60px; }
+  .steps .n { position:absolute; left:0; top:-6px; }
+  .steps h3 { margin-top:0; }
+  .terms { flex-direction:column; border-bottom:0; }
+  .terms li, .terms li + li { padding:18px 0; border-left:0; border-bottom:1px solid var(--line); }
+  .final { margin:0 8px 8px; padding:64px 20px; text-align:left; }
+  .final p { margin-left:0; }
+  .final .ctas { flex-direction:column; }
 }
-@media (min-width: 901px) { .sec-head, .start { grid-template-columns: minmax(0, 5fr) minmax(0, 11fr); } }
 
-/* Переключатель темы — header action Carbon: 48×48, иконка 20px, hover $background-hover */
-.theme-toggle { flex: none; width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; border: 0; background: transparent; color: var(--text); cursor: pointer; margin-right: -1rem; }
-.theme-toggle:hover { background: var(--bg-hover); }
-.theme-toggle svg { width: 20px; height: 20px; fill: currentColor; }
-.theme-toggle .ic-moon { display: none; }
-:root[data-theme="light"] .theme-toggle .ic-sun, :root:not([data-theme]) .theme-toggle .ic-sun { display: none; }
-:root[data-theme="light"] .theme-toggle .ic-moon, :root:not([data-theme]) .theme-toggle .ic-moon { display: inline; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme]) .theme-toggle .ic-sun { display: inline; } :root:not([data-theme]) .theme-toggle .ic-moon { display: none; } }
-@media (max-width: 420px) { .nav .nav-partners, .nav .nav-roomy { display: none; } }
-@media (min-width: 421px) and (max-width: 720px) { .nav .nav-partners { display: inline; } }
+/* Страница для ИТ */
+.intro { padding-top:72px; display:grid; grid-template-columns:7fr 5fr; gap:48px; align-items:start; }
+.intro h1 { font-size:clamp(34px, 4.4vw, 54px); line-height:1.06; }
+.intro .lead { margin-top:20px; font-size:19px; color:var(--text2); max-width:48ch; }
+.intro .bounds { margin-top:14px; font-size:15px; color:var(--text2); max-width:52ch; }
+.intro .ctas { margin-top:30px; display:flex; gap:12px; flex-wrap:wrap; }
+.summary { border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:26px 26px 22px; }
+.summary h2 { font-size:20px; letter-spacing:-.01em; }
+.summary p { margin-top:12px; font-size:15.5px; color:var(--text2); }
+.summary p b { color:var(--text); font-weight:500; }
+.summary .legend { margin-top:18px; padding-top:16px; border-top:1px dashed var(--line2); font-size:13.5px; }
+.summary .legend > span { display:block; margin-top:8px; }
 
-/* Правки 13-го разбора по Carbon */
-.btn { text-align: start; }
-.nav a { display: flex; align-items: center; height: 48px; }
-.skip { position: absolute; left: -9999px; top: 0; z-index: 100; }
-.skip:focus { left: 0; height: 48px; display: flex; align-items: center; padding: 0 1rem; border: 4px solid var(--focus); background: var(--bg); color: var(--text); outline: none; }
-.summary { padding: 1rem; }
-.compare > div { padding: 1rem; }
-th { padding: .9375rem 1rem; }
-@media (max-width: 671px) { .mail .copy { margin-left: -1rem; } }
-@media (min-width: 1056px) { .hero .wrap, .intro-grid, .final-grid { gap: 2rem; } }
+.tag { display:inline-flex; align-items:center; gap:6px; font-size:13.5px; font-weight:500; line-height:1.2; padding:5px 11px 5px 8px; border-radius:999px; white-space:nowrap; border:1px solid transparent; }
+.tag svg { width:15px; height:15px; fill:currentColor; flex:none; }
+.tag.ok { background:#e3f3e8; color:#0b5a26; }
+.tag.work { background:var(--accent-soft); color:var(--accent-text); }
+.tag.plan { background:var(--bg2); color:var(--text2); border-color:var(--line); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tag.ok { background:#10291a; color:#6fdc8c; } }
+:root[data-theme="dark"] .tag.ok { background:#10291a; color:#6fdc8c; }
+.legend .tag { margin-right:6px; }
 
-/* Правки 14-го разбора */
-.theme-toggle { color: var(--text-2); position: relative; transition: background-color 110ms cubic-bezier(0.2, 0, 0.38, 0.9); }
-.theme-toggle:hover, .theme-toggle:active { color: var(--text); }
-.theme-toggle:active, .nav a:active { background: var(--bg-active); }
-.theme-toggle::after { content: attr(aria-label); position: absolute; top: calc(100% + 8px); right: 0; white-space: nowrap; background: var(--tip-bg); color: var(--tip-text); font-size: .75rem; line-height: 1.33333; letter-spacing: .32px; padding: .5rem 1rem; border-radius: 2px; opacity: 0; pointer-events: none; transition: opacity 110ms; z-index: 20; }
-.theme-toggle:hover::after, .theme-toggle:focus-visible::after { opacity: 1; }
-@media (prefers-reduced-motion: reduce) { .theme-toggle, .theme-toggle::after { transition: none; } }
-.btn, .copy { transition: background-color 70ms cubic-bezier(0, 0, 0.38, 0.9); }
-.step h3, .gives h3, .cols3 h3, .pgrid h3, .models-h, .next-h, .summary-h, .band h3, .sub { line-height: 1.4; }
-.copy { padding-block: .375rem; line-height: 1.25rem; }
-.copy-note { font-size: .875rem; line-height: 1.42857; letter-spacing: .16px; color: var(--text-2); min-height: 1.25rem; }
-@media (min-width: 1056px) { .tbl, .models, .roadmap { max-width: 75%; } }
-</style>
-</head>
+.steps4 { list-style:none; padding:0; margin-top:48px; display:grid; grid-template-columns:repeat(4, 1fr); position:relative; }
+.steps4::before { content:""; position:absolute; top:19px; left:0; right:0; border-top:1px dashed var(--line2); }
+.steps4 li { position:relative; padding-right:28px; }
+.steps4 .n { width:40px; height:40px; border-radius:999px; display:grid; place-items:center; font-family:var(--mono); font-size:14px; background:var(--bg); border:1px solid var(--line2); }
+.steps4 h3 { margin-top:20px; font-size:18px; letter-spacing:-.01em; }
+.steps4 p { margin-top:6px; color:var(--text2); font-size:16px; }
+
+.models { margin-top:56px; display:grid; grid-template-columns:4fr 8fr; gap:32px; align-items:start; }
+.models h3 { font-size:22px; line-height:1.2; }
+.models h3 + p { margin-top:8px; color:var(--text2); }
+.rows { list-style:none; padding:0; border-top:1px solid var(--line); }
+.rows li { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:16px 0; border-bottom:1px solid var(--line); }
+
+.times { margin-top:48px; display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
+.times .num b { font-size:46px; }
+.was { margin-top:16px; display:flex; flex-wrap:wrap; gap:8px 24px; align-items:baseline; border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:20px 26px; }
+.was b { font-weight:500; }
+.was span { color:var(--text2); max-width:70ch; }
+.note { margin-top:18px; font-size:14px; color:var(--text2); max-width:80ch; }
+
+.tbl { margin-top:40px; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--panel); }
+.tbl table { width:100%; border-collapse:collapse; }
+.tbl th { text-align:left; font-size:14px; font-weight:500; color:var(--text2); padding:14px 22px; background:var(--bg2); border-bottom:1px solid var(--line); }
+.tbl td { padding:17px 22px; border-bottom:1px solid var(--line); vertical-align:top; }
+.tbl tr:last-child td { border-bottom:0; }
+.tbl td:first-child { font-weight:500; width:30%; }
+.tbl td:nth-child(2) { color:var(--text2); }
+.tbl td:last-child { width:1%; white-space:nowrap; text-align:right; }
+.fstek { margin-top:16px; display:flex; gap:14px; align-items:flex-start; border:1px solid var(--line); border-radius:14px; background:var(--bg2); padding:20px 24px; }
+.fstek svg { width:22px; height:22px; fill:var(--accent-text); flex:none; margin-top:2px; }
+.fstek p { color:var(--text2); }
+.fstek b { color:var(--text); font-weight:500; }
+
+.plan-list { margin-top:40px; list-style:none; padding:0; border-top:1px solid var(--line); }
+.plan-list li { display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center; padding:20px 0; border-bottom:1px solid var(--line); font-size:18px; }
+
+
+.next .steps { margin-top:40px; }
+footer .sources { margin-top:4px; font-size:13px; }
+
+@media (max-width: 900px) {
+  .intro { grid-template-columns:minmax(0,1fr); padding-top:40px; gap:32px; }
+  .intro .ctas { flex-direction:column; }
+  .steps4 { grid-template-columns:minmax(0,1fr); gap:26px; }
+  .steps4::before { top:0; bottom:0; left:19px; right:auto; border-top:0; border-left:1px dashed var(--line2); }
+  .steps4 li { padding:0 0 0 60px; }
+  .steps4 .n { position:absolute; left:0; top:-6px; }
+  .steps4 h3 { margin-top:0; }
+  .models { grid-template-columns:minmax(0,1fr); gap:20px; }
+  .rows li { flex-direction:column; align-items:flex-start; gap:8px; }
+  .times { grid-template-columns:1fr 1fr; gap:12px; }
+  .times .num b { font-size:34px; }
+  .tbl thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+  .tbl table, .tbl tbody, .tbl tr, .tbl td { display:block; width:auto !important; }
+  .tbl tr { padding:16px 18px; border-bottom:1px solid var(--line); }
+  .tbl tr:last-child { border-bottom:0; }
+  .tbl td { padding:0; border:0; text-align:left !important; white-space:normal !important; }
+  .tbl td:nth-child(2) { margin-top:4px; }
+  .tbl td:last-child { margin-top:10px; }
+  .plan-list li { grid-template-columns:minmax(0,1fr); gap:8px; font-size:17px; }
+  .plan-list .tag { justify-self:start; }
+  .fstek { padding:18px; }
+}
+</style></head>
 <body>
 <a class="skip" href="#main">Перейти к содержимому</a>
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="index.html">Atrium <span>· Атриум</span></a>
-    <nav class="nav" aria-label="Разделы">
-      <a href="#how">Как работает</a>
-      <a href="#tech">Подробности</a>
-      <a class="nav-keep" href="#security">Безопасность</a>
-      <a class="nav-keep nav-roomy" href="#ready">Закупка</a>
-      <a class="nav-cta" href="#contact">Связаться</a>
-    </nav>
-    <button class="theme-toggle" type="button" aria-label="Переключить тему"><svg class="ic-sun" viewBox="0 0 32 32" aria-hidden="true"><path d="M15 2H17V7H15z"/><path d="M21.668 6.854H26.626V8.854H21.668z" transform="rotate(-45 24.147 7.853)"/><path d="M25 15H30V17H25z"/><path d="M23.147 21.668H25.147V26.626H23.147z" transform="rotate(-45 24.147 24.146)"/><path d="M15 25H17V30H15z"/><path d="M5.375 23.147H10.333V25.147H5.375z" transform="rotate(-45 7.853 24.146)"/><path d="M2 15H7V17H2z"/><path d="M6.854 5.375H8.854V10.333H6.854z" transform="rotate(-45 7.854 7.853)"/><path d="M16,12a4,4,0,1,1-4,4,4.0045,4.0045,0,0,1,4-4m0-2a6,6,0,1,0,6,6,6,6,0,0,0-6-6Z"/></svg><svg class="ic-moon" viewBox="0 0 32 32" aria-hidden="true"><path d="M13.5025,5.4136A15.0755,15.0755,0,0,0,25.096,23.6082a11.1134,11.1134,0,0,1-7.9749,3.3893c-.1385,0-.2782.0051-.4178,0A11.0944,11.0944,0,0,1,13.5025,5.4136M14.98,3a1.0024,1.0024,0,0,0-.1746.0156A13.0959,13.0959,0,0,0,16.63,28.9973c.1641.006.3282,0,.4909,0a13.0724,13.0724,0,0,0,10.702-5.5556,1.0094,1.0094,0,0,0-.7833-1.5644A13.08,13.08,0,0,1,15.8892,4.38,1.0149,1.0149,0,0,0,14.98,3Z"/></svg></button>
-  </div>
-</header>
+<header class="top"><div class="w">
+  <a class="brand" href="./"><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="24" height="24" rx="6" fill="var(--brand)"/><path d="M8 20V12a5 5 0 0 1 10 0v8" fill="none" stroke="#fff" stroke-width="2.4"/></svg><span translate="no">Атриум</span></a>
+  <nav class="nav" aria-label="Разделы"><a href="#how">Как работает</a><a href="#tech">Техника</a><a href="#security">Безопасность</a><a href="#ready">Закупка</a></nav>
+  <a class="pill primary cta-top" href="#contact">Договориться о показе</a>
+  <button class="theme" type="button" aria-label="Переключить тему"><svg class="ic-sun" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M15 2H17V7H15z"/><path d="M21.668 6.854H26.625999999999998V8.854H21.668z" transform="rotate(-45 24.147 7.853)"/><path d="M25 15H30V17H25z"/><path d="M23.147 21.668H25.147V26.625999999999998H23.147z" transform="rotate(-45 24.147 24.146)"/><path d="M15 25H17V30H15z"/><path d="M5.375 23.147H10.333V25.147H5.375z" transform="rotate(-45 7.853 24.146)"/><path d="M2 15H7V17H2z"/><path d="M6.854 5.375H8.854V10.333H6.854z" transform="rotate(-45 7.854 7.853)"/><path d="M16,12a4,4,0,1,1-4,4,4.0045,4.0045,0,0,1,4-4m0-2a6,6,0,1,0,6,6,6,6,0,0,0-6-6Z"/></svg><svg class="ic-moon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M13.5025,5.4136A15.0755,15.0755,0,0,0,25.096,23.6082a11.1134,11.1134,0,0,1-7.9749,3.3893c-.1385,0-.2782.0051-.4178,0A11.0944,11.0944,0,0,1,13.5025,5.4136M14.98,3a1.0024,1.0024,0,0,0-.1746.0156A13.0959,13.0959,0,0,0,16.63,28.9973c.1641.006.3282,0,.4909,0a13.0724,13.0724,0,0,0,10.702-5.5556,1.0094,1.0094,0,0,0-.7833-1.5644A13.08,13.08,0,0,1,15.8892,4.38,1.0149,1.0149,0,0,0,14.98,3Z"/></svg></button>
+</div></header>
 
 <main id="main">
-  <section class="page-intro">
-    <div class="wrap">
-      <div class="intro-grid">
-      <div>
+<div class="frame">
+  <section class="w intro">
+    <div>
       <h1>Атриум для ИТ и безопасности</h1>
-      <p class="lead">Атриум — программа для запуска и учёта ИИ-моделей на серверах вашей компании: права, журнал, адреса для программ. Здесь — как он устроен, что с безопасностью и когда будут документы для закупки.</p>
-      <p class="bounds">Программу под задачу делает ваш ИТ-отдел или интегратор. Качество ответов моделей Атриум пока не оценивает.</p>
-      <div class="btns">
-        <a class="btn btn-primary" href="mailto:s.shvyrev@ro.ru?subject=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%20%D0%90%D1%82%D1%80%D0%B8%D1%83%D0%BC%D0%B0">Договориться о показе
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
-        <a class="more" href="index.html">На главную</a>
-      </div>
-      </div>
-      <section class="summary" aria-labelledby="summary-h">
-        <h2 class="summary-h" id="summary-h">Коротко</h2>
-        <p><b>Уже есть:</b> права и роли, журнал действий, изоляция команд, доступ к модели по токену.</p>
-        <p><b>Дальше:</b> подключение AD/LDAP, выгрузка журнала в SIEM, работа на российских ОС, сертификация ФСТЭК.</p>
-        <p class="legend">Статусы на странице. «Есть»: работает сейчас. «В работе»: делаем сейчас. «В проверке»: работает, проверяем на нашем сервере. «План»: срок-ориентир. «Ориентир» и «срок уточняем»: точной цифры или даты пока нет.</p>
-        <p><a href="#tech">Технические подробности</a> · <a href="#security">Безопасность</a> · <a href="#ready">Сроки</a></p>
-      </section>
-      </div>
+      <p class="lead">Платформа запуска ИИ-моделей внутри компании: права, журнал, адреса для программ. Здесь собрано, как она устроена, что с безопасностью и когда будут документы для закупки.</p>
+      <p class="bounds">Программу под задачу делает ИТ-отдел или интегратор. Качество ответов моделей Атриум пока не оценивает.</p>
+      <div class="ctas"><a class="pill primary big" href="#contact">Договориться о показе</a><a class="pill big" href="#tech">Техника и статусы</a></div>
     </div>
+    <section class="summary" aria-labelledby="summary-h">
+      <h2 id="summary-h">Коротко</h2>
+      <p><b>Уже есть:</b> права и роли, журнал действий, изоляция команд, доступ к модели по токену, языковые модели.</p>
+      <p><b>Дальше:</b> подключение AD/LDAP, выгрузка журнала в SIEM, работа на российских ОС, сертификация ФСТЭК.</p>
+      <p class="legend">Статусы на странице
+        <span><span class="tag ok"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM14,21.5908l-5-5L10.5906,15,14,18.4092,21.41,11l1.5957,1.5859Z"/><path fill="none" d="M14 21.591 9 16.591 10.591 15 14 18.409 21.41 11 23.005 12.585 14 21.591z" data-icon-path="inner-path"/></svg>Есть</span>работает сейчас</span>
+        <span><span class="tag work"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14.0158,14.0158,0,0,0,16,2Zm0,26A12,12,0,0,1,16,4V16l8.4812,8.4814A11.9625,11.9625,0,0,1,16,28Z"/></svg>В работе</span>делаем сейчас; «В проверке» — работает, проверяем на нашем сервере</span>
+        <span><span class="tag plan"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"/></svg>План</span>срок-ориентир; «Ориентир» и «Срок уточняем» — точной цифры пока нет</span>
+      </p>
+    </section>
   </section>
+</div>
 
-  <section class="sec" id="how">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Как работает</h2>
-        <p>Работа с моделями идёт в браузере, без ручных настроек. Четыре шага.</p>
-      </div>
-      <ol class="steps">
-        <li class="step"><p class="n" aria-hidden="true">1</p><h3>Добавьте модель</h3><p>Укажите, где лежит файл модели. Она появится в общем списке.</p></li>
-        <li class="step"><p class="n" aria-hidden="true">2</p><h3>Атриум проверит файл</h3><p>Если файла нет или он не читается, вы узнаете сразу, а не после запуска.</p></li>
-        <li class="step"><p class="n" aria-hidden="true">3</p><h3>Запустите</h3><p>Одна кнопка. Остановить и запустить снова тоже одной кнопкой.</p></li>
-        <li class="step"><p class="n" aria-hidden="true">4</p><h3>Подключите программы</h3><p>Модель получает адрес, по которому к ней обращаются ваши программы.</p></li>
-      </ol>
-      <h3 class="models-h">Какие модели подходят</h3>
-      <ul class="models">
-        <li><span>Обычные модели машинного обучения: прогнозы, оценки, классификация</span><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></li>
-        <li><span>Языковые модели: открытые и собственные</span><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></li>
-      </ul>
-      <p class="lead-note">Работает на серверах с видеокартами и без них.</p>
-        </div>
-  </section>
-
-  <section class="sec" id="proof">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Запуск модели: было и стало</h2>
-        <p>Контроль остаётся у ИТ: права и журнал. А командам не нужно ждать.</p>
-      </div>
-      <div class="compare">
-        <div class="was"><p class="lbl">Было</p><p class="big">2–3 недели</p><p>Заявка в ИТ, согласования, ручная настройка сервера. Типичный срок из нашего опыта.</p></div>
-        <div class="now"><p class="lbl">С Атриумом</p><p class="big">В тот же день</p><p>ИТ один раз задаёт права, дальше команды запускают модели сами. Сама операция занимает секунды: добавить модель за 7&nbsp;с, запустить за 20&nbsp;с, остановить за 10&nbsp;с.</p></div>
-      </div>
-      <p class="note">Замеры на нашем тестовом сервере в сентябре 2026 года: три обычные машины без видеокарт, небольшая модель. Большая языковая модель на нашем сервере запускается около 12&nbsp;минут: время зависит от её размера и серверов.</p>
-    </div>
-  </section>
-
-  <section class="sec" id="tech">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Технические подробности</h2>
-        <p>Коротко о том, на чём Атриум работает и как встраивается в вашу инфраструктуру.</p>
-      </div>
-      <div class="tbl">
-        <table>
-          <thead><tr><th scope="col">Что</th><th scope="col">Как</th><th scope="col">Статус</th></tr></thead>
-          <tbody>
-            <tr><td>Где работает</td><td>В Kubernetes на ваших Linux-серверах. Интернет не нужен</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
-            <tr><td>Вход пользователей</td><td>Встроенный вход, у каждого свои роли</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
-            <tr><td>Каталог пользователей компании</td><td>Подключение к вашему AD или LDAP</td><td><span class="tag plan"><span class="sr-only">Статус: </span>План: I кв. 2027</span></td></tr>
-            <tr><td>Как программы обращаются к модели</td><td>По HTTPS-адресу, который выдаёт Атриум. REST, открытый стандартный протокол для моделей</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
-            <tr><td>Кто может обратиться к модели</td><td>Только с токеном доступа. Без токена — отказ. Есть лимиты на число и размер запросов</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
-            <tr><td>Закрытие модели внутри кластера</td><td>Сетевая политика: к модели можно только через шлюз</td><td><span class="tag plan"><span class="sr-only">Статус: </span>План: IV кв. 2026</span></td></tr>
-            <tr><td>Форматы моделей</td><td>scikit-learn проверен. XGBoost, LightGBM, ONNX, PyTorch и TensorFlow проверяем</td><td><span class="tag plan"><span class="sr-only">Статус: </span>В проверке</span></td></tr>
-            <tr><td>Хранилище файлов моделей</td><td>Сейчас хранилище в составе Атриума. Подключение вашего S3-совместимого хранилища в работе</td><td><span class="tag plan"><span class="sr-only">Статус: </span>В работе</span></td></tr>
-                        <tr><td>Выгрузка журнала</td><td>Передача в вашу систему мониторинга (SIEM)</td><td><span class="tag plan"><span class="sr-only">Статус: </span>План: 2027</span></td></tr>
-            <tr><td>Серверы для пробы</td><td>Три машины, по 8 ядер и 32&nbsp;ГБ памяти каждая. Уточним по замерам</td><td><span class="tag plan"><span class="sr-only">Статус: </span>Ориентир</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="security">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Безопасность</h2>
-        <p>Те же вопросы задаст ваша служба безопасности. Три из них Атриум закрывает уже сейчас.</p>
-      </div>
-      <div class="tbl">
-        <table>
-          <thead><tr><th scope="col">Что проверяет служба безопасности</th><th scope="col">Как в Атриуме</th><th scope="col">Статус</th></tr></thead>
-          <tbody>
-            <tr><td>Команды отделены друг от друга</td><td>Каждая команда работает в своём пространстве и не видит чужого</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
-            <tr><td>У каждого только нужные права</td><td>Кто может смотреть, а кто запускать, задаёт администратор</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
-            <tr><td>Всё записывается</td><td>Журнал: кто, что и когда сделал</td><td><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></td></tr>
-            <tr><td>Контроль ИИ-помощников, которые сами выполняют действия</td><td>Права и история для них, как для моделей</td><td><span class="tag plan"><span class="sr-only">Статус: </span>План: 2027</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note">Приказ ФСТЭК России № 117 требует защищать ИИ в государственных системах, а по проекту изменений с 1 марта 2027 года требования расширят. Сертификата ФСТЭК у Атриума пока нет.</p>
-    </div>
-  </section>
-
-  <section class="sec" id="ready">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Сроки для закупки</h2>
-        <p>Что нужно, чтобы купить Атриум по правилам крупной компании или госзаказчика, и когда это будет.</p>
-      </div>
-      <ul class="roadmap">
-        <li><span>Ставим на ваши Linux-серверы вместе с вашими специалистами</span><span class="tag ok"><span class="sr-only">Статус: </span>Есть</span></li>
-        <li><span>Установка на закрытые серверы в один шаг</span><span class="tag plan"><span class="sr-only">Статус: </span>План: ноябрь 2026</span></li>
-        <li><span>Работа на российских операционных системах</span><span class="tag plan"><span class="sr-only">Статус: </span>План: I кв. 2027</span></li>
-        <li><span>Сертификация ФСТЭК</span><span class="tag plan"><span class="sr-only">Статус: </span>Срок уточняем</span></li>
-        <li><span>Включение в реестр российских программ</span><span class="tag plan"><span class="sr-only">Статус: </span>План: I кв. 2027</span></li>
+<div class="frame" id="how">
+  <section class="s w">
+    <div class="head"><h2>Как работает</h2><p>Работа с моделями идёт в браузере, без ручных настроек. Четыре шага.</p></div>
+    <ol class="steps4">
+      <li><span class="n" aria-hidden="true">1</span><h3>Добавьте модель</h3><p>Укажите, где лежит файл модели. Она появится в общем списке.</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>Атриум проверит файл</h3><p>Если файла нет или он не читается, это видно сразу, а не после запуска.</p></li>
+      <li><span class="n" aria-hidden="true">3</span><h3>Запустите</h3><p>Одна кнопка. Остановить и запустить снова тоже одной кнопкой.</p></li>
+      <li><span class="n" aria-hidden="true">4</span><h3>Подключите программы</h3><p>Модель получает адрес, по которому к ней обращаются программы компании.</p></li>
+    </ol>
+    <div class="models">
+      <div><h3>Какие модели подходят</h3><p>Работает на серверах с видеокартами и без них.</p></div>
+      <ul class="rows">
+        <li><span>Обычные модели машинного обучения: прогнозы, оценки, классификация</span><span class="tag ok"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM14,21.5908l-5-5L10.5906,15,14,18.4092,21.41,11l1.5957,1.5859Z"/><path fill="none" d="M14 21.591 9 16.591 10.591 15 14 18.409 21.41 11 23.005 12.585 14 21.591z" data-icon-path="inner-path"/></svg><span class="sr">Статус: </span>Есть</span></li>
+        <li><span>Языковые модели: открытые и собственные</span><span class="tag ok"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM14,21.5908l-5-5L10.5906,15,14,18.4092,21.41,11l1.5957,1.5859Z"/><path fill="none" d="M14 21.591 9 16.591 10.591 15 14 18.409 21.41 11 23.005 12.585 14 21.591z" data-icon-path="inner-path"/></svg><span class="sr">Статус: </span>Есть</span></li>
       </ul>
     </div>
   </section>
+</div>
 
-  <section class="sec why">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Почему не собрать самим</h2>
-        <p>Можно. Вот что для этого придётся сделать и потом поддерживать.</p>
-      </div>
-      <div class="cols3">
-        <div><h3>Собрать запуск</h3><p>Связать хранилище, серверы, проверку файлов и адреса, по которым программы обращаются к моделям.</p></div>
-        <div><h3>Написать права и журнал</h3><p>Пространства команд, роли, запись каждого действия. Без этого служба безопасности не пропустит.</p></div>
-        <div><h3>Поддерживать</h3><p>Обновлять десяток программ и отвечать за поломки. В Атриуме это делаем мы, авторы продукта.</p></div>
-      </div>
+<div class="frame" id="proof">
+  <section class="s w rule">
+    <div class="head"><h2>Сколько занимает запуск</h2><p>Контроль остаётся у ИТ: права и журнал. А командам не нужно ждать.</p></div>
+    <div class="times">
+      <div class="num"><b>7&nbsp;с</b><span>добавить модель</span></div>
+      <div class="num"><b>20&nbsp;с</b><span>запустить небольшую модель</span></div>
+      <div class="num"><b>10&nbsp;с</b><span>остановить модель</span></div>
+      <div class="num"><b>12&nbsp;мин</b><span>запустить большую языковую модель</span></div>
+    </div>
+    <div class="was"><b>Без Атриума обычно 2–3&nbsp;недели</b><span>Заявка в ИТ, согласования, ручная настройка сервера. Типичный срок из нашего опыта.</span></div>
+    <p class="note">Замеры на нашем тестовом сервере в сентябре 2026 года. Небольшая модель: три обычные машины без видеокарт. Время запуска большой языковой модели зависит от её размера и серверов.</p>
+  </section>
+</div>
+
+<div class="frame" id="tech">
+  <section class="s w rule">
+    <div class="head"><h2>Технические подробности</h2><p>На чём Атриум работает и как встраивается в инфраструктуру компании.</p></div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th scope="col">Что</th><th scope="col">Как</th><th scope="col">Статус</th></tr></thead>
+        <tbody>
+          <tr><td>Где работает</td><td>В Kubernetes на Linux-серверах компании. Интернет не нужен</td><td><span class="tag ok"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM14,21.5908l-5-5L10.5906,15,14,18.4092,21.41,11l1.5957,1.5859Z"/><path fill="none" d="M14 21.591 9 16.591 10.591 15 14 18.409 21.41 11 23.005 12.585 14 21.591z" data-icon-path="inner-path"/></svg><span class="sr">Статус: </span>Есть</span></td></tr>
+          <tr><td>Вход пользователей</td><td>Встроенный вход, у каждого свои роли</td><td><span class="tag ok"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM14,21.5908l-5-5L10.5906,15,14,18.4092,21.41,11l1.5957,1.5859Z"/><path fill="none" d="M14 21.591 9 16.591 10.591 15 14 18.409 21.41 11 23.005 12.585 14 21.591z" data-icon-path="inner-path"/></svg><span class="sr">Статус: </span>Есть</span></td></tr>
+          <tr><td>Каталог пользователей компании</td><td>Подключение к AD или LDAP</td><td><span class="tag plan"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"/></svg><span class="sr">Статус: </span>План: I&nbsp;кв.&nbsp;2027</span></td></tr>
+          <tr><td>Как программы обращаются к модели</td><td>По HTTPS-адресу, который выдаёт Атриум. REST, открытый стандартный протокол для моделей</td><td><span class="tag ok"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM14,21.5908l-5-5L10.5906,15,14,18.4092,21.41,11l1.5957,1.5859Z"/><path fill="none" d="M14 21.591 9 16.591 10.591 15 14 18.409 21.41 11 23.005 12.585 14 21.591z" data-icon-path="inner-path"/></svg><span class="sr">Статус: </span>Есть</span></td></tr>
+          <tr><td>Кто может обратиться к модели</td><td>Только с токеном доступа. Без токена — отказ. Есть лимиты на число и размер запросов</td><td><span class="tag ok"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM14,21.5908l-5-5L10.5906,15,14,18.4092,21.41,11l1.5957,1.5859Z"/><path fill="none" d="M14 21.591 9 16.591 10.591 15 14 18.409 21.41 11 23.005 12.585 14 21.591z" data-icon-path="inner-path"/></svg><span class="sr">Статус: </span>Есть</span></td></tr>
+          <tr><td>Закрытие модели внутри кластера</td><td>Сетевая политика: к модели можно только через шлюз</td><td><span class="tag plan"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"/></svg><span class="sr">Статус: </span>План: IV&nbsp;кв.&nbsp;2026</span></td></tr>
+          <tr><td>Форматы моделей</td><td>scikit-learn проверен. XGBoost, LightGBM, ONNX, PyTorch и TensorFlow проверяем</td><td><span class="tag work"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14.0158,14.0158,0,0,0,16,2Zm0,26A12,12,0,0,1,16,4V16l8.4812,8.4814A11.9625,11.9625,0,0,1,16,28Z"/></svg><span class="sr">Статус: </span>В проверке</span></td></tr>
+          <tr><td>Хранилище файлов моделей</td><td>Сейчас хранилище в составе Атриума. Подключение S3-совместимого хранилища компании в работе</td><td><span class="tag work"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14.0158,14.0158,0,0,0,16,2Zm0,26A12,12,0,0,1,16,4V16l8.4812,8.4814A11.9625,11.9625,0,0,1,16,28Z"/></svg><span class="sr">Статус: </span>В работе</span></td></tr>
+          <tr><td>Выгрузка журнала</td><td>Передача в систему мониторинга компании (SIEM)</td><td><span class="tag plan"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"/></svg><span class="sr">Статус: </span>План: 2027</span></td></tr>
+          <tr><td>Серверы для пробы</td><td>Три машины, по 8 ядер и 32&nbsp;ГБ памяти каждая. Уточним по замерам</td><td><span class="tag plan"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"/><path d="M20.59 22 15 16.41 15 7 17 7 17 15.58 22 20.59 20.59 22z"/></svg><span class="sr">Статус: </span>Ориентир</span></td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
+</div>
 
-  <section class="final" id="contact">
-    <div class="wrap final-grid">
-      <div>
-        <h2>Покажем Атриум на вашей задаче</h2>
-        <p class="lead">Напишите, какие модели вы запускаете и где. Ответим на вопросы вашей службы безопасности.</p>
-        <a class="btn btn-tertiary" href="mailto:s.shvyrev@ro.ru?subject=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%20%D0%90%D1%82%D1%80%D0%B8%D1%83%D0%BC%D0%B0">Договориться о показе
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 3 8.3 3.7 12.1 7.5H2v1h10.1l-3.8 3.8L9 13l5-5z"/></svg></a>
-        <div class="mail">
-          <span>Почта: <a id="c-mail" href="mailto:s.shvyrev@ro.ru">s.shvyrev@ro.ru</a></span>
-          <button class="copy" type="button" data-copy="c-mail">Скопировать адрес</button>
-          <span class="copy-note" role="status" aria-live="polite" id="copy-status"></span>
-        </div>
-      </div>
-      <div>
-        <h3 class="next-h">Что будет дальше</h3>
-        <ol class="next">
-          <li><b>Ответим за рабочий день</b><span>и договоримся о времени.</span></li>
-          <li><b>Покажем Атриум по видео</b><span>30–40 минут, на примере вашей задачи.</span></li>
-          <li><b>Бесплатная проба на три месяца</b><span>для первых клиентов, на ваших серверах.</span></li>
-        </ol>
-      </div>
+<div class="frame" id="security">
+  <section class="s w rule">
+    <div class="head"><h2>Безопасность</h2><p>Те же вопросы задаст служба безопасности. Три из них Атриум закрывает уже сейчас.</p></div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th scope="col">Что проверяет служба безопасности</th><th scope="col">Как в Атриуме</th><th scope="col">Статус</th></tr></thead>
+        <tbody>
+          <tr><td>Команды отделены друг от друга</td><td>Каждая команда работает в своём пространстве и не видит чужого</td><td><span class="tag ok"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM14,21.5908l-5-5L10.5906,15,14,18.4092,21.41,11l1.5957,1.5859Z"/><path fill="none" d="M14 21.591 9 16.591 10.591 15 14 18.409 21.41 11 23.005 12.585 14 21.591z" data-icon-path="inner-path"/></svg><span class="sr">Статус: </span>Есть</span></td></tr>
+          <tr><td>У каждого только нужные права</td><td>Кто может смотреть, а кто запускать, задаёт администратор</td><td><span class="tag ok"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM14,21.5908l-5-5L10.5906,15,14,18.4092,21.41,11l1.5957,1.5859Z"/><path fill="none" d="M14 21.591 9 16.591 10.591 15 14 18.409 21.41 11 23.005 12.585 14 21.591z" data-icon-path="inner-path"/></svg><span class="sr">Статус: </span>Есть</span></td></tr>
+          <tr><td>Всё записывается</td><td>Журнал: кто, что и когда сделал</td><td><span class="tag ok"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM14,21.5908l-5-5L10.5906,15,14,18.4092,21.41,11l1.5957,1.5859Z"/><path fill="none" d="M14 21.591 9 16.591 10.591 15 14 18.409 21.41 11 23.005 12.585 14 21.591z" data-icon-path="inner-path"/></svg><span class="sr">Статус: </span>Есть</span></td></tr>
+          <tr><td>Контроль ИИ-помощников, которые сами выполняют действия</td><td>Права и история для них, как для моделей</td><td><span class="tag plan"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"/></svg><span class="sr">Статус: </span>План: 2027</span></td></tr>
+        </tbody>
+      </table>
     </div>
+    <div class="fstek"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M25.7,9.3l-7-7C18.5,2.1,18.3,2,18,2H8C6.9,2,6,2.9,6,4v24c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V10C26,9.7,25.9,9.5,25.7,9.3	z M18,4.4l5.6,5.6H18V4.4z M24,28H8V4h8v6c0,1.1,0.9,2,2,2h6V28z"/><path d="M10 22H22V24H10z"/><path d="M10 16H22V18H10z"/></svg><p><b>ФСТЭК.</b> Приказ ФСТЭК России №&nbsp;117 требует защищать ИИ в государственных системах, а по проекту изменений с 1&nbsp;марта 2027 года требования расширят. Сертификата ФСТЭК у Атриума пока нет.</p></div>
   </section>
+</div>
+
+<div class="frame" id="ready">
+  <section class="s w rule">
+    <div class="head"><h2>Сроки для закупки</h2><p>Что нужно, чтобы купить Атриум по правилам крупной компании или госзаказчика, и когда это будет.</p></div>
+    <ul class="plan-list">
+      <li><span>Ставим на Linux-серверы компании вместе с её специалистами</span><span class="tag ok"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM14,21.5908l-5-5L10.5906,15,14,18.4092,21.41,11l1.5957,1.5859Z"/><path fill="none" d="M14 21.591 9 16.591 10.591 15 14 18.409 21.41 11 23.005 12.585 14 21.591z" data-icon-path="inner-path"/></svg><span class="sr">Статус: </span>Есть</span></li>
+      <li><span>Установка на закрытые серверы в один шаг</span><span class="tag plan"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"/></svg><span class="sr">Статус: </span>План: ноябрь 2026</span></li>
+      <li><span>Работа на российских операционных системах</span><span class="tag plan"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"/></svg><span class="sr">Статус: </span>План: I&nbsp;кв.&nbsp;2027</span></li>
+      <li><span>Сертификация ФСТЭК</span><span class="tag plan"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"/><path d="M20.59 22 15 16.41 15 7 17 7 17 15.58 22 20.59 20.59 22z"/></svg><span class="sr">Статус: </span>Срок уточняем</span></li>
+      <li><span>Включение в реестр российских программ</span><span class="tag plan"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"/></svg><span class="sr">Статус: </span>План: I&nbsp;кв.&nbsp;2027</span></li>
+    </ul>
+  </section>
+</div>
+
+<div class="frame">
+  <section class="s w rule why">
+    <div class="head"><h2>Почему не собрать самим</h2><p>Можно. Вот что для этого придётся сделать и потом поддерживать.</p></div>
+    <ol>
+      <li><div><h3>Собрать запуск</h3><p>Связать хранилище, серверы, проверку файлов и адреса, по которым программы обращаются к моделям.</p></div></li>
+      <li><div><h3>Написать права и журнал</h3><p>Пространства команд, роли, запись каждого действия. Без этого служба безопасности не пропустит.</p></div></li>
+      <li><div><h3>Поддерживать</h3><p>Обновлять десяток программ и отвечать за поломки. В Атриуме это делаем мы, авторы продукта.</p></div></li>
+    </ol>
+  </section>
+</div>
+
+<div class="frame next">
+  <section class="s w rule">
+    <div class="head"><h2>Что будет дальше</h2></div>
+    <ol class="steps">
+      <li><span class="n" aria-hidden="true">1</span><h3>Ответим за рабочий день</h3><p>И договоримся о времени показа.</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>Покажем по видеосвязи</h3><p>30–40&nbsp;минут, на примере задачи компании.</p></li>
+      <li><span class="n" aria-hidden="true">3</span><h3>Три месяца бесплатно</h3><p>Проба на серверах компании для первых клиентов.</p></li>
+    </ol>
+  </section>
+</div>
+
+<section class="final" id="contact">
+  <h2>Покажем Атриум на любой задаче</h2>
+  <p>Напишите, какие модели запускаете и где. Ответим на вопросы службы безопасности.</p>
+  <div class="ctas"><a class="pill big" href="mailto:s.shvyrev@ro.ru?subject=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%20%D0%90%D1%82%D1%80%D0%B8%D1%83%D0%BC%D0%B0">Договориться о показе</a><button class="pill big ghost" type="button" data-copy="mail"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z"/><path d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z"/></svg>Скопировать адрес</button></div>
+  <p class="mail" translate="no">s.shvyrev@ro.ru</p>
+  <p class="status" role="status" data-status="mail"></p>
+</section>
 </main>
-
-<footer>
-  <div class="wrap"><span>Atrium · Атриум · 2026</span><span><a href="index.html#partners">Условия для интеграторов</a></span></div>
-  <div class="wrap sources"><span>Приказ ФСТЭК России № 117 от 11.04.2025; проект изменений: по сообщению ComNews от 26.08.2026.</span></div>
-</footer>
-
+<footer><div class="w"><span><span translate="no">Атриум</span>, 2026</span><nav aria-label="Ещё"><a href="./">Главная</a><a href="index.html#partners">Условия для интеграторов</a></nav></div>
+  <div class="w sources">Приказ ФСТЭК России №&nbsp;117 от 11.04.2025; проект изменений: по сообщению ComNews от 26.08.2026.</div></footer>
 <script>
 (function () {
-  // Переключатель темы: запоминаем выбор; без выбора — как в системе
-  var root = document.documentElement, b = document.querySelector('.theme-toggle'); if (!b) return;
-  try { var saved = localStorage.getItem('atrium-theme'); if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved); } catch (e) {}
+  var root = document.documentElement, b = document.querySelector('.theme'); if (!b) return;
   function current() { var t = root.getAttribute('data-theme'); if (t) return t; return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
   function label() { b.setAttribute('aria-label', current() === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему'); }
   label();
@@ -533,23 +484,32 @@ th { padding: .9375rem 1rem; }
     label();
   });
 })();
-
-document.querySelectorAll('.copy').forEach(function (b) {
-  var label = b.textContent;
-  var status = document.getElementById('copy-status');
-  b.addEventListener('click', function () {
-    var el = document.getElementById(b.dataset.copy);
-    var text = el.textContent.trim();
-    function say(msg) { status.textContent = msg; setTimeout(function () { status.textContent = ''; }, 2500); }
-    function fallback() {
-      var r = document.createRange(); r.selectNodeContents(el);
-      var s = getSelection(); s.removeAllRanges(); s.addRange(r);
-      say('Адрес выделен: нажмите Ctrl+C (на Mac — ⌘C)');
-    }
-    try { navigator.clipboard.writeText(text).then(function () { say('Скопировано'); }, fallback); } catch (e) { fallback(); }
+(function () {
+  // Картинки следуют и системной теме, и теме, выбранной кнопкой
+  var all = [];
+  document.querySelectorAll('picture source').forEach(function (x) { all.push([x, x.media]); });
+  function apply() {
+    var t = document.documentElement.getAttribute('data-theme');
+    all.forEach(function (p) {
+      var x = p[0], m = p[1], dark = m.indexOf('prefers-color-scheme: dark') !== -1;
+      if (t === 'dark') x.media = dark ? (m.replace(/\s*and\s*\(prefers-color-scheme: dark\)|\(prefers-color-scheme: dark\)/, '').trim() || 'all') : (m.indexOf('max-width') !== -1 ? 'not all' : m);
+      else if (t === 'light') x.media = dark ? 'not all' : m;
+      else x.media = m;
+    });
+  }
+  apply();
+  new MutationObserver(apply).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+(function () {
+  var values = { mail: 's.shvyrev@ro.ru', it: new URL('it.html', location.href).href };
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var key = b.getAttribute('data-copy'), out = document.querySelector('[data-status="' + key + '"]');
+      function done(ok) { if (out) out.textContent = ok ? 'Скопировано' : 'Не получилось скопировать: ' + values[key]; }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(values[key]).then(function () { done(true); }, function () { done(false); });
+      else done(false);
+    });
   });
-});
-
+})();
 </script>
-</body>
-</html>
+</body></html>
