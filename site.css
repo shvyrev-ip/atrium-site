@@ -72,7 +72,7 @@ figcaption{font-size:14px;color:var(--text-3);margin-top:16px}
 .top .nav{align-self:stretch}
 .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:500;font-size:20px;letter-spacing:-.01em;min-height:44px}
 .brand:hover{color:var(--text)}
-.brand svg{width:26px;height:26px}
+.brand img{display:block;height:28px;width:auto}
 .nav{display:flex;align-items:center;gap:32px;flex:1}
 .nav > a,.nav summary{color:var(--text-2);text-decoration:none;font-size:15px;padding:10px 0;cursor:pointer;list-style:none;transition:color .2s}
 .nav > a:hover,.nav summary:hover{color:var(--text)}
@@ -344,8 +344,7 @@ main:has(> .start:last-child) + footer{margin-top:0}
   footer{padding-top:72px}
 }
 @media (max-width:380px){
-  .brand{font-size:18px;gap:8px}
-  .brand svg{width:22px;height:22px}
+  .brand img{height:24px}
   .nav .btn.primary::after{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.scene{opacity:1}}
