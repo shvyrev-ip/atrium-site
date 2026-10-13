@@ -1,0 +1,2 @@
+Значки: Phosphor Icons, начертание Light (@phosphor-icons/core 2.1.1), лицензия MIT.
+https://github.com/phosphor-icons/core

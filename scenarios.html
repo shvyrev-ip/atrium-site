@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сценарии Атриума</title>
+<meta name="description" content="Примеры задач для промышленности, страхования и банков: что меняется, какие модели, что измерять.">
+<meta property="og:type" content="website"><meta property="og:title" content="Сценарии Атриума"><meta property="og:description" content="Примеры задач для промышленности, страхования и банков: что меняется, какие модели, что измерять."><meta property="og:url" content="https://atrium-ai.ru/scenarios.html"><meta property="og:image" content="https://atrium-ai.ru/og.png">
+<link rel="canonical" href="https://atrium-ai.ru/scenarios.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 26 26%22%3E%3Crect x=%221%22 y=%221%22 width=%2224%22 height=%2224%22 fill=%22white%22 stroke=%22%230f62fe%22 stroke-width=%222%22/%3E%3Crect x=%228%22 y=%228%22 width=%2210%22 height=%2210%22 fill=%22%230f62fe%22/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/plex-cyrillic-300.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержимому</a>
+<header class="top">
+  <div class="w">
+    <a class="brand" href="./"><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="24" height="24" fill="none" stroke="#0f62fe" stroke-width="1.6"/><rect x="9" y="9" width="8" height="8" fill="#0f62fe"/></svg>Атриум</a>
+    <nav class="nav" aria-label="Основное меню">
+      <a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a>
+      <details class="drop"><summary>Партнёрам</summary><div><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></div></details>
+      <details class="burger"><summary>Меню</summary><div><a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></div></details>
+      <a class="btn primary" href="mailto:info@atrium-ai.ru">Написать нам</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="page-hero"><div class="w">
+  <div class="grid">
+    <p class="crumb"><a href="index.html">Главная</a> / Сценарии</p>
+    <div class="txt">
+    <h1>Сценарии по отраслям</h1>
+    <p class="sub">Примеры задач, которые компании решают своими моделями на внутренних серверах. Эффект считается по показателям самой компании, поэтому у каждого сценария указано, что измерять. Атриум запускает модель и выдаёт адрес и токен для обращения к ней. Приложение для сотрудников делает ИТ компании или интегратор.</p>
+    </div>
+    <div class="scene" data-view="apps" role="img" aria-label="Схема: программы компании и рабочие места команд обращаются к моделям внутри периметра">
+    <canvas></canvas>
+    <div class="pin d" data-a="apps"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-plug"></i><div><b>Программы компании</b><span>обращаются к модели</span></div></div></div>
+    <div class="pin l" data-a="model"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-model"></i><div><b>Модели</b><span>предиктивные и генеративные</span></div></div></div>
+    <p class="cap">Схема</p>
+  </div>
+  </div>
+</div></div>
+
+<section id="industry" class="w" aria-labelledby="h-ind">
+  <div class="grid">
+    <div class="sec-head"><i class="ic i-factory"></i><h2 id="h-ind">Промышленность</h2></div>
+    <div class="sec-body"><p class="lead">Данные о линиях, сырье и качестве не выходят за пределы предприятия. Модели работают рядом с этими данными.</p></div>
+
+    <article class="scen"><h3>Прогноз поломок оборудования</h3><dl>
+      <div><dt>Задача</dt><dd>Ремонт начинается после остановки линии.</dd></div>
+      <div><dt>Что меняется</dt><dd>Сигнал о вероятной поломке приходит заранее, ремонт планируется.</dd></div>
+      <div><dt>Модели</dt><dd>Предиктивные</dd></div>
+      <div><dt>Что измерять</dt><dd class="m">Внеплановые простои в месяц, часы простоя</dd></div>
+    </dl></article>
+
+    <article class="scen"><h3>Контроль качества по параметрам процесса</h3><dl>
+      <div><dt>Задача</dt><dd>Брак находят на выходе, когда партия уже сделана.</dd></div>
+      <div><dt>Что меняется</dt><dd>Модель отмечает партии с риском брака по ходу процесса.</dd></div>
+      <div><dt>Модели</dt><dd>Предиктивные</dd></div>
+      <div><dt>Что измерять</dt><dd class="m">Доля брака, партии на перепроверку</dd></div>
+    </dl></article>
+
+    <article class="scen"><h3>Расход сырья и энергии</h3><dl>
+      <div><dt>Задача</dt><dd>Нормы расхода считаются по среднему, перерасход виден в конце месяца.</dd></div>
+      <div><dt>Что меняется</dt><dd>Прогноз расхода по каждой смене и отклонения в течение дня.</dd></div>
+      <div><dt>Модели</dt><dd>Предиктивные</dd></div>
+      <div><dt>Что измерять</dt><dd class="m">Расход на тонну продукции, отклонение от плана</dd></div>
+    </dl></article>
+
+    <article class="scen"><h3>Прогноз спроса и запасов</h3><dl>
+      <div><dt>Задача</dt><dd>Склад то пустеет, то забит.</dd></div>
+      <div><dt>Что меняется</dt><dd>Закупки планируются по прогнозу спроса на недели вперёд.</dd></div>
+      <div><dt>Модели</dt><dd>Предиктивные</dd></div>
+      <div><dt>Что измерять</dt><dd class="m">Дни дефицита, оборачиваемость запасов</dd></div>
+    </dl></article>
+  </div>
+</section>
+
+<section id="insurance" class="w" aria-labelledby="h-ins">
+  <div class="grid">
+    <div class="sec-head"><i class="ic i-umbrella"></i><h2 id="h-ins">Страхование</h2></div>
+    <div class="sec-body"><p class="lead">Медицинские и персональные данные клиентов нельзя отправлять во внешние сервисы. Модели тарифа, убытков и документов работают внутри компании.</p></div>
+
+    <article class="scen"><h3>Тариф и андеррайтинг</h3><dl>
+      <div><dt>Задача</dt><dd>Расчёт по сложному договору занимает дни и зависит от опыта андеррайтера.</dd></div>
+      <div><dt>Что меняется</dt><dd>Модель даёт оценку риска, андеррайтер принимает решение.</dd></div>
+      <div><dt>Модели</dt><dd>Предиктивные</dd></div>
+      <div><dt>Что измерять</dt><dd class="m">Время расчёта, убыточность портфеля</dd></div>
+    </dl></article>
+
+    <article class="scen"><h3>Мошенничество в убытках</h3><dl>
+      <div><dt>Задача</dt><dd>Проверяют выборочно, подозрительные случаи теряются среди обычных.</dd></div>
+      <div><dt>Что меняется</dt><dd>Модель ранжирует убытки по риску, проверка начинается с верхних.</dd></div>
+      <div><dt>Модели</dt><dd>Предиктивные</dd></div>
+      <div><dt>Что измерять</dt><dd class="m">Доля выявленных случаев, проверки без находок</dd></div>
+    </dl></article>
+
+    <article class="scen"><h3>Разбор документов по убытку и медкарт ДМС</h3><dl>
+      <div><dt>Задача</dt><dd>Заявления, справки и медкарты читают вручную, дело ждёт днями.</dd></div>
+      <div><dt>Что меняется</dt><dd>Приложение компании с помощью модели раскладывает документы по полям, сотрудник проверяет. Медицинские данные не покидают серверы компании.</dd></div>
+      <div><dt>Модели</dt><dd>Генеративные</dd></div>
+      <div><dt>Что измерять</dt><dd class="m">Время обработки одного дела</dd></div>
+    </dl></article>
+
+    <article class="scen"><h3>Отток при продлении договора</h3><dl>
+      <div><dt>Задача</dt><dd>Клиент уходит к другому страховщику, об этом узнают в день окончания договора.</dd></div>
+      <div><dt>Что меняется</dt><dd>Список клиентов с риском ухода за месяц до продления.</dd></div>
+      <div><dt>Модели</dt><dd>Предиктивные</dd></div>
+      <div><dt>Что измерять</dt><dd class="m">Доля продлений</dd></div>
+    </dl></article>
+  </div>
+</section>
+
+<section id="banks" class="w" aria-labelledby="h-bank">
+  <div class="grid">
+    <div class="sec-head"><i class="ic i-bank"></i><h2 id="h-bank">Банки</h2></div>
+    <div class="sec-body"><p class="lead">Платёжные и кредитные данные остаются в контуре банка. Каждое действие с моделью записано для проверок.</p></div>
+
+    <article class="scen"><h3>Проверка платежей</h3><dl>
+      <div><dt>Задача</dt><dd>Подозрительную операцию замечают после списания денег.</dd></div>
+      <div><dt>Что меняется</dt><dd>Модель оценивает операцию до проведения.</dd></div>
+      <div><dt>Модели</dt><dd>Предиктивные</dd></div>
+      <div><dt>Что измерять</dt><dd class="m">Доля ложных срабатываний, операции на ручной проверке</dd></div>
+    </dl></article>
+
+    <article class="scen"><h3>Кредитный скоринг</h3><dl>
+      <div><dt>Задача</dt><dd>Новая модель скоринга месяцами ждёт выхода в работу.</dd></div>
+      <div><dt>Что меняется</dt><dd>Команда сама запускает модель и подключает её к программам банка.</dd></div>
+      <div><dt>Модели</dt><dd>Предиктивные</dd></div>
+      <div><dt>Что измерять</dt><dd class="m">Доля одобрений, просрочка, срок вывода модели</dd></div>
+    </dl></article>
+  </div>
+</section>
+
+<section id="start" class="start" aria-labelledby="h-start">
+  <div class="w"><div class="grid">
+    <div class="sec-head"><h2 id="h-start">Своя задача</h2></div>
+    <div class="sec-body"><p class="lead">Если задачи нет в списке, достаточно описать её в двух строках: какие данные, какая модель, где она должна работать.</p></div>
+    <div class="cta-row"><a class="btn primary" href="mailto:info@atrium-ai.ru">Написать нам</a><a class="mail" href="mailto:info@atrium-ai.ru">info@atrium-ai.ru</a></div>
+  </div></div>
+</section>
+</main>
+<footer>
+  <div class="w"><div class="grid">
+    <a class="mailbig" href="mailto:info@atrium-ai.ru">info@atrium-ai.ru</a>
+    <nav aria-label="Разделы сайта"><a href="./">Главная</a><a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></nav>
+    <p class="copy">Атриум, 2026</p>
+  </div></div>
+</footer>
+<script type="module" src="scene.js"></script>
+</body>
+</html>

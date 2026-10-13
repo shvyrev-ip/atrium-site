@@ -1,407 +1,206 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Модель работает через минуты после загрузки, без заявок и ожидания. Данные не покидают компанию, каждое действие записано.">
-<meta property="og:type" content="website"><meta property="og:title" content="Атриум: платформа запуска ИИ-моделей внутри компании"><meta property="og:description" content="Модель работает через минуты после загрузки, без заявок и ожидания. Данные не покидают компанию, каждое действие записано."><meta property="og:url" content="https://atrium-ai.ru/"><meta property="og:image" content="https://atrium-ai.ru/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 26 26%22%3E%3Crect x=%221%22 y=%221%22 width=%2224%22 height=%2224%22 rx=%226%22 fill=%22%230f62fe%22/%3E%3Cpath d=%22M8 20V12a5 5 0 0 1 10 0v8%22 fill=%22none%22 stroke=%22white%22 stroke-width=%222.4%22/%3E%3C/svg%3E">
-<script>try{var t=localStorage.getItem("atrium-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
-<title>Атриум · платформа запуска ИИ-моделей внутри компании</title>
-<meta name="theme-color" content="#fbfbfa" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111315" media="(prefers-color-scheme: dark)">
-<link rel="preload" href="fonts/Onest-Cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<style>
-/* Onest (OFL, fonts/LICENSE-Onest-OFL.txt) и IBM Plex Mono со своего сервера: сайт не ходит на чужие серверы */
-@font-face { font-family:'Onest'; font-style:normal; font-weight:400 600; font-display:swap; src:url(fonts/Onest-Cyrillic.woff2) format('woff2'); unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-@font-face { font-family:'Onest'; font-style:normal; font-weight:400 600; font-display:swap; src:url(fonts/Onest-Latin.woff2) format('woff2'); unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family:'IBM Plex Mono'; font-style:normal; font-weight:400; font-display:swap; src:url(fonts/IBMPlexMono-Regular-Cyrillic.woff2) format('woff2'); unicode-range:U+0400-045F, U+0472-0473, U+0490-049D, U+04A0-04A5, U+04AA-04AB, U+04AE-04B3, U+04B6-04BB, U+04C0-04C2, U+04CF-04D9, U+04DC-04DF, U+04E2-04E9, U+04EE-04F5, U+04F8-04F9; }
-@font-face { font-family:'IBM Plex Mono'; font-style:normal; font-weight:400; font-display:swap; src:url(fonts/IBMPlexMono-Regular-Latin1.woff2) format('woff2'); unicode-range:U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+FB01-FB02; }
-/* Design read: B2B-лендинг платформы запуска моделей для владельцев и ИТ компаний 300-1500 человек.
-   Логика подачи как у страниц запуска моделей у облачных платформ: категория, что исчезает, доказательства.
-   Светлая чертёжная сетка, один акцент (синий продукта #0f62fe). Dials: V5 M3 D4.
-   Скругления: кнопки 999px, блоки 14px, мелкие элементы 6px. */
-:root {
-  color-scheme: light dark;
-  --bg:#fbfbfa; --bg2:#f3f4f3; --panel:#ffffff; --text:#15171a; --text2:#545b64; --line:#e4e6e8; --line2:#d3d7db;
-  --brand:#0f62fe; --brand-hover:#0050e6; --on-brand:#ffffff;
-  --accent-text:#0043ce; --accent-soft:#edf3ff;
-  --mono:'IBM Plex Mono', ui-monospace, monospace;
-  --shot-shadow:0 -12px 30px -18px rgba(20,30,50,.18);
-}
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg:#111315; --bg2:#16191c; --panel:#1a1d21; --text:#eef0f2; --text2:#a3abb4; --line:#272b30; --line2:#353a40;
-  --accent-text:#78a9ff; --accent-soft:#16213a; --shot-shadow:none; } }
-:root[data-theme="dark"] { color-scheme:dark;
-  --bg:#111315; --bg2:#16191c; --panel:#1a1d21; --text:#eef0f2; --text2:#a3abb4; --line:#272b30; --line2:#353a40;
-  --accent-text:#78a9ff; --accent-soft:#16213a; --shot-shadow:none; }
-:root[data-theme="light"] { color-scheme:light; }
-* { box-sizing:border-box; margin:0; }
-html { scroll-padding-top:80px; -webkit-text-size-adjust:100%; }
-body { background:var(--bg); color:var(--text); font-family:'Onest',system-ui,sans-serif; font-size:17px; line-height:1.5; -webkit-font-smoothing:antialiased; touch-action:manipulation; -webkit-tap-highlight-color:transparent; }
-a { color:inherit; }
-:focus-visible { outline:2px solid var(--brand); outline-offset:3px; border-radius:6px; }
-.sr { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-.skip { position:absolute; left:-999px; top:8px; background:var(--panel); padding:10px 16px; border-radius:6px; z-index:20; }
-.skip:focus { left:8px; outline:2px solid var(--brand); outline-offset:2px; }
-h1, h2, h3 { text-wrap:balance; font-weight:600; letter-spacing:-.025em; }
-.w { max-width:1200px; margin:0 auto; padding:0 32px; }
-/* чертёжная рамка: линии по внешнему краю колонки, блоки внутри с отступом */
-.frame { position:relative; }
-.frame::before, .frame::after { content:""; position:absolute; top:0; bottom:0; width:1px; background:var(--line); pointer-events:none; }
-.frame::before { left:max(12px, calc(50% - 600px)); } .frame::after { right:max(12px, calc(50% - 600px)); }
-.rule { border-top:1px dashed var(--line2); }
-
-/* шапка */
-.top { position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
-.top .w { height:64px; display:flex; align-items:center; gap:32px; }
-.brand { display:flex; align-items:center; gap:10px; min-height:44px; font-weight:600; font-size:18px; text-decoration:none; }
-.brand svg { width:26px; height:26px; }
-.nav { display:flex; gap:28px; margin-left:auto; }
-.nav a { color:var(--text2); text-decoration:none; font-size:15px; padding:10px 0; }
-.nav a:hover { color:var(--text); }
-.pill { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:10px 18px; border-radius:999px; font:inherit; font-size:15px; font-weight:500; color:var(--text); text-decoration:none; border:1px solid var(--line2); background:var(--panel); cursor:pointer; transition:background-color .15s, border-color .15s; }
-.pill:hover { border-color:var(--text2); }
-.pill.primary { background:var(--brand); color:var(--on-brand); border-color:var(--brand); }
-.pill.primary:hover { background:var(--brand-hover); border-color:var(--brand-hover); }
-.pill.big { min-height:52px; padding:14px 26px; font-size:16px; }
-.pill svg { width:18px; height:18px; fill:currentColor; flex:none; }
-.theme { flex:none; width:44px; height:44px; display:inline-grid; place-items:center; border-radius:999px; border:1px solid var(--line2); background:var(--panel); color:var(--text2); cursor:pointer; transition:color .15s, border-color .15s; }
-.theme:hover { color:var(--text); border-color:var(--text2); }
-.theme svg { width:20px; height:20px; fill:currentColor; }
-.theme .ic-sun { display:none; }
-:root[data-theme="dark"] .theme .ic-sun { display:block; } :root[data-theme="dark"] .theme .ic-moon { display:none; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme]) .theme .ic-sun { display:block; } :root:not([data-theme]) .theme .ic-moon { display:none; } }
-.status { min-height:1.5em; font-size:14px; color:var(--text2); }
-
-/* первый экран */
-.hero { text-align:center; padding:80px 32px 0; }
-.for { display:inline-block; font-size:15px; color:var(--accent-text); padding:6px 12px; border:1px dashed color-mix(in srgb, var(--brand) 50%, transparent); border-radius:6px; background:var(--accent-soft); }
-.hero h1 { margin:24px auto 0; font-size:clamp(36px, 5vw, 62px); line-height:1.06; max-width:20ch; }
-.hero .lead { margin:22px auto 0; font-size:19px; color:var(--text2); max-width:46ch; }
-.hero .ctas { margin-top:36px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-.shot { margin:60px auto 0; max-width:1080px; padding:0 32px; }
-.shot .win { border:1px solid var(--line2); border-bottom:0; border-radius:14px 14px 0 0; overflow:hidden; background:var(--panel); height:420px; box-shadow:var(--shot-shadow); }
-.shot img { display:block; width:100%; height:auto; }
-
-/* три довода: первый шире */
-.trio { display:grid; grid-template-columns:1.5fr 1fr 1fr; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-.trio > div { padding:32px 28px; min-width:0; }
-.trio > div + div { border-left:1px solid var(--line); }
-.trio svg { width:24px; height:24px; fill:var(--accent-text); }
-.trio h3 { margin-top:16px; font-size:18px; letter-spacing:-.01em; }
-.trio .lead3 h3 { font-size:24px; line-height:1.2; }
-.trio p { margin-top:6px; color:var(--text2); font-size:16px; }
-
-section.s { padding-block:112px; }
-.head { max-width:760px; }
-.head h2 { font-size:clamp(30px, 3.6vw, 44px); line-height:1.1; }
-.head p { margin-top:16px; color:var(--text2); font-size:18px; }
-
-/* скорость: крупные цифры + честная пропорция */
-.speed { margin-top:56px; display:grid; grid-template-columns:4fr 8fr; gap:20px; }
-.nums { display:grid; gap:20px; }
-.num { border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:24px 26px; }
-.num b { display:block; font-weight:600; font-size:56px; line-height:1; letter-spacing:-.04em; color:var(--accent-text); }
-.num span { display:block; margin-top:10px; color:var(--text2); font-size:15.5px; }
-.race { border:1px solid var(--line); border-radius:14px; background:var(--panel); padding:30px 30px 24px; display:flex; flex-direction:column; justify-content:center; }
-.lane + .lane { margin-top:30px; }
-.lane .lbl { display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:12px; }
-.lane .lbl b { font-weight:500; }
-.lane .lbl span { font-family:var(--mono); font-size:14px; color:var(--text2); font-variant-numeric:tabular-nums; white-space:nowrap; }
-.track { display:flex; gap:4px; min-height:44px; }
-.track i { display:flex; align-items:center; padding:6px 10px; font-style:normal; font-size:13.5px; line-height:1.25; border-radius:6px; min-width:0; }
-.old i { background:var(--bg2); color:var(--text2); border:1px solid var(--line); }
-.new { align-items:center; gap:12px; }
-.new i { flex:none; width:5%; min-width:20px; height:44px; background:var(--brand); padding:0; }
-.new em { font-style:normal; font-size:14.5px; font-weight:500; }
-.race .src { margin-top:22px; font-size:13px; color:var(--text2); }
-
-/* контроль: текст + настоящий журнал */
-.control { margin-top:56px; display:grid; grid-template-columns:6fr 5fr; gap:56px; align-items:center; }
-.control ul { list-style:none; padding:0; border-top:1px solid var(--line); }
-.control li { padding:22px 0; border-bottom:1px solid var(--line); }
-.control li h3 { font-size:19px; letter-spacing:-.01em; }
-.control li p { margin-top:4px; color:var(--text2); }
-.log { border:1px solid var(--line2); border-radius:14px; overflow:hidden; background:var(--panel); }
-.log img { display:block; width:100%; height:auto; }
-
-/* сценарии */
-.bento { margin-top:56px; display:grid; grid-template-columns:5fr 7fr; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--panel); }
-.bento .intro { padding:30px; border-right:1px solid var(--line); background:var(--bg2); display:flex; flex-direction:column; justify-content:space-between; gap:24px; min-width:0; }
-.bento .intro h3 { font-size:26px; line-height:1.15; }
-.bento .intro p { margin-top:10px; color:var(--text2); }
-.bento .intro .who { font-size:14.5px; color:var(--text2); border-top:1px dashed var(--line2); padding-top:16px; margin-top:0; }
-.bento .intro .who b { color:var(--text); font-weight:500; }
-.cases { display:grid; grid-template-columns:1fr 1fr; }
-.cases > div { padding:26px 28px; min-width:0; }
-.cases > div:nth-child(odd) { border-right:1px solid var(--line); }
-.cases > div:nth-child(-n+2) { border-bottom:1px solid var(--line); }
-.cases svg { width:28px; height:28px; fill:var(--accent-text); }
-.cases h3 { margin-top:14px; font-size:17px; letter-spacing:-.01em; }
-.cases p { margin-top:6px; color:var(--text2); font-size:15.5px; }
-
-/* почему сейчас */
-.why { display:grid; grid-template-columns:5fr 7fr; gap:56px; align-items:start; }
-.why h2 { font-size:clamp(30px, 3.6vw, 44px); line-height:1.1; }
-.why ol { list-style:none; padding:0; border-top:1px solid var(--line); counter-reset:w; }
-.why li { display:grid; grid-template-columns:56px 1fr; gap:8px; padding:24px 0; border-bottom:1px solid var(--line); counter-increment:w; }
-.why li::before { content:counter(w, decimal-leading-zero); font-family:var(--mono); font-size:14px; color:var(--accent-text); padding-top:3px; }
-.why h3 { font-size:19px; letter-spacing:-.01em; }
-.why p { margin-top:4px; color:var(--text2); }
-
-/* начать: полоса для ИТ + шаги */
-.itband { margin-top:48px; display:flex; gap:32px; align-items:center; justify-content:space-between; flex-wrap:wrap; border:1px solid color-mix(in srgb, var(--brand) 28%, var(--line)); border-radius:14px; background:var(--accent-soft); padding:28px 30px; }
-.itband h3 { font-size:22px; line-height:1.2; }
-.itband p { margin-top:6px; color:var(--text2); max-width:52ch; }
-.itband .row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
-.steps { list-style:none; padding:0; margin-top:56px; display:grid; grid-template-columns:repeat(3, 1fr); position:relative; }
-.steps::before { content:""; position:absolute; top:19px; left:0; right:0; border-top:1px dashed var(--line2); }
-.steps li { position:relative; padding-right:32px; }
-.steps .n { width:40px; height:40px; border-radius:999px; display:grid; place-items:center; font-family:var(--mono); font-size:14px; background:var(--bg); border:1px solid var(--line2); }
-.steps h3 { margin-top:20px; font-size:19px; letter-spacing:-.01em; }
-.steps p { margin-top:6px; color:var(--text2); }
-
-/* интеграторам: строка условий */
-.partners .head { max-width:none; display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; }
-.partners .head > div { max-width:640px; }
-.terms { margin-top:40px; list-style:none; padding:0; display:flex; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-.terms li { flex:1; padding:22px 24px 22px 0; min-width:0; }
-.terms li + li { padding-left:24px; border-left:1px solid var(--line); }
-.terms h3 { font-size:17px; letter-spacing:-.01em; }
-.terms p { margin-top:4px; color:var(--text2); font-size:15.5px; }
-
-/* финал: насыщенный синий в обеих темах */
-.final { margin:0 16px 16px; border-radius:14px; background:var(--brand); color:var(--on-brand); text-align:center; padding:96px 24px; }
-.final :focus-visible { outline-color:var(--on-brand); }
-.final h2 { font-size:clamp(32px, 4.4vw, 56px); line-height:1.05; }
-.final p { margin:18px auto 0; max-width:44ch; font-size:18px; }
-.final .ctas { margin-top:36px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-.final .pill { background:var(--on-brand); color:#0b3fb8; border-color:transparent; }
-.final .pill:hover { background:#e6eeff; }
-.final .pill.ghost { background:transparent; color:var(--on-brand); border-color:rgba(255,255,255,.5); }
-.final .pill.ghost:hover { background:rgba(255,255,255,.12); border-color:var(--on-brand); }
-.final .mail { margin-top:22px; font-family:var(--mono); font-size:14px; }
-.final .status { color:var(--on-brand); min-height:0; margin-top:8px; }
-footer { padding:20px 0 32px; font-size:14px; color:var(--text2); }
-footer .w { display:flex; gap:8px 24px; flex-wrap:wrap; justify-content:space-between; align-items:center; }
-footer nav { display:flex; gap:20px; flex-wrap:wrap; }
-footer a { text-decoration:none; display:inline-block; padding:12px 0; } footer a:hover { text-decoration:underline; }
-
-@media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
-@media (max-width: 1000px) {
-  .nav { gap:20px; } .top .cta-top { display:none; }
-}
-@media (max-width: 900px) {
-  .w { padding:0 20px; }
-  .frame::before, .frame::after { display:none; }
-  .top .w { height:auto; flex-wrap:wrap; gap:0 16px; padding-top:6px; }
-  .theme { margin-left:auto; }
-  .nav { order:3; width:100%; margin:0 -20px; padding:0 20px; overflow-x:auto; gap:20px; scrollbar-width:none; border-top:1px solid var(--line); }
-  .nav a { white-space:nowrap; padding:12px 0; }
-  .hero { padding:44px 20px 0; text-align:left; }
-  .hero h1, .hero .lead { margin-left:0; }
-  .hero .ctas { flex-direction:column; }
-  .shot { padding:0 20px; margin-top:40px; }
-  .shot .win { height:auto; border-radius:14px 14px 0 0; }
-  .trio { grid-template-columns:minmax(0,1fr); }
-  .trio > div + div { border-left:0; border-top:1px solid var(--line); }
-  .trio > div { padding:26px 0; }
-  section.s { padding-block:72px; }
-  .speed, .control, .bento, .cases, .why { grid-template-columns:minmax(0,1fr); }
-  .nums { grid-template-columns:1fr 1fr; gap:12px; }
-  .num { padding:18px; } .num b { font-size:36px; }
-  .race { padding:22px 18px; }
-  .old { flex-wrap:wrap; } .old i { flex:1 1 40% !important; min-height:40px; }
-  .lane .lbl { flex-direction:column; gap:2px; }
-  .control { gap:28px; }
-  .bento .intro { border-right:0; border-bottom:1px solid var(--line); }
-  .cases > div:nth-child(odd) { border-right:0; }
-  .cases > div:not(:last-child) { border-bottom:1px solid var(--line); }
-  .why { gap:24px; }
-  .itband { padding:22px 20px; } .itband .row { width:100%; } .itband .pill { flex:1 1 auto; }
-  .steps { grid-template-columns:minmax(0,1fr); gap:28px; }
-  .steps::before { top:0; bottom:0; left:19px; right:auto; border-top:0; border-left:1px dashed var(--line2); }
-  .steps li { padding:0 0 0 60px; }
-  .steps .n { position:absolute; left:0; top:-6px; }
-  .steps h3 { margin-top:0; }
-  .terms { flex-direction:column; border-bottom:0; }
-  .terms li, .terms li + li { padding:18px 0; border-left:0; border-bottom:1px solid var(--line); }
-  .final { margin:0 8px 8px; padding:64px 20px; text-align:left; }
-  .final p { margin-left:0; }
-  .final .ctas { flex-direction:column; }
-}
-</style>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Атриум: приватность определяет периметр</title>
+<meta name="description" content="Атриум запускает предиктивные и генеративные модели на внутренних серверах компании. Открытые и собственные, с ролями, журналом действий и доступом по токену.">
+<meta property="og:type" content="website"><meta property="og:title" content="Атриум: приватность определяет периметр"><meta property="og:description" content="Атриум запускает предиктивные и генеративные модели на внутренних серверах компании. Открытые и собственные, с ролями, журналом действий и доступом по токену."><meta property="og:url" content="https://atrium-ai.ru/"><meta property="og:image" content="https://atrium-ai.ru/og.png">
+<link rel="canonical" href="https://atrium-ai.ru/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 26 26%22%3E%3Crect x=%221%22 y=%221%22 width=%2224%22 height=%2224%22 fill=%22white%22 stroke=%22%230f62fe%22 stroke-width=%222%22/%3E%3Crect x=%228%22 y=%228%22 width=%2210%22 height=%2210%22 fill=%22%230f62fe%22/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/plex-cyrillic-300.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 <a class="skip" href="#main">Перейти к содержимому</a>
-<header class="top"><div class="w">
-  <a class="brand" href="./"><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="24" height="24" rx="6" fill="var(--brand)"/><path d="M8 20V12a5 5 0 0 1 10 0v8" fill="none" stroke="#fff" stroke-width="2.4"/></svg><span translate="no">Атриум</span></a>
-  <nav class="nav" aria-label="Разделы"><a href="#what">Что даёт</a><a href="#control">Контроль</a><a href="#cases">Для каких задач</a><a href="it.html">Для ИТ и безопасности</a><a href="#partners">Интеграторам</a></nav>
-  <a class="pill primary cta-top" href="#contact">Договориться о показе</a>
-  <button class="theme" type="button" aria-label="Переключить тему"><svg class="ic-sun" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M15 2H17V7H15z"/><path d="M21.668 6.854H26.625999999999998V8.854H21.668z" transform="rotate(-45 24.147 7.853)"/><path d="M25 15H30V17H25z"/><path d="M23.147 21.668H25.147V26.625999999999998H23.147z" transform="rotate(-45 24.147 24.146)"/><path d="M15 25H17V30H15z"/><path d="M5.375 23.147H10.333V25.147H5.375z" transform="rotate(-45 7.853 24.146)"/><path d="M2 15H7V17H2z"/><path d="M6.854 5.375H8.854V10.333H6.854z" transform="rotate(-45 7.854 7.853)"/><path d="M16,12a4,4,0,1,1-4,4,4.0045,4.0045,0,0,1,4-4m0-2a6,6,0,1,0,6,6,6,6,0,0,0-6-6Z"/></svg><svg class="ic-moon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M13.5025,5.4136A15.0755,15.0755,0,0,0,25.096,23.6082a11.1134,11.1134,0,0,1-7.9749,3.3893c-.1385,0-.2782.0051-.4178,0A11.0944,11.0944,0,0,1,13.5025,5.4136M14.98,3a1.0024,1.0024,0,0,0-.1746.0156A13.0959,13.0959,0,0,0,16.63,28.9973c.1641.006.3282,0,.4909,0a13.0724,13.0724,0,0,0,10.702-5.5556,1.0094,1.0094,0,0,0-.7833-1.5644A13.08,13.08,0,0,1,15.8892,4.38,1.0149,1.0149,0,0,0,14.98,3Z"/></svg></button>
-</div></header>
-
+<header class="top">
+  <div class="w">
+    <a class="brand" href="./"><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="24" height="24" fill="none" stroke="#0f62fe" stroke-width="1.6"/><rect x="9" y="9" width="8" height="8" fill="#0f62fe"/></svg>Атриум</a>
+    <nav class="nav" aria-label="Основное меню">
+      <a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a>
+      <details class="drop"><summary>Партнёрам</summary><div><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></div></details>
+      <details class="burger"><summary>Меню</summary><div><a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></div></details>
+      <a class="btn primary" href="mailto:info@atrium-ai.ru">Написать нам</a>
+    </nav>
+  </div>
+</header>
 <main id="main">
-<div class="frame">
-  <section class="hero">
-    <span class="for">Для компаний, где данные нельзя выносить наружу</span>
-    <h1>Платформа запуска ИИ&#8209;моделей внутри компании</h1>
-    <p class="lead">Модель работает через минуты после загрузки, без заявок и ожидания. Данные не покидают компанию, каждое действие записано.</p>
-    <div class="ctas"><a class="pill primary big" href="#contact">Договориться о показе</a><a class="pill big" href="it.html">Для ИТ и безопасности</a></div>
-  </section>
-  <div class="shot"><div class="win"><picture>
-    <source media="(max-width: 900px) and (prefers-color-scheme: dark)" srcset="assets/screen-dark-m.png">
-    <source media="(max-width: 900px)" srcset="assets/screen-light-m.png">
-    <source media="(prefers-color-scheme: dark)" srcset="assets/screen-dark.png">
-    <img src="assets/screen-light.png" width="2560" height="1600" fetchpriority="high" alt="Экран «Обзор» в Атриуме: сколько моделей работает и запускается, кто их запустил, журнал действий"></picture></div></div>
+<div class="hero">
+  <div class="w copy">
+    <h1>Приватность определяет периметр. <span class="a">Модель выбирает компания.</span></h1>
+    <div>
+      <p class="sub">Атриум запускает предиктивные и генеративные модели на внутренних серверах компании. Открытые и собственные, с ролями, журналом действий и доступом по токену.</p>
+      <div class="ctas"><a class="btn primary" href="mailto:info@atrium-ai.ru">Написать нам</a><a class="btn" href="it.html">Для ИТ и безопасности</a></div>
+    </div>
+  </div>
+  <div class="w">
+  <div class="scene" data-view="all" role="img" aria-label="Схема: внутри периметра компании стоят серверы, Атриум, журнал, модели и рабочие места команд; связь с интернетом оборвана">
+    <canvas></canvas>
+    <div class="pin l" data-a="data"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-data"></i><div><b>Данные</b><span>на внутренних серверах</span></div></div></div>
+    <div class="pin l d" data-a="access"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-key"></i><div><b>Доступ</b><span>роли и токены</span></div></div></div>
+    <div class="pin" data-a="model"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-model"></i><div><b>Модель</b><span>открытая или своя</span></div></div></div>
+    <div class="pin d" data-a="trace"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-log"></i><div><b>След</b><span>журнал действий</span></div></div></div>
+    <div class="pin out l" data-a="net"><i class="dot"></i><i class="stem"></i><div class="tag"><div><b>Интернет</b><span>не нужен</span></div></div></div>
+    <p class="cap">Схема</p>
+  </div>
+  </div>
 </div>
 
-<div class="frame" id="what">
-  <div class="w"><h2 class="sr">Что даёт Атриум</h2><div class="trio">
-    <div class="lead3"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M24,14H22V8A6,6,0,0,0,10,8v6H8a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H24a2,2,0,0,0,2-2V16A2,2,0,0,0,24,14ZM12,8a4,4,0,0,1,8,0v6H12ZM24,28H8V16H24Z"/></svg><h3>Независимость от зарубежных сервисов</h3><p>Модели и данные на серверах компании. Работают без интернета.</p></div>
-    <div><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M11.61,29.92a1,1,0,0,1-.6-1.07L12.83,17H8a1,1,0,0,1-1-1.23l3-13A1,1,0,0,1,11,2H21a1,1,0,0,1,.78.37,1,1,0,0,1,.2.85L20.25,11H25a1,1,0,0,1,.9.56,1,1,0,0,1-.11,1l-13,17A1,1,0,0,1,12,30,1.09,1.09,0,0,1,11.61,29.92ZM17.75,13l2-9H11.8L9.26,15h5.91L13.58,25.28,23,13Z"/></svg><h3>Командам не надо ждать</h3><p>ИТ один раз задаёт права, дальше команды запускают модели сами.</p></div>
-    <div><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 22H30V24H16z"/><path d="M14 19.4 12.6 18 6 24.6 3.4 22 2 23.4 6 27.4z"/><path d="M16 8H30V10H16z"/><path d="M14 5.4 12.6 4 6 10.6 3.4 8 2 9.4 6 13.4z"/></svg><h3>Видно каждое действие</h3><p>Кто, что и когда сделал.</p></div>
+<section id="perimeter" class="w" aria-labelledby="h-perimeter">
+  <div class="grid">
+    <div class="sec-head"><h2 id="h-perimeter">Из чего состоит периметр</h2></div>
+    <div class="sec-body"><p class="lead">Большинство моделей на рынке открытые или дообучены на открытых. Данные защищает место, где модель работает, и правила доступа к ней.</p></div>
+    <div class="parts">
+      <div class="part"><i class="ic i-data"></i><h3>Данные</h3><p>Остаются на внутренних серверах компании. Выход в интернет не нужен.</p></div>
+      <div class="part"><i class="ic i-model"></i><h3>Модель</h3><p>Выбирает компания: открытую или собственную, предиктивную или генеративную.</p></div>
+      <div class="part"><i class="ic i-key"></i><h3>Доступ</h3><p>Каждая команда работает в своём пространстве. Программы обращаются к модели по токену с лимитом запросов.</p></div>
+      <div class="part"><i class="ic i-log"></i><h3>След</h3><p>Журнал показывает, кто запустил модель, кто выдал права и кто остановил старую версию.</p></div>
+    </div>
+    <div class="fact">
+      <b>71%</b>
+      <p>крупных российских компаний уже используют генеративный ИИ хотя бы в одной функции.</p>
+      <p class="src">«Яков и Партнёры» и Яндекс, «ИИ в России 2025». <a href="https://www.comnews.ru/content/242813/2025-12-08/2025-w50/1010/dolya-krupnykh-rossiyskikh-kompaniy-ispolzuyuschikh-generativnyy-ii-prevysila-70">Источник</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="roles" class="w" aria-labelledby="h-roles">
+  <div class="grid">
+    <div class="sec-head"><h2 id="h-roles">Кому подойдёт</h2></div>
+    <div class="sec-body roles">
+      <div class="role"><h3>ИТ-директору</h3><p>Права задаются один раз. Дальше команды запускают модели сами, без заявок и ручной настройки серверов.</p></div>
+      <div class="role"><h3>Службе безопасности</h3><p>Модели и данные внутри контура. Видно, у кого какая роль и кто что сделал с каждой моделью.</p></div>
+      <div class="role"><h3>Руководителю данных</h3><p>Команда добавляет модель из браузера и получает адрес, по которому к ней обращаются программы компании.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="scenarios" class="w" aria-labelledby="h-scen">
+  <div class="grid">
+    <div class="sec-head"><h2 id="h-scen">Сценарии</h2></div>
+    <div class="sec-body"><p class="lead">Примеры задач по отраслям. Эффект считается по показателям самой компании.</p><a class="more" href="scenarios.html">Все сценарии</a></div>
+    <div class="matrix">
+      <div class="labels" aria-hidden="true"><span></span><span>Сценарий</span><span>Задача</span><span>Модели</span><span>Что измерять</span></div>
+      <article><p class="ind"><i class="ic i-factory"></i>Промышленность</p><h3>Прогноз поломок оборудования</h3><p data-l="Задача">Ремонт начинается после остановки линии.</p><p data-l="Модели">Предиктивные</p><p class="m" data-l="Что измерять">Внеплановые простои в месяц, часы простоя</p></article>
+      <article><p class="ind"><i class="ic i-umbrella"></i>Страхование</p><h3>Разбор документов по убытку</h3><p data-l="Задача">Заявления и справки читают вручную, дело ждёт днями.</p><p data-l="Модели">Генеративные</p><p class="m" data-l="Что измерять">Время обработки одного дела</p></article>
+      <article><p class="ind"><i class="ic i-bank"></i>Банки</p><h3>Проверка платежей</h3><p data-l="Задача">Подозрительную операцию замечают после списания денег.</p><p data-l="Модели">Предиктивные</p><p class="m" data-l="Что измерять">Доля ложных срабатываний, операции на ручной проверке</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="w" aria-labelledby="h-how">
+  <div class="grid">
+    <div class="sec-head"><h2 id="h-how">Как устроено</h2></div>
+    <div class="sec-body"><p class="lead">Атриум стоит между программами компании и моделями. Всё работает на её серверах.</p></div>
+    <div class="layers" aria-label="Слои">
+      <div class="layer"><i class="ic i-team"></i><b>Программы компании</b><span>Обращаются к модели по адресу и токену</span></div>
+      <div class="layer atr"><i class="ic i-shield"></i><b>Атриум</b><span>Пространства команд, роли, журнал, запуск моделей</span></div>
+      <div class="layer"><i class="ic i-model"></i><b>Модели</b><span>Предиктивные и генеративные, открытые и собственные</span></div>
+      <div class="layer"><i class="ic i-srv"></i><b>Внутренние серверы</b><span>С видеокартами и без</span></div>
+    </div>
+    <figure class="how-shot">
+      <img src="assets/activity-log-crop.png" width="2560" height="1638" loading="lazy" alt="Журнал событий области в Атриуме: регистрация модели не удалась, с именем того, кто запускал, и объяснением ошибки; ниже созданные версии и готовые точки входа">
+      <figcaption>Интерфейс Атриума: журнал событий. У неудачной операции видно, кто её запустил и что пошло не так.</figcaption>
+    </figure>
+    <ol class="flow">
+      <li>Команда добавляет модель и указывает, где лежат её файлы.</li>
+      <li>Атриум проверяет файлы до запуска.</li>
+      <li>Модель запускается одной кнопкой.</li>
+      <li>Программы компании получают адрес модели.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="ready" class="w" aria-labelledby="h-ready">
+  <div class="grid">
+    <div class="sec-head" style="grid-column:1/-1"><h2 id="h-ready">Готовое или своё</h2></div>
+  </div>
+  <div class="grid" style="margin-top:40px">
+    <div class="big" aria-hidden="true">67%</div>
+    <div class="big-text">
+      <p>По данным MIT, готовые решения специализированных поставщиков доходят до результата примерно в 67% случаев. Собственные разработки примерно втрое реже.</p>
+      <p>Атриум берёт на себя запуск, права и журнал. Команды занимаются своими задачами.</p>
+      <p class="src">MIT NANDA, «The GenAI Divide», июль 2025, выборка американских компаний. <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/">Источник</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="status" class="w" aria-labelledby="h-status">
+  <div class="grid">
+    <div class="sec-head"><h2 id="h-status">Что есть и что дальше</h2></div>
+    <div class="sec-body"><p class="lead">Подробности и сроки по каждому пункту на странице для ИТ.</p><a class="more" href="it.html">Для ИТ и безопасности</a></div>
+    <div class="cols">
+      <div class="yes">
+        <h3>Есть сейчас</h3>
+        <ul>
+          <li>Запуск предиктивных и генеративных моделей из браузера</li>
+          <li>Проверка файлов модели до запуска</li>
+          <li>Пространства команд и роли</li>
+          <li>Журнал действий</li>
+          <li>Доступ к модели по токену с лимитами</li>
+          <li>Работа без интернета</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Дальше</h3>
+        <ul>
+          <li>Установка на закрытые серверы в один шаг<span>IV кв. 2026</span></li>
+          <li>Вход через каталог пользователей компании<span>I кв. 2027</span></li>
+          <li>Работа на российских операционных системах<span>I кв. 2027</span></li>
+          <li>Реестр российского ПО<span>I кв. 2027</span></li>
+          <li>Передача журнала в системы мониторинга<span>2027</span></li>
+          <li>Сертификат ФСТЭК<span>срок уточняется</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="buy" class="w" aria-labelledby="h-buy">
+  <div class="grid">
+    <div class="sec-head"><h2 id="h-buy">Как купить и внедрить</h2></div>
+    <div class="paths">
+      <div class="path"><i class="ic i-srv"></i><h3>Вместе с сервером</h3><p>Атриум ставится на ИИ-серверы производителя. Для производителей открыта партнёрская программа.</p><a class="more" href="partners-servers.html">Производителям серверов</a></div>
+      <div class="path"><i class="ic i-hand"></i><h3>Через интегратора</h3><p>Интегратор ставит Атриум в контуре компании, подключает программы и сопровождает.</p><a class="more" href="partners-integrators.html">Интеграторам</a></div>
+      <div class="path"><i class="ic i-mail"></i><h3>Напрямую</h3><p>Установка вместе со специалистами компании. Поддержку программы ведёт команда Атриума.</p><a class="more" href="#start">С чего начать</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="start" class="start" aria-labelledby="h-start">
+  <div class="w"><div class="grid">
+    <div class="sec-head"><h2 id="h-start">С чего начать</h2></div>
+    <div class="sec-body"><p class="lead">С одной задачи и одной команды.</p></div>
+    <ol class="ladder">
+      <li><h3>Показ</h3><p>По видеосвязи, на задаче компании.</p></li>
+      <li><h3>Проба</h3><p>Установка на серверах компании для одной команды и одной модели.</p></li>
+      <li><h3>Работа</h3><p>Подключение остальных команд и программ.</p></li>
+    </ol>
+    <div class="cta-row"><a class="btn primary" href="mailto:info@atrium-ai.ru?subject=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%20%D0%90%D1%82%D1%80%D0%B8%D1%83%D0%BC%D0%B0">Написать нам</a><a class="mail" href="mailto:info@atrium-ai.ru">info@atrium-ai.ru</a></div>
   </div></div>
-</div>
+</section>
 
-<div class="frame">
-  <section class="s w">
-    <div class="head"><h2>Модель в работе за минуты, а не за недели</h2><p>Обычно готовую модель неделями ведут через заявки и администраторов. В Атриуме команда загружает её сама.</p></div>
-    <div class="speed">
-      <div class="nums">
-        <div class="num"><b>20&nbsp;с</b><span>запуск небольшой модели</span></div>
-        <div class="num"><b>12&nbsp;мин</b><span>запуск большой языковой модели</span></div>
-      </div>
-      <div class="race">
-        <div role="img" aria-label="Обычно путь модели до работы занимает 2–3 недели: заявка, согласование, настройка сервера, проверка, готово к работе. В Атриуме тот же путь занимает минуты.">
-          <div class="lane"><div class="lbl"><b>Обычно</b><span>2–3&nbsp;недели</span></div>
-            <div class="track old"><i style="flex:2">Заявка в ИТ</i><i style="flex:3">Согласование доступа</i><i style="flex:4">Администратор настраивает сервер</i><i style="flex:2">Проверка</i><i style="flex:2">Готово к работе</i></div></div>
-          <div class="lane"><div class="lbl"><b>В Атриуме</b><span>минуты</span></div>
-            <div class="track new"><i></i><em>Загрузить, проверить, запустить</em></div></div>
-        </div>
-        <p class="src">Замеры на нашем сервере: время зависит от размера модели и серверов. Срок «обычно» взят из нашего опыта в ИТ. Подробно на <a href="it.html#proof">странице для ИТ</a>.</p>
-      </div>
+<section id="faq" class="w" aria-labelledby="h-faq">
+  <div class="grid">
+    <div class="sec-head"><h2 id="h-faq">Частые вопросы</h2></div>
+    <div class="sec-body faq">
+      <details><summary>Нужен ли интернет?</summary><p>Нет. Атриум и модели работают на внутренних серверах без выхода наружу.</p></details>
+      <details><summary>Какие модели можно запускать?</summary><p>Предиктивные и генеративные, открытые и собственные. Проверенные форматы перечислены на странице для ИТ.</p></details>
+      <details><summary>Какие серверы нужны?</summary><p>Для пробы ориентир такой: три машины по 8 ядер и 32 ГБ памяти. Генеративным моделям нужны видеокарты.</p></details>
+      <details><summary>Атриум есть в реестре российского ПО?</summary><p>Пока нет. Включение в реестр запланировано на I квартал 2027 года.</p></details>
+      <details><summary>Как считается цена?</summary><p>Цена зависит от числа пользователей и видеокарт. Её называют после разговора о задаче.</p></details>
+      <details><summary>Кто ставит и поддерживает?</summary><p>Атриум ставится вместе со специалистами компании или через интегратора. Поддержку программы ведёт команда Атриума.</p></details>
     </div>
-  </section>
-</div>
-
-<div class="frame" id="control">
-  <section class="s w rule">
-    <div class="head"><h2>ИТ видит всё, команды работают сами</h2></div>
-    <div class="control">
-      <ul>
-        <li><h3>Команды не видят чужого</h3><p>У каждой команды своё пространство: свои модели, свои данные.</p></li>
-        <li><h3>У каждого только нужные права</h3><p>Кто может смотреть, а кто запускать, задаёт администратор.</p></li>
-        <li><h3>Журнал каждого действия</h3><p>Кто запустил модель, кто дал доступ, кто остановил старую версию.</p></li>
-      </ul>
-      <div class="log"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/journal-dark.png"><img src="assets/journal-light.png" width="650" height="722" loading="lazy" alt="Журнал в Атриуме: 10:42 А. Смирнова запустила «Проверка платежей», 10:15 П. Орлов добавил «Прогноз спроса», 09:58 администратор дал И. Ким права в «Маркетинге», 09:30 Е. Лебедева остановила старую версию «Разбор обращений»"></picture></div>
-    </div>
-  </section>
-</div>
-
-<div class="frame" id="cases">
-  <section class="s w rule">
-    <div class="head"><h2>Для каких задач компании запускают свой ИИ</h2><p>Прогнозы, проверки, документы, ответы клиентам. Модели для всех этих задач работают в Атриуме.</p></div>
-    <div class="bento">
-      <div class="intro">
-        <div><h3>Запускаются открытые и собственные модели компании</h3><p>Включая языковые. На серверах компании, под контролем ИТ.</p></div>
-        <p class="who"><b>Кто что делает.</b> Атриум запускает модели и держит их под контролем. Программу под задачу делает ИТ-отдел или интегратор.</p>
-      </div>
-      <div class="cases">
-        <div><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4.67,28l6.39-12,7.3,6.49a2,2,0,0,0,1.7.47,2,2,0,0,0,1.42-1.07L27,10.9,25.18,10,19.69,21l-7.3-6.49A2,2,0,0,0,10.71,14a2,2,0,0,0-1.42,1L4,25V2H2V28a2,2,0,0,0,2,2H30V28Z"/></svg><h3>Прогноз спроса</h3><p>Сколько товара понадобится на складах на следующей неделе.</p></div>
-        <div><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M2 28H30V30H2z"/><path d="M27,11a1,1,0,0,0,1-1V7a1,1,0,0,0-.66-.94l-11-4a1,1,0,0,0-.68,0l-11,4A1,1,0,0,0,4,7v3a1,1,0,0,0,1,1H6V24H4v2H28V24H26V11ZM6,7.7,16,4.06,26,7.7V9H6ZM18,24H14V11h4ZM8,11h4V24H8ZM24,24H20V11h4Z"/></svg><h3>Проверка платежей</h3><p>Подозрительные операции отмечаются до того, как деньги ушли.</p></div>
-        <div><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M25.7,9.3l-7-7C18.5,2.1,18.3,2,18,2H8C6.9,2,6,2.9,6,4v24c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V10C26,9.7,25.9,9.5,25.7,9.3	z M18,4.4l5.6,5.6H18V4.4z M24,28H8V4h8v6c0,1.1,0.9,2,2,2h6V28z"/><path d="M10 22H22V24H10z"/><path d="M10 16H22V18H10z"/></svg><h3>Разбор документов</h3><p>Договоры и заявки читаются и раскладываются по полям.</p></div>
-        <div><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M17.74,30,16,29l4-7h6a2,2,0,0,0,2-2V8a2,2,0,0,0-2-2H6A2,2,0,0,0,4,8V20a2,2,0,0,0,2,2h9v2H6a4,4,0,0,1-4-4V8A4,4,0,0,1,6,4H26a4,4,0,0,1,4,4V20a4,4,0,0,1-4,4H21.16Z"/><path d="M8 10H24V12H8z"/><path d="M8 16H18V18H8z"/></svg><h3>Ответы клиентам</h3><p>Помощник отвечает по базе знаний компании.</p></div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<div class="frame">
-  <section class="s w rule why">
-    <h2>Почему своя платформа нужна уже сейчас</h2>
-    <ol>
-      <li><div><h3>Внешний сервис живёт по своим правилам</h3><p>Он может закрыть доступ, поднять цены или поменять условия. На чужой площадке правила пишет она.</p></div></li>
-      <li><div><h3>Модели уже есть, контроля нет</h3><p>Команды запускают бесплатные модели кто как умеет. Кто что запустил и к каким данным подключил, никто не видит.</p></div></li>
-      <li><div><h3>Запросы наружу уносят данные</h3><p>С каждым запросом к внешнему сервису документы, клиенты и переписка оказываются на чужих серверах.</p></div></li>
-    </ol>
-  </section>
-</div>
-
-<div class="frame">
-  <section class="s w rule">
-    <div class="head"><h2>С чего начать</h2><p>С показа. Страницу с техникой можно сразу переслать ИТ-директору.</p></div>
-    <div class="itband">
-      <div><h3>Для ИТ и безопасности</h3><p>Как устроено, что с безопасностью, требования ФСТЭК и сроки для закупки.</p></div>
-      <div class="row"><a class="pill" href="it.html">Для ИТ и безопасности <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M18 6 16.57 7.393 24.15 15 4 15 4 17 24.15 17 16.57 24.573 18 26 28 16 18 6z"/></svg></a><button class="pill" type="button" data-copy="it"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z"/><path d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z"/></svg>Скопировать ссылку</button><span class="status" role="status" data-status="it"></span></div>
-    </div>
-    <ol class="steps">
-      <li><span class="n" aria-hidden="true">1</span><h3>Ответим за рабочий день</h3><p>И договоримся о времени показа.</p></li>
-      <li><span class="n" aria-hidden="true">2</span><h3>Покажем по видеосвязи</h3><p>30–40&nbsp;минут, на примере задачи компании.</p></li>
-      <li><span class="n" aria-hidden="true">3</span><h3>Три месяца бесплатно</h3><p>Проба на серверах компании для первых клиентов.</p></li>
-    </ol>
-  </section>
-</div>
-
-<div class="frame" id="partners">
-  <section class="s w rule partners">
-    <div class="head"><div><h2>Внедряете ИТ для клиентов?</h2><p>Продавайте Атриум со своими услугами. Особенно тем, кому нужен ИИ, но нельзя выносить данные наружу: госсектору, банкам, промышленности.</p></div><a class="pill" href="#contact">Обсудить партнёрство</a></div>
-    <ul class="terms">
-      <li><h3>Скидка на лицензии</h3><p>Постоянная, для каждого клиента.</p></li>
-      <li><h3>Внедрение ваше</h3><p>Установка и сопровождение приносят доход вам.</p></li>
-      <li><h3>Клиент закреплён за вами</h3><p>Кто первым привёл клиента, с тем и работаем.</p></li>
-      <li><h3>Бесплатная проба</h3><p>Первые клиенты пробуют три&nbsp;месяца бесплатно.</p></li>
-    </ul>
-  </section>
-</div>
-
-<section class="final" id="contact">
-  <h2>Покажем Атриум на любой задаче</h2>
-  <p>Опишите задачу в паре строк, остальное обсудим на показе.</p>
-  <div class="ctas"><a class="pill big" href="mailto:info@atrium-ai.ru?subject=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%20%D0%90%D1%82%D1%80%D0%B8%D1%83%D0%BC%D0%B0">Договориться о показе</a><button class="pill big ghost" type="button" data-copy="mail"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z"/><path d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z"/></svg>Скопировать адрес</button></div>
-  <p class="mail" translate="no">info@atrium-ai.ru</p>
-  <p class="status" role="status" data-status="mail"></p>
+  </div>
 </section>
 </main>
-<footer><div class="w"><span><span translate="no">Атриум</span>, 2026</span><nav aria-label="Ещё"><a href="it.html">Для ИТ и безопасности</a><a href="#partners">Интеграторам</a></nav></div></footer>
-<script>
-(function () {
-  var root = document.documentElement, b = document.querySelector('.theme'); if (!b) return;
-  function current() { var t = root.getAttribute('data-theme'); if (t) return t; return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
-  function label() { b.setAttribute('aria-label', current() === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему'); }
-  label();
-  b.addEventListener('click', function () {
-    var next = current() === 'dark' ? 'light' : 'dark';
-    var sys = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    if (next === sys) { root.removeAttribute('data-theme'); try { localStorage.removeItem('atrium-theme'); } catch (e) {} }
-    else { root.setAttribute('data-theme', next); try { localStorage.setItem('atrium-theme', next); } catch (e) {} }
-    label();
-  });
-})();
-(function () {
-  // Картинки следуют и системной теме, и теме, выбранной кнопкой
-  var all = [];
-  document.querySelectorAll('picture source').forEach(function (x) { all.push([x, x.media]); });
-  function apply() {
-    var t = document.documentElement.getAttribute('data-theme');
-    all.forEach(function (p) {
-      var x = p[0], m = p[1], dark = m.indexOf('prefers-color-scheme: dark') !== -1;
-      if (t === 'dark') x.media = dark ? (m.replace(/\s*and\s*\(prefers-color-scheme: dark\)|\(prefers-color-scheme: dark\)/, '').trim() || 'all') : (m.indexOf('max-width') !== -1 ? 'not all' : m);
-      else if (t === 'light') x.media = dark ? 'not all' : m;
-      else x.media = m;
-    });
-  }
-  apply();
-  new MutationObserver(apply).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-})();
-(function () {
-  var values = { mail: 'info@atrium-ai.ru', it: new URL('it.html', location.href).href };
-  document.querySelectorAll('[data-copy]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var key = b.getAttribute('data-copy'), out = document.querySelector('[data-status="' + key + '"]');
-      function done(ok) { if (out) out.textContent = ok ? 'Скопировано' : 'Не получилось скопировать: ' + values[key]; }
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(values[key]).then(function () { done(true); }, function () { done(false); });
-      else done(false);
-    });
-  });
-})();
-</script>
-</body></html>
+<footer>
+  <div class="w"><div class="grid">
+    <a class="mailbig" href="mailto:info@atrium-ai.ru">info@atrium-ai.ru</a>
+    <nav aria-label="Разделы сайта"><a href="./">Главная</a><a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></nav>
+    <p class="copy">Атриум, 2026</p>
+  </div></div>
+</footer>
+<script type="module" src="scene.js"></script>
+</body>
+</html>
