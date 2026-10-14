@@ -184,12 +184,12 @@ footer nav a[aria-current]{color:var(--text)}
 .layer.atr .ic{color:#dbe7ff}
 .layer.atr span{color:#fff}
 .layer.atr b{font-weight:500}
-.flow{grid-column:1/span 5;margin-top:48px;list-style:none;counter-reset:f}
+.flow{grid-column:7/span 6;margin-top:72px;list-style:none;counter-reset:f}
 .flow li{counter-increment:f;display:grid;grid-template-columns:48px 1fr;padding:18px 0;border-top:1px solid var(--rule);font-size:17px}
 .flow li::before{content:counter(f,decimal-leading-zero);color:var(--accent);font-size:15px;padding-top:2px}
-.how-shot{grid-column:7/span 6;grid-row:span 2;margin-top:72px;align-self:start;position:relative;padding:32px 0 32px 32px}
-.how-shot::before{content:"";position:absolute;inset:0 calc(-1*var(--gut)) 0 0;background:var(--bg-3)}
-.how-shot img{position:relative;box-shadow:0 24px 48px -20px rgba(0,29,108,.3)}
+.how-shot{grid-column:1/-1;margin-top:80px;position:relative;padding:40px}
+.how-shot::before{content:"";position:absolute;inset:0;background:var(--bg-3)}
+.how-shot img{position:relative;display:block;width:100%;height:auto;box-shadow:0 24px 48px -20px rgba(0,29,108,.3)}
 .how-shot figcaption{position:relative}
 
 /* готовое или своё */
@@ -306,7 +306,7 @@ main:has(> .start:last-child) + footer{margin-top:0}
   .matrix,.paths{grid-template-columns:minmax(0,1fr)}
   .layers,.flow,.how-shot{grid-column:1/-1}
   .how-shot{margin-top:48px}
-  .how-shot::before{right:calc(-1*var(--gut))}
+
   .ladder.four{grid-template-columns:repeat(2,minmax(0,1fr))}
   .scen{grid-template-columns:minmax(0,1fr)}
   .scen h3,.scen dl{grid-column:1/-1}
@@ -336,7 +336,7 @@ main:has(> .start:last-child) + footer{margin-top:0}
   .part .ic{font-size:40px;margin-bottom:12px}
   .role{grid-template-columns:minmax(0,1fr);gap:8px}
   .matrix article,.path,.resp > div{padding:28px 24px}
-  .how-shot{padding:20px 0 20px 20px}
+  .how-shot{padding:20px}
   .cols{gap:48px}
   .cols li{flex-direction:column;gap:6px}
   .yes li{flex-direction:row}
