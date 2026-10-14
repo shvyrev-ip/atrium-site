@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Атриум для ИТ и безопасности</title>
 <meta name="description" content="Как устроен Атриум, что с безопасностью и когда будут документы для закупки.">
-<meta property="og:type" content="website"><meta property="og:title" content="Атриум для ИТ и безопасности"><meta property="og:description" content="Как устроен Атриум, что с безопасностью и когда будут документы для закупки."><meta property="og:url" content="https://atrium-ai.ru/it.html"><meta property="og:image" content="https://atrium-ai.ru/og.png">
+<meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Атриум">
+<meta property="og:title" content="Атриум для ИТ и безопасности"><meta property="og:description" content="Как устроен Атриум, что с безопасностью и когда будут документы для закупки."><meta property="og:url" content="https://atrium-ai.ru/it.html">
+<meta property="og:image" content="https://atrium-ai.ru/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Атриум: модели на внутренних серверах компании">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://atrium-ai.ru/it.html">
 <link rel="icon" href="brand/favicon.ico" sizes="48x48">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
@@ -21,9 +24,9 @@
   <div class="w">
     <a class="brand" href="./"><img src="brand/atrium-horizontal-ru.svg" width="108" height="28" alt="Атриум"></a>
     <nav class="nav" aria-label="Основное меню">
-      <a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a>
+      <a href="scenarios.html">Сценарии</a><a href="it.html" aria-current="page">Для ИТ и безопасности</a>
       <details class="drop"><summary>Партнёрам</summary><div><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></div></details>
-      <details class="burger"><summary>Меню</summary><div><a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></div></details>
+      <details class="burger"><summary>Меню</summary><div><a href="scenarios.html">Сценарии</a><a href="it.html" aria-current="page">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></div></details>
       <a class="btn primary" href="mailto:info@atrium-ai.ru">Написать нам</a>
     </nav>
   </div>
@@ -38,7 +41,7 @@
     <div class="ctas"><a class="btn primary" href="mailto:info@atrium-ai.ru">Написать нам</a><a class="btn" href="#tech">Техника и статусы</a></div>
     </div>
     <div class="scene" data-view="all" role="img" aria-label="Схема: внутри периметра компании стоят серверы, Атриум, журнал, модели и рабочие места команд">
-    <canvas></canvas><picture class="still"><source media="(max-width:560px)" srcset="assets/scene/it-m.webp"><img src="assets/scene/it.webp" alt="" loading="lazy"></picture>
+    <canvas></canvas><picture class="still"><source media="(max-width:560px)" srcset="assets/scene/it-m.webp"><source media="(max-width:1100px)" srcset="assets/scene/it-t.webp"><img src="assets/scene/it.webp" alt="" loading="lazy"></picture>
     <div class="pin l" data-a="data"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-data"></i><div><b>Данные</b><span>на внутренних серверах</span></div></div></div>
     <div class="pin l d" data-a="access"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-key"></i><div><b>Доступ</b><span>роли и токены</span></div></div></div>
     <div class="pin" data-a="model"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-model"></i><div><b>Модель</b><span>открытая или своя</span></div></div></div>
@@ -54,9 +57,9 @@
     <div class="sec-body"><p class="lead">Работа с моделями идёт в браузере, без ручной настройки серверов.</p></div>
     <ol class="ladder four">
       <li><h3>Добавить</h3><p>Команда указывает, где лежат файлы модели. Модель появляется в общем списке.</p></li>
-      <li><h3>Проверить</h3><p>Атриум проверяет файлы до запуска. Если файла нет или он не читается, модель не запустится. Причина попадёт в журнал.</p></li>
+      <li><h3>Проверить</h3><p>При регистрации Атриум проверяет, что файлы модели на месте и читаются. Если нет, модель не зарегистрируется, причина попадёт в журнал. Содержимое файлов не проверяется.</p></li>
       <li><h3>Запустить</h3><p>Запуск и остановка одной кнопкой.</p></li>
-      <li><h3>Подключить</h3><p>Модель получает HTTPS-адрес, программы обращаются к нему с токеном.</p></li>
+      <li><h3>Подключить</h3><p>Команда открывает модели HTTPS-адрес, программы обращаются к нему с токеном. Пока адрес не открыт, модель снаружи недоступна.</p></li>
     </ol>
   </div>
 </section>
@@ -69,14 +72,15 @@
       <thead><tr><th>Что</th><th>Как</th><th>Статус</th></tr></thead>
       <tbody>
         <tr><td>Где работает</td><td>Kubernetes на Linux-серверах компании. Интернет не нужен</td><td><span class="st yes">Есть</span></td></tr>
-        <tr><td>Какие модели</td><td>Предиктивные (прогнозы, оценки, классификация) и генеративные, открытые и собственные. На серверах с видеокартами и без</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Какие модели</td><td>Предиктивные (прогнозы, оценки, классификация), открытые и собственные. На серверах с видеокартами и без</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Генеративные модели</td><td>Движки в поставке есть, прогон на стенде впереди</td><td><span class="st work">В проверке</span></td></tr>
         <tr><td>Форматы моделей</td><td>scikit-learn проверен. XGBoost, LightGBM, ONNX, PyTorch и TensorFlow проверяются</td><td><span class="st work">В проверке</span></td></tr>
         <tr><td>Как программы обращаются к модели</td><td>По HTTPS-адресу, который выдаёт Атриум. REST, открытый стандартный протокол для моделей</td><td><span class="st yes">Есть</span></td></tr>
-        <tr><td>Кто может обратиться к модели</td><td>Только с токеном доступа. Без токена отказ. Лимиты на число и размер запросов</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Кто может обратиться к модели</td><td>Только с токеном доступа, без токена отказ. Лимиты на частоту, число одновременных и размер запросов, список сетей, откуда можно обращаться</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Вход пользователей</td><td>Встроенный вход, у каждого свои роли</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Каталог пользователей компании</td><td>Подключение к AD или LDAP</td><td><span class="st">I кв. 2027</span></td></tr>
         <tr><td>Хранилище файлов моделей</td><td>Сейчас хранилище в составе Атриума. Подключение S3-совместимого хранилища компании</td><td><span class="st work">В работе</span></td></tr>
-        <tr><td>Закрытие модели внутри кластера</td><td>Сетевая политика: к модели можно обратиться только через шлюз</td><td><span class="st">IV кв. 2026</span></td></tr>
+        <tr><td>Закрытие модели внутри кластера</td><td>Сетевая политика: к модели можно обратиться только через шлюз Атриума. Ставится при создании пространства команды</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Выгрузка журнала</td><td>Передача в систему мониторинга компании (SIEM)</td><td><span class="st">2027</span></td></tr>
       </tbody>
     </table>
@@ -97,13 +101,13 @@
     <table class="stable">
       <thead><tr><th>Что проверяет служба безопасности</th><th>Как в Атриуме</th><th>Статус</th></tr></thead>
       <tbody>
-        <tr><td>Команды отделены друг от друга</td><td>Каждая команда работает в своём пространстве и не видит чужого</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Команды отделены друг от друга</td><td>Каждая команда работает в своём пространстве со своей квотой ресурсов и не видит чужих моделей. Сетевой изоляции между пространствами пока нет</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>У каждого только нужные права</td><td>Кто может смотреть, а кто запускать, задаёт администратор</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Всё записывается</td><td>Журнал: кто, что и когда сделал, чем закончилась операция</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Контроль ИИ-помощников, которые сами выполняют действия</td><td>Права и история для них, как для моделей</td><td><span class="st">2027</span></td></tr>
       </tbody>
     </table>
-    <p class="note">Приказ ФСТЭК России № 117 требует защищать ИИ в государственных системах, по проекту изменений с 1 марта 2027 года требования расширят. Сертификата ФСТЭК у Атриума пока нет.</p>
+    <p class="note">Приказ ФСТЭК России № 117 содержит требования к защите ИИ в государственных информационных системах. Сертификата ФСТЭК у Атриума пока нет.</p>
   </div>
 </section>
 
@@ -113,10 +117,14 @@
     <div class="sec-body"><p class="lead">Чтобы не было сюрпризов на пилоте.</p></div>
     <ul class="plain">
       <li><b>Откат в один шаг</b><span>Прежнюю версию можно развернуть снова вручную.</span></li>
-      <li><b>Автомасштаб</b></li>
-      <li><b>Деление видеокарты между моделями</b></li>
+      <li><b>Сетевая изоляция между пространствами команд</b><span>Сейчас пространства разделены по правам и ресурсам.</span></li>
+      <li><b>Автомасштаб</b><span>Число копий модели задаётся при запуске. Срок не назначен.</span></li>
+      <li><b>Деление видеокарты между моделями</b><span>Одна видеокарта занята одной моделью. Срок не назначен.</span></li>
+      <li><b>Каталог пользователей компании (AD, LDAP)</b><span>I кв. 2027.</span></li>
+      <li><b>Выгрузка журнала в SIEM</b><span>2027.</span></li>
       <li><b>Дообучение, поиск по документам, агенты</b><span>Атриум запускает готовые модели.</span></li>
       <li><b>Оценка качества ответов</b><span>Атриум пока не оценивает качество моделей, его проверяют на задачах заказчика.</span></li>
+      <li><b>Простой ключ доступа для программ</b><span>Сейчас программы обращаются с токеном, который выдаёт вход Атриума.</span></li>
       <li><b>OpenAI-совместимый адрес</b><span>Программы обращаются по REST.</span></li>
     </ul>
   </div>
@@ -171,10 +179,12 @@
 <footer>
   <div class="w"><div class="grid">
     <a class="mailbig" href="mailto:info@atrium-ai.ru">info@atrium-ai.ru</a>
-    <nav aria-label="Разделы сайта"><a href="./">Главная</a><a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></nav>
-    <p class="copy">Атриум, 2026</p>
+    <nav aria-label="Разделы сайта"><a href="./">Главная</a><a href="scenarios.html">Сценарии</a><a href="it.html" aria-current="page">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></nav>
+    <p class="copy">© 2026 ИП Швырев С. В. · ОГРНИП 324480000049782 · ИНН 482612174175</p>
   </div></div>
 </footer>
+<p class="toast" role="status" aria-live="polite"></p>
+<script src="site.js" defer></script>
 <script type="module" src="scene.js"></script>
 <script>setTimeout(function(){var s=document.querySelector('.scene');if(!s.classList.contains('ready'))s.classList.add('still-on')},4000)</script>
 <noscript><style>.scene{opacity:1}.scene .still{display:block;position:absolute;inset:-140px 0 0}.scene .still img{width:100%;height:100%;object-fit:contain}.scene .pin{display:none}</style></noscript>

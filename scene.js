@@ -166,6 +166,22 @@ function size() {
   cam.left = -span * a; cam.right = span * a; cam.top = span; cam.bottom = -span;
   cam.updateProjectionMatrix();
 }
+// метка не должна закрывать текст первого экрана, выходить за край экрана и сцены
+// и налезать на другую метку: перебираем положения (вверх/вниз, вправо/влево)
+pins.forEach(p => { p.dataset.base = p.className; });
+const pad = 8;
+const hit = (a, b) => a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
+function obstacles() {
+  const out = [];
+  const zone = host.closest('.hero, .page-hero');
+  if (!zone) return out;
+  zone.querySelectorAll('h1, .sub, .crumb').forEach(el => {
+    const r = document.createRange(); r.selectNodeContents(el);
+    out.push(...r.getClientRects());
+  });
+  zone.querySelectorAll('.ctas a').forEach(a => out.push(a.getBoundingClientRect()));
+  return out;
+}
 function place() {
   const w = host.clientWidth, h = host.clientHeight, v = new THREE.Vector3();
   pins.forEach(p => {
@@ -173,19 +189,55 @@ function place() {
     v.copy(anchors[p.dataset.a]).project(cam);
     p.style.transform = `translate(${(v.x + 1) / 2 * w}px, ${(1 - v.y) / 2 * h}px)`;
   });
+  const busy = obstacles(), hb = host.getBoundingClientRect();
+  const left = Math.max(hb.left, pad), right = Math.min(hb.right, document.documentElement.clientWidth - pad);
+  pins.forEach(p => {
+    const tag = p.querySelector('.tag');
+    if (!tag || !tag.offsetWidth) return;
+    const base = p.dataset.base, flip = (c, k) => c.includes(' ' + k) ? c.replace(' ' + k, '') : c + ' ' + k;
+    let best = null;
+    for (const c of [base, flip(base, 'd'), flip(base, 'l'), flip(flip(base, 'd'), 'l')]) {
+      p.className = c; p.style.setProperty('--dx', '0px');
+      let r = tag.getBoundingClientRect();
+      const dx = r.left < left ? left - r.left : r.right > right ? right - r.right : 0;
+      p.style.setProperty('--dx', dx + 'px');
+      r = tag.getBoundingClientRect();
+      const bad = busy.filter(b => hit(r, b)).length + (r.bottom > hb.bottom ? 1 : 0) + Math.abs(dx) / 1000;
+      if (!best || bad < best.bad) best = { c, dx, bad };
+      if (bad < 0.05) break;
+    }
+    p.className = best.c; p.style.setProperty('--dx', best.dx + 'px');
+    busy.push(tag.getBoundingClientRect());
+  });
 }
 const clock = new THREE.Clock();
-function frame() {
+// анимация идёт, пока сцена на экране; если кадры рисуются медленно
+// (программная отрисовка без видеокарты), переходим на снимок
+// window.atriumLive ставит только скрипт съёмки снимков: там отрисовка программная и медленная
+const live = window.atriumLive === true;
+let running = false, visible = true, slow = false, n = 0, t0 = 0;
+function frame(now) {
+  if (!visible || slow) { running = false; return; }
   const t = clock.getElapsedTime();
   models.forEach(o => { o.m.position.y = o.y + Math.sin(t * 1.1 + o.ph) * 0.12; o.m.rotation.y = Math.sin(t * 0.4 + o.ph) * 0.25; });
   ring.scale.setScalar(1 + Math.sin(t * 1.6) * 0.04);
   pulses.forEach(p => { p.s.position.copy(p.c.getPointAt(((t * 0.18 + p.t) % 1))); });
   lineMat.dashOffset = -t * 0.6;
   renderer.render(scene, cam);
-  if (!reduce) requestAnimationFrame(frame);
+  if (++n === 3) t0 = now;
+  if (!live && n > 3 && now - t0 > 1500 && n < 30) {
+    slow = true; host.classList.add('still-on'); return;
+  }
+  requestAnimationFrame(frame);
 }
+function start() { if (!running && !reduce && !slow) { running = true; requestAnimationFrame(frame); } }
 size(); place();
-if (reduce) { clock.start(); pulses.forEach(p => p.s.position.copy(p.c.getPointAt(0.5))); renderer.render(scene, cam); } else frame();
-new ResizeObserver(() => { size(); place(); renderer.render(scene, cam); }).observe(host);
-host.classList.remove('still-on');
+if (reduce) {
+  clock.start(); pulses.forEach(p => p.s.position.copy(p.c.getPointAt(0.5)));
+  const a = performance.now(); renderer.render(scene, cam);
+  if (!live && performance.now() - a > 1000) { slow = true; host.classList.add('still-on'); }
+}
+new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) start(); }).observe(host);
+new ResizeObserver(() => { size(); place(); if (!slow) renderer.render(scene, cam); }).observe(host);
+if (!slow) host.classList.remove('still-on');
 host.classList.add('ready');

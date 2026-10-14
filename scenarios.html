@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Сценарии Атриума</title>
 <meta name="description" content="Примеры задач для промышленности, страхования и банков: что меняется, какие модели, что измерять.">
-<meta property="og:type" content="website"><meta property="og:title" content="Сценарии Атриума"><meta property="og:description" content="Примеры задач для промышленности, страхования и банков: что меняется, какие модели, что измерять."><meta property="og:url" content="https://atrium-ai.ru/scenarios.html"><meta property="og:image" content="https://atrium-ai.ru/og.png">
+<meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Атриум">
+<meta property="og:title" content="Сценарии Атриума"><meta property="og:description" content="Примеры задач для промышленности, страхования и банков: что меняется, какие модели, что измерять."><meta property="og:url" content="https://atrium-ai.ru/scenarios.html">
+<meta property="og:image" content="https://atrium-ai.ru/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Атриум: модели на внутренних серверах компании">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://atrium-ai.ru/scenarios.html">
 <link rel="icon" href="brand/favicon.ico" sizes="48x48">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
@@ -21,9 +24,9 @@
   <div class="w">
     <a class="brand" href="./"><img src="brand/atrium-horizontal-ru.svg" width="108" height="28" alt="Атриум"></a>
     <nav class="nav" aria-label="Основное меню">
-      <a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a>
+      <a href="scenarios.html" aria-current="page">Сценарии</a><a href="it.html">Для ИТ и безопасности</a>
       <details class="drop"><summary>Партнёрам</summary><div><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></div></details>
-      <details class="burger"><summary>Меню</summary><div><a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></div></details>
+      <details class="burger"><summary>Меню</summary><div><a href="scenarios.html" aria-current="page">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></div></details>
       <a class="btn primary" href="mailto:info@atrium-ai.ru">Написать нам</a>
     </nav>
   </div>
@@ -37,7 +40,7 @@
     <p class="sub">Примеры задач, которые компании решают своими моделями на внутренних серверах. Эффект считается по показателям самой компании, поэтому у каждого сценария указано, что измерять. Атриум запускает модель и выдаёт адрес и токен для обращения к ней. Приложение для сотрудников делает ИТ компании или интегратор.</p>
     </div>
     <div class="scene" data-view="apps" role="img" aria-label="Схема: программы компании и рабочие места команд обращаются к моделям внутри периметра">
-    <canvas></canvas><picture class="still"><source media="(max-width:560px)" srcset="assets/scene/scenarios-m.webp"><img src="assets/scene/scenarios.webp" alt="" loading="lazy"></picture>
+    <canvas></canvas><picture class="still"><source media="(max-width:560px)" srcset="assets/scene/scenarios-m.webp"><source media="(max-width:1100px)" srcset="assets/scene/scenarios-t.webp"><img src="assets/scene/scenarios.webp" alt="" loading="lazy"></picture>
     <div class="pin d" data-a="apps"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-plug"></i><div><b>Программы компании</b><span>обращаются к модели</span></div></div></div>
     <div class="pin l" data-a="model"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-model"></i><div><b>Модели</b><span>предиктивные и генеративные</span></div></div></div>
     <p class="cap">Схема</p>
@@ -147,10 +150,12 @@
 <footer>
   <div class="w"><div class="grid">
     <a class="mailbig" href="mailto:info@atrium-ai.ru">info@atrium-ai.ru</a>
-    <nav aria-label="Разделы сайта"><a href="./">Главная</a><a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></nav>
-    <p class="copy">Атриум, 2026</p>
+    <nav aria-label="Разделы сайта"><a href="./">Главная</a><a href="scenarios.html" aria-current="page">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></nav>
+    <p class="copy">© 2026 ИП Швырев С. В. · ОГРНИП 324480000049782 · ИНН 482612174175</p>
   </div></div>
 </footer>
+<p class="toast" role="status" aria-live="polite"></p>
+<script src="site.js" defer></script>
 <script type="module" src="scene.js"></script>
 <script>setTimeout(function(){var s=document.querySelector('.scene');if(!s.classList.contains('ready'))s.classList.add('still-on')},4000)</script>
 <noscript><style>.scene{opacity:1}.scene .still{display:block;position:absolute;inset:-140px 0 0}.scene .still img{width:100%;height:100%;object-fit:contain}.scene .pin{display:none}</style></noscript>

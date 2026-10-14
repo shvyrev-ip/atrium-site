@@ -93,6 +93,13 @@ figcaption{font-size:14px;color:var(--text-3);margin-top:16px}
 .burger summary{min-height:44px;display:flex;align-items:center;font-size:15px;color:var(--text)}
 .burger div{position:absolute;left:0;right:0;top:64px;background:#fff;border-bottom:1px solid var(--rule);padding:8px var(--gut) 20px;display:flex;flex-direction:column;box-shadow:0 20px 40px -20px rgba(0,45,156,.2)}
 .burger div a{padding:14px 0;text-decoration:none;color:var(--text);border-bottom:1px solid var(--rule)}
+/* текущая страница в меню */
+.nav > a[aria-current]{color:var(--text);box-shadow:inset 0 -2px var(--accent)}
+.drop div a[aria-current],.burger div a[aria-current]{color:var(--accent)}
+footer nav a[aria-current]{color:var(--text)}
+/* подсказка после нажатия на почтовую ссылку */
+.toast{position:fixed;left:50%;bottom:24px;z-index:30;translate:-50% 16px;max-width:calc(100% - 32px);background:#161616;color:#fff;font-size:15px;padding:14px 20px;opacity:0;pointer-events:none;transition:opacity .2s,translate .2s}
+.toast.on{opacity:1;translate:-50% 0}
 
 /* первый экран главной: текст сверху, сцена во всю ширину */
 .hero{padding-top:96px;background:linear-gradient(180deg,#fff 0,#fff 45%,var(--bg-2) 100%);overflow:hidden}
@@ -107,7 +114,7 @@ figcaption{font-size:14px;color:var(--text-3);margin-top:16px}
 .pin .dot{position:absolute;left:-7px;top:-7px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(15,98,254,.18)}
 .pin .dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--accent);animation:ping 2.8s ease-out infinite;opacity:0}
 .pin .stem{position:absolute;left:0;bottom:7px;width:1px;height:56px;background:linear-gradient(var(--accent),rgba(15,98,254,.15))}
-.pin .tag{position:absolute;left:-18px;bottom:62px;display:flex;align-items:center;gap:12px;white-space:nowrap;background:#fff;padding:10px 16px 10px 12px;box-shadow:0 10px 30px -12px rgba(0,45,156,.25),0 0 0 1px rgba(15,98,254,.1)}
+.pin .tag{position:absolute;translate:var(--dx,0px) 0;left:-18px;bottom:62px;display:flex;align-items:center;gap:12px;white-space:nowrap;background:#fff;padding:10px 16px 10px 12px;box-shadow:0 10px 30px -12px rgba(0,45,156,.25),0 0 0 1px rgba(15,98,254,.1)}
 .pin .tag .ic{font-size:26px;color:var(--accent)}
 .pin .tag b{display:block;font-weight:500;font-size:15px;line-height:1.2}
 .pin .tag span{display:block;font-size:13px;color:var(--text-2);line-height:1.3}
@@ -147,10 +154,6 @@ figcaption{font-size:14px;color:var(--text-3);margin-top:16px}
 .part .ic{font-size:48px;color:var(--accent);margin-bottom:24px}
 .part h3{font-size:24px}
 .part p{color:var(--text-2);font-size:17px}
-.fact{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px;margin-top:120px;align-items:center}
-.fact b{grid-column:1/span 5;font-size:clamp(96px,11vw,168px);font-weight:300;line-height:.9;letter-spacing:-.04em;color:var(--accent)}
-.fact p{grid-column:6/span 6;font-size:24px;line-height:1.45;font-weight:300}
-.fact .src{grid-column:6/span 6;font-size:15px;font-weight:400;margin-top:16px;color:var(--text-3)}
 
 /* роли: строки с крупным заголовком */
 .roles{display:flex;flex-direction:column}
@@ -177,8 +180,9 @@ figcaption{font-size:14px;color:var(--text-3);margin-top:16px}
 .layer .ic{grid-row:span 2;font-size:30px;color:var(--text-2)}
 .layer b{font-weight:400;font-size:19px}
 .layer span{color:var(--text-2);font-size:15px}
-.layer.atr{background:var(--accent);box-shadow:0 20px 40px -20px rgba(15,98,254,.6);color:#fff;padding:30px 24px;margin:0 -12px}
-.layer.atr .ic,.layer.atr span{color:#dbe7ff}
+.layer.atr{background:var(--accent);box-shadow:0 20px 40px -20px rgba(15,98,254,.6);color:#fff;padding:30px 24px}
+.layer.atr .ic{color:#dbe7ff}
+.layer.atr span{color:#fff}
 .layer.atr b{font-weight:500}
 .flow{grid-column:1/span 5;margin-top:48px;list-style:none;counter-reset:f}
 .flow li{counter-increment:f;display:grid;grid-template-columns:48px 1fr;padding:18px 0;border-top:1px solid var(--rule);font-size:17px}
@@ -189,11 +193,6 @@ figcaption{font-size:14px;color:var(--text-3);margin-top:16px}
 .how-shot figcaption{position:relative}
 
 /* готовое или своё */
-.big{grid-column:1/span 5;font-size:clamp(96px,14vw,200px);line-height:.9;font-weight:300;letter-spacing:-.05em;color:var(--accent)}
-.big-text{grid-column:6/span 7;align-self:end}
-.big-text p{font-size:24px;line-height:1.45;font-weight:300}
-.big-text p + p{margin-top:20px;font-size:18px;font-weight:400;color:var(--text-2)}
-.big-text .src{font-size:14px;color:var(--text-3)}
 
 /* есть и дальше */
 .cols{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;margin-top:72px}
@@ -279,14 +278,17 @@ main:has(> .start:last-child) + footer{margin-top:0}
 .plain li b{display:block;font-weight:400;font-size:21px;margin-bottom:6px}
 .plain li span{color:var(--text-2)}
 
-@media (max-width:1060px){
-  :root{--sec:104px}
+/* меню сворачивается позже сетки: на 940–1060 пункты ещё помещаются */
+@media (max-width:940px){
   .nav > a:not(.btn),.nav .drop{display:none}
   .burger{display:block;margin-left:auto}
   .nav .btn.primary{margin-left:0;gap:24px;padding:0 16px 0 20px}
   .burger{align-self:center;margin-right:4px}
   .top .w{gap:16px}
   .nav{gap:16px}
+}
+@media (max-width:1060px){
+  :root{--sec:104px}
   .sec-head,.sec-body{grid-column:1/-1}
   .sec-body{margin-top:24px}
   .hero{padding-top:56px}
@@ -301,15 +303,10 @@ main:has(> .start:last-child) + footer{margin-top:0}
   .pin .tag{bottom:42px}
   .pin.d .tag{top:42px}
   .parts{grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 32px;margin-top:56px}
-  .fact{margin-top:80px}
-  .fact{grid-template-columns:minmax(0,1fr)}
-  .fact b,.fact p,.fact .src{grid-column:1/-1}
-  .fact p{margin-top:16px}
   .matrix,.paths{grid-template-columns:minmax(0,1fr)}
-  .layers,.flow,.how-shot,.big,.big-text{grid-column:1/-1}
+  .layers,.flow,.how-shot{grid-column:1/-1}
   .how-shot{margin-top:48px}
   .how-shot::before{right:calc(-1*var(--gut))}
-  .big-text{margin-top:24px}
   .ladder.four{grid-template-columns:repeat(2,minmax(0,1fr))}
   .scen{grid-template-columns:minmax(0,1fr)}
   .scen h3,.scen dl{grid-column:1/-1}
@@ -339,7 +336,6 @@ main:has(> .start:last-child) + footer{margin-top:0}
   .part .ic{font-size:40px;margin-bottom:12px}
   .role{grid-template-columns:minmax(0,1fr);gap:8px}
   .matrix article,.path,.resp > div{padding:28px 24px}
-  .layer.atr{margin:0}
   .how-shot{padding:20px 0 20px 20px}
   .cols{gap:48px}
   .cols li{flex-direction:column;gap:6px}

@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Атриум: приватность определяет периметр</title>
 <meta name="description" content="Атриум запускает предиктивные и генеративные модели на внутренних серверах компании. Открытые и собственные, с ролями, журналом действий и доступом по токену.">
-<meta property="og:type" content="website"><meta property="og:title" content="Атриум: приватность определяет периметр"><meta property="og:description" content="Атриум запускает предиктивные и генеративные модели на внутренних серверах компании. Открытые и собственные, с ролями, журналом действий и доступом по токену."><meta property="og:url" content="https://atrium-ai.ru/"><meta property="og:image" content="https://atrium-ai.ru/og.png">
+<meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Атриум">
+<meta property="og:title" content="Атриум: приватность определяет периметр"><meta property="og:description" content="Атриум запускает предиктивные и генеративные модели на внутренних серверах компании. Открытые и собственные, с ролями, журналом действий и доступом по токену."><meta property="og:url" content="https://atrium-ai.ru/">
+<meta property="og:image" content="https://atrium-ai.ru/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Атриум: модели на внутренних серверах компании">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://atrium-ai.ru/">
 <link rel="icon" href="brand/favicon.ico" sizes="48x48">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
@@ -39,7 +42,7 @@
   </div>
   <div class="w">
   <div class="scene" data-view="all" role="img" aria-label="Схема: внутри периметра компании стоят серверы, Атриум, журнал, модели и рабочие места команд; связь с интернетом оборвана">
-    <canvas></canvas><picture class="still"><source media="(max-width:560px)" srcset="assets/scene/index-m.webp"><img src="assets/scene/index.webp" alt="" loading="lazy"></picture>
+    <canvas></canvas><picture class="still"><source media="(max-width:560px)" srcset="assets/scene/index-m.webp"><source media="(max-width:1100px)" srcset="assets/scene/index-t.webp"><img src="assets/scene/index.webp" alt="" loading="lazy"></picture>
     <div class="pin l" data-a="data"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-data"></i><div><b>Данные</b><span>на внутренних серверах</span></div></div></div>
     <div class="pin l d" data-a="access"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-key"></i><div><b>Доступ</b><span>роли и токены</span></div></div></div>
     <div class="pin" data-a="model"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-model"></i><div><b>Модель</b><span>открытая или своя</span></div></div></div>
@@ -60,11 +63,6 @@
       <div class="part"><i class="ic i-key"></i><h3>Доступ</h3><p>Каждая команда работает в своём пространстве. Программы обращаются к модели по токену с лимитом запросов.</p></div>
       <div class="part"><i class="ic i-log"></i><h3>След</h3><p>Журнал показывает, кто запустил модель, кто выдал права и кто остановил старую версию.</p></div>
     </div>
-    <div class="fact">
-      <b>71%</b>
-      <p>крупных российских компаний уже используют генеративный ИИ хотя бы в одной функции.</p>
-      <p class="src">«Яков и Партнёры» и Яндекс, «ИИ в России 2025». <a href="https://www.comnews.ru/content/242813/2025-12-08/2025-w50/1010/dolya-krupnykh-rossiyskikh-kompaniy-ispolzuyuschikh-generativnyy-ii-prevysila-70">Источник</a></p>
-    </div>
   </div>
 </section>
 
@@ -72,7 +70,7 @@
   <div class="grid">
     <div class="sec-head"><h2 id="h-roles">Кому подойдёт</h2></div>
     <div class="sec-body roles">
-      <div class="role"><h3>ИТ-директору</h3><p>Права задаются один раз. Дальше команды запускают модели сами, без заявок и ручной настройки серверов.</p></div>
+      <div class="role"><h3>ИТ-директору</h3><p>Администратор задаёт роли, и команды запускают модели в рамках своих прав. Без ручной настройки серверов, каждое действие записано в журнал.</p></div>
       <div class="role"><h3>Службе безопасности</h3><p>Модели и данные внутри контура. Видно, у кого какая роль и кто что сделал с каждой моделью.</p></div>
       <div class="role"><h3>Руководителю данных</h3><p>Команда добавляет модель из браузера и получает адрес, по которому к ней обращаются программы компании.</p></div>
     </div>
@@ -108,26 +106,13 @@
     </figure>
     <ol class="flow">
       <li>Команда добавляет модель и указывает, где лежат её файлы.</li>
-      <li>Атриум проверяет файлы до запуска.</li>
+      <li>При регистрации Атриум проверяет, что файлы на месте и читаются.</li>
       <li>Модель запускается одной кнопкой.</li>
       <li>Программы компании получают адрес модели.</li>
     </ol>
   </div>
 </section>
 
-<section id="ready" class="w" aria-labelledby="h-ready">
-  <div class="grid">
-    <div class="sec-head" style="grid-column:1/-1"><h2 id="h-ready">Готовое или своё</h2></div>
-  </div>
-  <div class="grid" style="margin-top:40px">
-    <div class="big" aria-hidden="true">67%</div>
-    <div class="big-text">
-      <p>По данным MIT, готовые решения специализированных поставщиков доходят до результата примерно в 67% случаев. Собственные разработки примерно втрое реже.</p>
-      <p>Атриум берёт на себя запуск, права и журнал. Команды занимаются своими задачами.</p>
-      <p class="src">MIT NANDA, «The GenAI Divide», июль 2025, выборка американских компаний. <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/">Источник</a></p>
-    </div>
-  </div>
-</section>
 
 <section id="status" class="w" aria-labelledby="h-status">
   <div class="grid">
@@ -137,8 +122,8 @@
       <div class="yes">
         <h3>Есть сейчас</h3>
         <ul>
-          <li>Запуск предиктивных и генеративных моделей из браузера</li>
-          <li>Проверка файлов модели до запуска</li>
+          <li>Запуск предиктивных моделей из браузера</li>
+          <li>Проверка при регистрации: файлы модели на месте и читаются</li>
           <li>Пространства команд и роли</li>
           <li>Журнал действий</li>
           <li>Доступ к модели по токену с лимитами</li>
@@ -148,6 +133,7 @@
       <div>
         <h3>Дальше</h3>
         <ul>
+          <li>Генеративные модели и форматы кроме scikit-learn<span>В проверке</span></li>
           <li>Установка на закрытые серверы в один шаг<span>IV кв. 2026</span></li>
           <li>Вход через каталог пользователей компании<span>I кв. 2027</span></li>
           <li>Работа на российских операционных системах<span>I кв. 2027</span></li>
@@ -189,7 +175,7 @@
     <div class="sec-head"><h2 id="h-faq">Частые вопросы</h2></div>
     <div class="sec-body faq">
       <details><summary>Нужен ли интернет?</summary><p>Нет. Атриум и модели работают на внутренних серверах без выхода наружу.</p></details>
-      <details><summary>Какие модели можно запускать?</summary><p>Предиктивные и генеративные, открытые и собственные. Проверенные форматы перечислены на странице для ИТ.</p></details>
+      <details><summary>Какие модели можно запускать?</summary><p>Предиктивные и генеративные, открытые и собственные. Что уже прогнано на стенде, перечислено на странице для ИТ.</p></details>
       <details><summary>Какие серверы нужны?</summary><p>Для пробы ориентир такой: три машины по 8 ядер и 32 ГБ памяти. Генеративным моделям нужны видеокарты.</p></details>
       <details><summary>Атриум есть в реестре российского ПО?</summary><p>Пока нет. Включение в реестр запланировано на I квартал 2027 года.</p></details>
       <details><summary>Как считается цена?</summary><p>Цена зависит от числа пользователей и видеокарт. Её называют после разговора о задаче.</p></details>
@@ -201,10 +187,12 @@
 <footer>
   <div class="w"><div class="grid">
     <a class="mailbig" href="mailto:info@atrium-ai.ru">info@atrium-ai.ru</a>
-    <nav aria-label="Разделы сайта"><a href="./">Главная</a><a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></nav>
-    <p class="copy">Атриум, 2026</p>
+    <nav aria-label="Разделы сайта"><a href="./" aria-current="page">Главная</a><a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></nav>
+    <p class="copy">© 2026 ИП Швырев С. В. · ОГРНИП 324480000049782 · ИНН 482612174175</p>
   </div></div>
 </footer>
+<p class="toast" role="status" aria-live="polite"></p>
+<script src="site.js" defer></script>
 <script type="module" src="scene.js"></script>
 <script>setTimeout(function(){var s=document.querySelector('.scene');if(!s.classList.contains('ready'))s.classList.add('still-on')},4000)</script>
 <noscript><style>.scene{opacity:1}.scene .still{display:block;position:absolute;inset:-140px 0 0}.scene .still img{width:100%;height:100%;object-fit:contain}.scene .pin{display:none}</style></noscript>
