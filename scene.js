@@ -31,6 +31,7 @@ const VIEWS = {
 const view = VIEWS[host.dataset.view] || VIEWS.all;
 cam.position.set(view.t[0] + 30, view.t[1] + 26, view.t[2] + 30);
 cam.lookAt(...view.t);
+cam.updateMatrixWorld();
 
 scene.add(new THREE.HemisphereLight(0xffffff, 0xc9d4e8, 1.6));
 const sun = new THREE.DirectionalLight(0xffffff, 2.1);
@@ -183,6 +184,7 @@ function obstacles() {
   return out;
 }
 function place() {
+  cam.updateMatrixWorld();
   const w = host.clientWidth, h = host.clientHeight, v = new THREE.Vector3();
   pins.forEach(p => {
     if (!anchors[p.dataset.a]) return;
