@@ -5,7 +5,14 @@ const host = document.querySelector('.scene');
 const canvas = host.querySelector('canvas');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
+} catch (e) {
+  // без WebGL (нет видеокарты, отключено политикой) показываем снимок сцены
+  host.classList.add('still-on');
+  throw e;
+}
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -180,4 +187,5 @@ function frame() {
 size(); place();
 if (reduce) { clock.start(); pulses.forEach(p => p.s.position.copy(p.c.getPointAt(0.5))); renderer.render(scene, cam); } else frame();
 new ResizeObserver(() => { size(); place(); renderer.render(scene, cam); }).observe(host);
+host.classList.remove('still-on');
 host.classList.add('ready');

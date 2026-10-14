@@ -39,7 +39,7 @@
   </div>
   <div class="w">
   <div class="scene" data-view="all" role="img" aria-label="Схема: внутри периметра компании стоят серверы, Атриум, журнал, модели и рабочие места команд; связь с интернетом оборвана">
-    <canvas></canvas>
+    <canvas></canvas><picture class="still"><source media="(max-width:560px)" srcset="assets/scene/index-m.webp"><img src="assets/scene/index.webp" alt="" loading="lazy"></picture>
     <div class="pin l" data-a="data"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-data"></i><div><b>Данные</b><span>на внутренних серверах</span></div></div></div>
     <div class="pin l d" data-a="access"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-key"></i><div><b>Доступ</b><span>роли и токены</span></div></div></div>
     <div class="pin" data-a="model"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-model"></i><div><b>Модель</b><span>открытая или своя</span></div></div></div>
@@ -206,5 +206,7 @@
   </div></div>
 </footer>
 <script type="module" src="scene.js"></script>
+<script>setTimeout(function(){var s=document.querySelector('.scene');if(!s.classList.contains('ready'))s.classList.add('still-on')},4000)</script>
+<noscript><style>.scene{opacity:1}.scene .still{display:block;position:absolute;inset:-140px 0 0}.scene .still img{width:100%;height:100%;object-fit:contain}.scene .pin{display:none}</style></noscript>
 </body>
 </html>

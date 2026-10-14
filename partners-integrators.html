@@ -38,7 +38,7 @@
     <div class="ctas"><a class="btn primary" href="mailto:info@atrium-ai.ru">Написать нам</a></div>
     </div>
     <div class="scene" data-view="apps" role="img" aria-label="Схема: программы заказчика обращаются к моделям через Атриум внутри периметра">
-    <canvas></canvas>
+    <canvas></canvas><picture class="still"><source media="(max-width:560px)" srcset="assets/scene/partners-integrators-m.webp"><img src="assets/scene/partners-integrators.webp" alt="" loading="lazy"></picture>
     <div class="pin d" data-a="apps"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-plug"></i><div><b>Программы заказчика</b><span>делает интегратор</span></div></div></div>
     <div class="pin l" data-a="core"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-shield"></i><div><b>Атриум</b><span>запуск моделей, роли, журнал</span></div></div></div>
     <p class="cap">Схема</p>
@@ -112,5 +112,7 @@
   </div></div>
 </footer>
 <script type="module" src="scene.js"></script>
+<script>setTimeout(function(){var s=document.querySelector('.scene');if(!s.classList.contains('ready'))s.classList.add('still-on')},4000)</script>
+<noscript><style>.scene{opacity:1}.scene .still{display:block;position:absolute;inset:-140px 0 0}.scene .still img{width:100%;height:100%;object-fit:contain}.scene .pin{display:none}</style></noscript>
 </body>
 </html>
