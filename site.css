@@ -165,9 +165,9 @@ footer nav a[aria-current]{color:var(--text)}
 
 /* сценарии на главной: три карточки */
 /* строки карточек выровнены между собой через subgrid: отрасль, заголовок, задача, модели, показатель */
-.matrix{grid-column:1/-1;margin-top:72px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 32px}
+.matrix{grid-column:1/-1;margin-top:72px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 32px}
 .matrix .labels{display:none}
-.matrix article{background:var(--bg-2);padding:36px 32px 40px;display:grid;grid-row:span 5;grid-template-rows:subgrid;align-content:start;transition:background .25s}
+.matrix article{background:var(--bg-2);padding:36px 32px 40px;display:grid;grid-row:span 5;grid-template-rows:subgrid;align-content:start;margin-bottom:18px;transition:background .25s}
 .matrix article:hover{background:var(--bg-3)}
 .matrix .ind{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--accent);margin-bottom:24px}
 .matrix .ind .ic{font-size:40px}
@@ -189,6 +189,8 @@ footer nav a[aria-current]{color:var(--text)}
 .flow{grid-column:7/span 6;margin-top:72px;list-style:none;counter-reset:f}
 .flow li{counter-increment:f;display:grid;grid-template-columns:48px 1fr;padding:18px 0;border-top:1px solid var(--rule);font-size:17px}
 .flow li::before{content:counter(f,decimal-leading-zero);color:var(--accent);font-size:15px;padding-top:2px}
+.flow li b{display:block;font-weight:500;color:var(--text);margin-bottom:4px}
+.flow li div{color:var(--text-2)}
 .how-shot{grid-column:1/-1;margin-top:80px;position:relative;padding:40px}
 .how-shot::before{content:"";position:absolute;inset:0;background:var(--bg-3)}
 .how-shot img{position:relative;display:block;width:100%;height:auto;box-shadow:0 24px 48px -20px rgba(0,29,108,.3)}
@@ -307,7 +309,7 @@ main:has(> .start:last-child) + footer{margin-top:0}
   .parts{grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 32px;margin-top:56px}
   .matrix,.paths{grid-template-columns:minmax(0,1fr)}
   .matrix{row-gap:32px}
-  .matrix article{display:flex;flex-direction:column;gap:14px;grid-row:auto}
+  .matrix article{display:flex;flex-direction:column;gap:14px;grid-row:auto;margin-bottom:0}
   .layers,.flow,.how-shot{grid-column:1/-1}
   .how-shot{margin-top:48px}
 
