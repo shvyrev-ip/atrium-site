@@ -154,10 +154,6 @@ footer nav a[aria-current]{color:var(--text)}
 .part .ic{font-size:48px;color:var(--accent);margin-bottom:24px}
 .part h3{font-size:24px}
 .part p{color:var(--text-2);font-size:17px}
-/* короткий перечень: маркированный список Carbon, маркер «–», без линий */
-.part ul{list-style:none;color:var(--text-2);font-size:17px;display:flex;flex-direction:column;gap:8px}
-.part li{position:relative;padding-left:18px}
-.part li::before{content:"–";position:absolute;left:0}
 
 /* роли: строки с крупным заголовком */
 .roles{display:flex;flex-direction:column}
