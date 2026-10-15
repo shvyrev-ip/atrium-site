@@ -173,9 +173,11 @@ footer nav a[aria-current]{color:var(--text)}
 .matrix article{position:relative}
 .matrix h3 a{color:inherit;text-decoration:none}
 .matrix h3 a::after{content:"";position:absolute;inset:0}
-.matrix article:hover h3 a{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+/* как кликабельная плитка Carbon: при наведении меняется фон, без подчёркивания; стрелка в углу, рамка фокуса */
+.matrix .ind::after{content:"";margin-left:auto;width:20px;height:20px;background:currentColor;-webkit-mask:url(icons/arrow-right.svg) center/contain no-repeat;mask:url(icons/arrow-right.svg) center/contain no-repeat;transition:transform .2s}
+.matrix article:hover .ind::after{transform:translateX(4px)}
 .matrix h3 a:focus-visible{outline:none}
-.matrix article:has(a:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.matrix article:has(a:focus-visible){outline:2px solid var(--accent);outline-offset:-2px}
 .matrix .ind{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--accent);margin-bottom:24px}
 .matrix .ind .ic{font-size:40px}
 .matrix h3{font-size:26px;line-height:1.25;margin-bottom:8px}
