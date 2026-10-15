@@ -37,19 +37,29 @@
     <p class="crumb"><a href="index.html">Главная</a> / Для ИТ и безопасности</p>
     <div class="txt">
     <h1>Атриум для ИТ и безопасности</h1>
-    <p class="sub">Как устроен Атриум, что со службой безопасности и когда будут документы для закупки. У каждого пункта статус: есть, в работе или план со сроком.</p>
+    <p class="sub">Как устроен Атриум, что со службой безопасности и когда будут документы для закупки. У каждого пункта статус: есть или срок.</p>
     <div class="ctas"><a class="btn primary" href="mailto:info@atrium-ai.ru">Написать нам</a><a class="btn" href="#tech">Техника и статусы</a></div>
     </div>
     <div class="scene" data-view="all" role="img" aria-label="Схема: внутри периметра компании стоят серверы, Атриум, журнал, модели и рабочие места команд">
     <canvas></canvas><picture class="still"><source media="(max-width:560px)" srcset="assets/scene/it-m.webp"><source media="(max-width:1100px)" srcset="assets/scene/it-t.webp"><img src="assets/scene/it.webp" alt="" loading="lazy"></picture>
     <div class="pin l" data-a="data"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-data"></i><div><b>Данные</b><span>на внутренних серверах</span></div></div></div>
-    <div class="pin l d" data-a="access"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-key"></i><div><b>Доступ</b><span>роли и токены</span></div></div></div>
+    <div class="pin l d" data-a="access"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-key"></i><div><b>Доступ</b><span>права и токены</span></div></div></div>
     <div class="pin" data-a="model"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-model"></i><div><b>Модель</b><span>открытая или своя</span></div></div></div>
-    <div class="pin d" data-a="trace"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-log"></i><div><b>Журнал</b><span>кто, что и когда</span></div></div></div>
+    <div class="pin d" data-a="trace"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-log"></i><div><b>Журнал</b><span>что, когда и чем закончилось</span></div></div></div>
     <p class="cap">Схема</p>
   </div>
   </div>
 </div></div>
+
+<nav class="toc" aria-label="Оглавление страницы"><div class="w"><ul>
+  <li><a href="#how">Как работает</a></li>
+  <li><a href="#tech">Техника</a></li>
+  <li><a href="#servers">Серверы</a></li>
+  <li><a href="#security">Безопасность</a></li>
+  <li><a href="#not-yet">Чего пока нет</a></li>
+  <li><a href="#buy">Закупка</a></li>
+  <li><a href="#faq">Вопросы</a></li>
+</ul></div></nav>
 
 <section id="how" class="w" aria-labelledby="h-how">
   <div class="grid">
@@ -57,7 +67,7 @@
     <div class="sec-body"><p class="lead">Работа с моделями идёт в браузере, без ручной настройки серверов.</p></div>
     <ol class="ladder four">
       <li><h3>Добавить</h3><p>Команда указывает, где лежат файлы модели. Модель появляется в общем списке.</p></li>
-      <li><h3>Проверить</h3><p>При регистрации Атриум проверяет, что файлы модели на месте и читаются. Если нет, модель не зарегистрируется, причина попадёт в журнал. Содержимое файлов не проверяется.</p></li>
+      <li><h3>Проверить</h3><p>При добавлении Атриум проверяет, что файлы модели на месте и читаются. Если нет, модель не добавится. Содержимое файлов не проверяется.</p></li>
       <li><h3>Запустить</h3><p>Запуск и остановка одной кнопкой.</p></li>
       <li><h3>Подключить</h3><p>Команда открывает модели HTTPS-адрес, программы обращаются к нему с токеном. Пока адрес не открыт, модель снаружи недоступна.</p></li>
     </ol>
@@ -72,16 +82,16 @@
       <thead><tr><th>Что</th><th>Как</th><th>Статус</th></tr></thead>
       <tbody>
         <tr><td>Где работает</td><td>В Kubernetes компании, на любых её серверах. Проверено на Linux. После установки интернет не нужен</td><td><span class="st yes">Есть</span></td></tr>
-        <tr><td>Поставка вместе с Kubernetes</td><td>Для серверов, где Kubernetes ещё нет: Атриум и Kubernetes ставятся одним комплектом</td><td><span class="st">IV кв. 2026</span></td></tr>
-        <tr><td>Какие модели</td><td>Предиктивные (прогнозы, оценки, классификация), открытые и собственные. На серверах без видеокарт, с видеокартами в проверке</td><td><span class="st yes">Есть</span></td></tr>
-        <tr><td>Генеративные модели</td><td>Движки в поставке есть, они же дают адрес в формате OpenAI. Прогон на стенде с видеокартой впереди</td><td><span class="st work">В проверке</span></td></tr>
-        <tr><td>Форматы моделей</td><td>scikit-learn проверен. XGBoost, LightGBM, ONNX, PyTorch и TensorFlow проверяются</td><td><span class="st work">В проверке</span></td></tr>
+        <tr><td>Поставка вместе с Kubernetes</td><td>Для серверов, где Kubernetes ещё нет: Атриум и Kubernetes ставятся одним комплектом</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Какие модели</td><td>Предиктивные (прогнозы, оценки, классификация), открытые и собственные. На серверах с видеокартами и без</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Генеративные модели</td><td>Работают на серверах с видеокартами, отвечают по адресу в формате OpenAI</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Форматы моделей</td><td>scikit-learn, XGBoost, LightGBM, ONNX, PyTorch и TensorFlow</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Как программы обращаются к модели</td><td>По HTTPS-адресу, который выдаёт Атриум. Обычным HTTPS-запросом (REST)</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Кто может обратиться к модели</td><td>Только с токеном доступа, без токена отказ. Лимиты на частоту, число одновременных и размер запросов, список сетей, откуда можно обращаться</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Версии модели</td><td>У модели хранятся версии, прежнюю можно развернуть снова</td><td><span class="st yes">Есть</span></td></tr>
-        <tr><td>Вход пользователей</td><td>Встроенный вход, у каждого свои роли</td><td><span class="st yes">Есть</span></td></tr>
-        <tr><td>Каталог пользователей компании</td><td>Вход через AD или LDAP средствами Keycloak, который входит в поставку. Прогон на стенде впереди</td><td><span class="st work">В проверке</span></td></tr>
-        <tr><td>Хранилище файлов моделей</td><td>Сейчас хранилище в составе Атриума. Подключение S3-совместимого хранилища компании</td><td><span class="st work">В работе</span></td></tr>
+        <tr><td>Вход пользователей</td><td>Вход в поставке Атриума, у каждого свои права</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Каталог пользователей компании</td><td>AD или LDAP подключается ко входу Атриума</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Хранилище файлов моделей</td><td>Хранилище в составе Атриума или S3-совместимое хранилище компании</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Закрытие модели от прямых обращений</td><td>Модель закрыта от прямых обращений, к ней можно обратиться только через Атриум. Ставится при создании пространства команды</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Выгрузка журнала</td><td>Передача в систему мониторинга компании (SIEM)</td><td><span class="st">2027</span></td></tr>
       </tbody>
@@ -109,23 +119,20 @@
         <tr><td>Контроль ИИ-помощников, которые сами выполняют действия</td><td>Права и история для них, как для моделей</td><td><span class="st">2027</span></td></tr>
       </tbody>
     </table>
-    <p class="note">Приказ ФСТЭК России № 117 содержит требования к защите ИИ в государственных информационных системах. Сертификата ФСТЭК у Атриума пока нет.</p>
   </div>
 </section>
 
 <section id="not-yet" class="w" aria-labelledby="h-no">
   <div class="grid">
     <div class="sec-head"><h2 id="h-no">Чего пока нет</h2></div>
-    <div class="sec-body"><p class="lead">Чтобы не было сюрпризов на пилоте.</p></div>
+    <div class="sec-body"><p class="lead">Чтобы не было сюрпризов на пробном запуске.</p></div>
     <ul class="plain">
       <li><b>Откат в один шаг</b><span>Прежнюю версию можно развернуть снова вручную.</span></li>
       <li><b>Сетевая изоляция между пространствами команд</b><span>Сейчас пространства разделены по правам и ресурсам.</span></li>
-      <li><b>Автомасштаб</b><span>Число копий модели задаётся при запуске. Срок не назначен.</span></li>
-      <li><b>Деление видеокарты между моделями</b><span>Одна видеокарта занята одной моделью. Срок не назначен.</span></li>
-      <li><b>Проверенный вход через AD, LDAP</b><span>Схема через Keycloak в проверке на стенде.</span></li>
-      <li><b>Выгрузка журнала в SIEM</b><span>2027.</span></li>
+      <li><b>Автомасштаб</b><span>Число копий модели задаётся при запуске.</span></li>
+      <li><b>Деление видеокарты между моделями</b><span>Одна видеокарта занята одной моделью.</span></li>
       <li><b>Дообучение, поиск по документам, агенты</b><span>Атриум запускает готовые модели.</span></li>
-      <li><b>Оценка качества ответов</b><span>Атриум пока не оценивает качество моделей, его проверяют на задачах заказчика.</span></li>
+      <li><b>Оценка качества ответов</b><span>Атриум пока не оценивает качество моделей, его проверяют на задачах компании.</span></li>
       <li><b>Постоянный ключ для программ</b><span>Сейчас программа получает токен через вход в Атриум.</span></li>
     </ul>
   </div>
@@ -139,10 +146,9 @@
       <thead><tr><th>Что</th><th>Подробности</th><th>Статус</th></tr></thead>
       <tbody>
         <tr><td>Установка</td><td>На серверы компании вместе с её специалистами</td><td><span class="st yes">Есть</span></td></tr>
-        <tr><td>Установка в один шаг</td><td>На закрытые серверы без интернета</td><td><span class="st">IV кв. 2026</span></td></tr>
+        <tr><td>Установка в один шаг</td><td>На закрытые серверы без интернета</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Российские ОС</td><td>Работа на российских операционных системах</td><td><span class="st">I кв. 2027</span></td></tr>
         <tr><td>Реестр российского ПО</td><td>Включение в реестр</td><td><span class="st">I кв. 2027</span></td></tr>
-        <tr><td>Сертификат ФСТЭК</td><td></td><td><span class="st">Срок уточняется</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -150,7 +156,7 @@
 
 <section id="who" class="w" aria-labelledby="h-who">
   <div class="grid">
-    <div class="sec-head"><h2 id="h-who">Кто за что отвечает</h2></div>
+    <div class="sec-head"><h2 id="h-who">Кто что делает</h2></div>
     <div class="resp">
       <div><h3>Компания или интегратор</h3><ul><li>Серверы и Kubernetes</li><li>Видеокарты, драйверы, ОС, хранилище</li><li>Программы под задачу</li><li>Выбор и качество моделей</li></ul></div>
       <div><h3>Атриум</h3><ul><li>Запуск моделей, права, журнал</li><li>Обновления и поддержка по почте</li></ul></div>
@@ -162,9 +168,9 @@
   <div class="grid">
     <div class="sec-head"><h2 id="h-faq">Частые вопросы</h2></div>
     <div class="sec-body faq">
-      <details><summary>Можно ли собрать такое самим?</summary><p>Можно. Придётся связать хранилище, серверы, проверку файлов и адреса моделей, написать пространства команд, роли и журнал, а потом обновлять всё это и отвечать за поломки.</p></details>
-      <details><summary>Нужен ли доступ в интернет?</summary><p>После установки не нужен: Атриум и модели работают на внутренних серверах. Установка на закрытые серверы пока идёт вместе со специалистами Атриума, в один шаг — IV кв. 2026.</p></details>
-      <details><summary>Как считается цена?</summary><p>Атриум продаётся по годовой лицензии. Цена зависит от числа пользователей и видеокарт, а начать можно с пробного запуска на задаче компании.</p></details>
+      <details><summary>Можно ли собрать такое самим?</summary><p>Можно. Придётся связать хранилище, серверы, проверку файлов и адреса моделей, написать пространства команд, права и журнал, а потом самим выпускать обновления и исправлять ошибки.</p></details>
+      <details><summary>Нужен ли доступ в интернет?</summary><p>После установки не нужен: Атриум и модели работают на внутренних серверах. На закрытые серверы Атриум ставится в один шаг.</p></details>
+      <details><summary>Как считается цена?</summary><p>Атриум продаётся по годовой лицензии. Цена зависит от числа пользователей и видеокарт, а начать можно с пробного запуска на задаче компании. Обновления и поддержка по почте входят в лицензию.</p></details>
     </div>
   </div>
 </section>
@@ -172,7 +178,7 @@
 <section id="start" class="start" aria-labelledby="h-start">
   <div class="w"><div class="grid">
     <div class="sec-head"><h2 id="h-start">Вопросы службы безопасности</h2></div>
-    <div class="sec-body"><p class="lead">Достаточно описать, какие модели нужны и где они должны работать. Ответ в течение рабочего дня.</p></div>
+    <div class="sec-body"><p class="lead">Достаточно описать, какие модели нужны и где они должны работать.</p></div>
     <div class="cta-row"><a class="btn primary" href="mailto:info@atrium-ai.ru">Написать нам</a><a class="mail" href="mailto:info@atrium-ai.ru">info@atrium-ai.ru</a></div>
   </div></div>
 </section>
