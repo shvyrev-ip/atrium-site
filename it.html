@@ -25,8 +25,8 @@
     <a class="brand" href="./"><img src="brand/atrium-horizontal-ru.svg" width="108" height="28" alt="Атриум"></a>
     <nav class="nav" aria-label="Основное меню">
       <a href="scenarios.html">Сценарии</a><a href="it.html" aria-current="page">Для ИТ и безопасности</a>
-      <details class="drop"><summary>Партнёрам</summary><div><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></div></details>
-      <details class="burger"><summary>Меню</summary><div><a href="scenarios.html">Сценарии</a><a href="it.html" aria-current="page">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></div></details>
+      <details class="drop"><summary>Партнёрам</summary><div><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и разработчикам ПО</a></div></details>
+      <details class="burger"><summary>Меню</summary><div><a href="scenarios.html">Сценарии</a><a href="it.html" aria-current="page">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и разработчикам ПО</a></div></details>
       <a class="btn primary" href="mailto:info@atrium-ai.ru">Написать нам</a>
     </nav>
   </div>
@@ -45,7 +45,7 @@
     <div class="pin l" data-a="data"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-data"></i><div><b>Данные</b><span>на внутренних серверах</span></div></div></div>
     <div class="pin l d" data-a="access"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-key"></i><div><b>Доступ</b><span>роли и токены</span></div></div></div>
     <div class="pin" data-a="model"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-model"></i><div><b>Модель</b><span>открытая или своя</span></div></div></div>
-    <div class="pin d" data-a="trace"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-log"></i><div><b>След</b><span>журнал действий</span></div></div></div>
+    <div class="pin d" data-a="trace"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-log"></i><div><b>Журнал</b><span>кто, что и когда</span></div></div></div>
     <p class="cap">Схема</p>
   </div>
   </div>
@@ -71,17 +71,18 @@
     <table class="stable">
       <thead><tr><th>Что</th><th>Как</th><th>Статус</th></tr></thead>
       <tbody>
-        <tr><td>Где работает</td><td>Linux-серверы компании, в Kubernetes компании. Интернет не нужен</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Где работает</td><td>В Kubernetes компании, на любых её серверах. Проверено на Linux. После установки интернет не нужен</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Поставка вместе с Kubernetes</td><td>Для серверов, где Kubernetes ещё нет: Атриум и Kubernetes ставятся одним комплектом</td><td><span class="st">IV кв. 2026</span></td></tr>
-        <tr><td>Какие модели</td><td>Предиктивные (прогнозы, оценки, классификация), открытые и собственные. На серверах с видеокартами и без</td><td><span class="st yes">Есть</span></td></tr>
-        <tr><td>Генеративные модели</td><td>Движки в поставке есть, прогон на стенде впереди</td><td><span class="st work">В проверке</span></td></tr>
+        <tr><td>Какие модели</td><td>Предиктивные (прогнозы, оценки, классификация), открытые и собственные. На серверах без видеокарт, с видеокартами в проверке</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Генеративные модели</td><td>Движки в поставке есть, они же дают адрес в формате OpenAI. Прогон на стенде с видеокартой впереди</td><td><span class="st work">В проверке</span></td></tr>
         <tr><td>Форматы моделей</td><td>scikit-learn проверен. XGBoost, LightGBM, ONNX, PyTorch и TensorFlow проверяются</td><td><span class="st work">В проверке</span></td></tr>
-        <tr><td>Как программы обращаются к модели</td><td>По HTTPS-адресу, который выдаёт Атриум. REST, открытый стандартный протокол для моделей</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Как программы обращаются к модели</td><td>По HTTPS-адресу, который выдаёт Атриум. Обычным HTTPS-запросом (REST)</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Кто может обратиться к модели</td><td>Только с токеном доступа, без токена отказ. Лимиты на частоту, число одновременных и размер запросов, список сетей, откуда можно обращаться</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Версии модели</td><td>У модели хранятся версии, прежнюю можно развернуть снова</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Вход пользователей</td><td>Встроенный вход, у каждого свои роли</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Каталог пользователей компании</td><td>Подключение к AD или LDAP</td><td><span class="st">I кв. 2027</span></td></tr>
         <tr><td>Хранилище файлов моделей</td><td>Сейчас хранилище в составе Атриума. Подключение S3-совместимого хранилища компании</td><td><span class="st work">В работе</span></td></tr>
-        <tr><td>Закрытие модели внутри кластера</td><td>Сетевая политика: к модели можно обратиться только через шлюз Атриума. Ставится при создании пространства команды</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Закрытие модели от прямых обращений</td><td>Модель закрыта от прямых обращений, к ней можно обратиться только через Атриум. Ставится при создании пространства команды</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Выгрузка журнала</td><td>Передача в систему мониторинга компании (SIEM)</td><td><span class="st">2027</span></td></tr>
       </tbody>
     </table>
@@ -90,7 +91,7 @@
 
 <section id="servers" class="w" aria-labelledby="h-servers">
   <div class="grid">
-    <div class="sec-head"><h2 id="h-servers">Серверы для пробы</h2></div>
+    <div class="sec-head"><h2 id="h-servers">Серверы для пробного запуска</h2></div>
     <div class="sec-body"><p class="lead">Ориентир: три машины по 8 ядер и 32 ГБ памяти каждая. Для генеративных моделей нужны видеокарты. Точные требования уточняются по замерам.</p></div>
   </div>
 </section>
@@ -125,8 +126,7 @@
       <li><b>Выгрузка журнала в SIEM</b><span>2027.</span></li>
       <li><b>Дообучение, поиск по документам, агенты</b><span>Атриум запускает готовые модели.</span></li>
       <li><b>Оценка качества ответов</b><span>Атриум пока не оценивает качество моделей, его проверяют на задачах заказчика.</span></li>
-      <li><b>Простой ключ доступа для программ</b><span>Сейчас программы обращаются с токеном, который выдаёт вход Атриума.</span></li>
-      <li><b>OpenAI-совместимый адрес</b><span>Программы обращаются по REST.</span></li>
+      <li><b>Постоянный ключ для программ</b><span>Сейчас программа получает токен через вход в Атриум.</span></li>
     </ul>
   </div>
 </section>
@@ -138,7 +138,7 @@
     <table class="stable">
       <thead><tr><th>Что</th><th>Подробности</th><th>Статус</th></tr></thead>
       <tbody>
-        <tr><td>Установка</td><td>На Linux-серверы компании вместе с её специалистами</td><td><span class="st yes">Есть</span></td></tr>
+        <tr><td>Установка</td><td>На серверы компании вместе с её специалистами</td><td><span class="st yes">Есть</span></td></tr>
         <tr><td>Установка в один шаг</td><td>На закрытые серверы без интернета</td><td><span class="st">IV кв. 2026</span></td></tr>
         <tr><td>Российские ОС</td><td>Работа на российских операционных системах</td><td><span class="st">I кв. 2027</span></td></tr>
         <tr><td>Реестр российского ПО</td><td>Включение в реестр</td><td><span class="st">I кв. 2027</span></td></tr>
@@ -152,8 +152,8 @@
   <div class="grid">
     <div class="sec-head"><h2 id="h-who">Кто за что отвечает</h2></div>
     <div class="resp">
-      <div><h3>Компания или интегратор</h3><ul><li>Серверы и Kubernetes</li><li>Программы под задачу</li><li>Выбор и качество моделей</li></ul></div>
-      <div><h3>Атриум</h3><ul><li>Запуск моделей, права, журнал</li><li>Обновления программы</li><li>Поддержка: отвечают авторы продукта</li></ul></div>
+      <div><h3>Компания или интегратор</h3><ul><li>Серверы и Kubernetes</li><li>Видеокарты, драйверы, ОС, хранилище</li><li>Программы под задачу</li><li>Выбор и качество моделей</li></ul></div>
+      <div><h3>Атриум</h3><ul><li>Запуск моделей, права, журнал</li><li>Обновления и поддержка по почте</li></ul></div>
     </div>
   </div>
 </section>
@@ -163,8 +163,8 @@
     <div class="sec-head"><h2 id="h-faq">Частые вопросы</h2></div>
     <div class="sec-body faq">
       <details><summary>Можно ли собрать такое самим?</summary><p>Можно. Придётся связать хранилище, серверы, проверку файлов и адреса моделей, написать пространства команд, роли и журнал, а потом обновлять всё это и отвечать за поломки.</p></details>
-      <details><summary>Нужен ли доступ в интернет?</summary><p>Нет. Атриум и модели работают на внутренних серверах.</p></details>
-      <details><summary>Как считается цена?</summary><p>Цена зависит от числа пользователей и видеокарт. Её называют после разговора о задаче.</p></details>
+      <details><summary>Нужен ли доступ в интернет?</summary><p>После установки не нужен: Атриум и модели работают на внутренних серверах. Установка на закрытые серверы пока идёт вместе со специалистами Атриума, в один шаг — IV кв. 2026.</p></details>
+      <details><summary>Как считается цена?</summary><p>Атриум продаётся по годовой лицензии. Цена зависит от числа пользователей и видеокарт, а начать можно с пробного запуска на задаче компании.</p></details>
     </div>
   </div>
 </section>
@@ -180,7 +180,7 @@
 <footer>
   <div class="w"><div class="grid">
     <a class="mailbig" href="mailto:info@atrium-ai.ru">info@atrium-ai.ru</a>
-    <nav aria-label="Разделы сайта"><a href="./">Главная</a><a href="scenarios.html">Сценарии</a><a href="it.html" aria-current="page">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и вендорам ПО</a></nav>
+    <nav aria-label="Разделы сайта"><a href="./">Главная</a><a href="scenarios.html">Сценарии</a><a href="it.html" aria-current="page">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и разработчикам ПО</a></nav>
     <p class="copy">© 2026 ИП Швырев С. В. · ОГРНИП 324480000049782 · ИНН 482612174175</p>
   </div></div>
 </footer>
