@@ -1,3 +1,9 @@
+// Тестовая подмена темы: ?scheme=dark или ?scheme=light.
+// Нужна для снимков и проверки тёмного варианта; обычные посетители получают
+// тему от системной настройки через prefers-color-scheme.
+const scheme = new URLSearchParams(location.search).get('scheme');
+if (scheme === 'dark' || scheme === 'light') document.documentElement.dataset.scheme = scheme;
+
 // Меню «Партнёрам» и «Меню» закрываются по Esc и щелчку мимо.
 // Ссылки mailto: на машине без почтовой программы адрес хотя бы окажется в буфере обмена.
 const menus = [...document.querySelectorAll('details.drop, details.burger')];
