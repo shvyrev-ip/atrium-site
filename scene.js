@@ -37,13 +37,15 @@ async function init(THREE) {
   const darkMode = document.documentElement.dataset.scheme === 'dark' ||
     (document.documentElement.dataset.scheme !== 'light' &&
      matchMedia('(prefers-color-scheme: dark)').matches);
+  // Стойки и плита контрастируют с фоном, а не повторяют его: на светлой
+  // странице модель тёмная, на тёмной — светлая. Значения ступеней Carbon.
   const C = darkMode
-    ? { clay: 0x393939, clay2: 0x525252, slot: 0x6f6f6f, edge: 0x8d8d8d, edgeOp: 0.7,
-        line: 0x4589ff, cut: 0x8d8d8d, hemiSky: 0x525252, hemiGround: 0x262626,
-        hemiI: 1.1, sunI: 1.7, shadowOp: 0.5 }
-    : { clay: 0xffffff, clay2: 0xf1f4f9, slot: 0xc8d0dd, edge: 0xb9c3d3, edgeOp: 0.55,
-        line: 0x8fb3ff, cut: 0xa8a8a8, hemiSky: 0xffffff, hemiGround: 0xc9d4e8,
-        hemiI: 1.6, sunI: 2.1, shadowOp: 0.1 };
+    ? { clay: 0xd0d0d0, clay2: 0xb5b5b5, slot: 0x8d8d8d, edge: 0x393939, edgeOp: 0.8,
+        line: 0x78a9ff, cut: 0x8d8d8d, hemiSky: 0xffffff, hemiGround: 0x6f6f6f,
+        hemiI: 1.5, sunI: 2.4, shadowOp: 0.55 }
+    : { clay: 0x1f1f1f, clay2: 0x2e2e2e, slot: 0x4a4a4a, edge: 0x8d8d8d, edgeOp: 0.5,
+        line: 0x4589ff, cut: 0x8d8d8d, hemiSky: 0xffffff, hemiGround: 0xd0d7e2,
+        hemiI: 1.5, sunI: 2.6, shadowOp: 0.22 };
 
   let renderer;
   try {

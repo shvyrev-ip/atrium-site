@@ -1,8 +1,12 @@
 // Тестовая подмена темы: ?scheme=dark или ?scheme=light.
 // Нужна для снимков и проверки тёмного варианта; обычные посетители получают
 // тему от системной настройки через prefers-color-scheme.
-const scheme = new URLSearchParams(location.search).get('scheme');
+const qs = new URLSearchParams(location.search);
+const scheme = qs.get('scheme');
 if (scheme === 'dark' || scheme === 'light') document.documentElement.dataset.scheme = scheme;
+// ?live=1 держит сцену живой при съёмке снимков: без этого она на медленной
+// программной отрисовке сама уходит на картинку, и снимок показывает старое
+if (qs.get('live') === '1') window.atriumLive = true;
 
 // Переключатель темы. Без выбора работает системная настройка; как только
 // человек нажал кнопку, решение запоминается и перебивает системное.
