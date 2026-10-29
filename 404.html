@@ -15,6 +15,14 @@
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#ffffff">
+<script>
+/* выбор темы применяем до первой отрисовки: иначе у тех, кто выбрал тёмную,
+   страница успевает мигнуть светлой */
+try {
+  var t = localStorage.getItem('atrium-theme');
+  if (t === 'dark' || t === 'light') document.documentElement.dataset.scheme = t;
+} catch (e) {}
+</script>
 <link rel="preload" href="fonts/plex-cyrillic-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
 </head>
@@ -22,11 +30,14 @@
 <a class="skip" href="#main">Перейти к содержимому</a>
 <header class="top">
   <div class="w">
-    <a class="brand" href="./"><img src="brand/atrium-horizontal-ru.svg" width="108" height="28" alt="Атриум"></a>
+    <a class="brand" href="./"><img class="logo-l" src="brand/atrium-horizontal-ru.svg" width="108" height="28" alt="Атриум"><img class="logo-d" src="brand/atrium-horizontal-ru-dark.svg" width="108" height="28" alt="" aria-hidden="true"></a>
     <nav class="nav" aria-label="Основное меню">
       <a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a>
       <details class="drop"><summary>Партнёрам</summary><div><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и разработчикам ПО</a></div></details>
       <details class="burger"><summary>Меню</summary><div><a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и разработчикам ПО</a></div></details>
+      <button class="theme" type="button" aria-pressed="false" aria-label="Включить тёмную тему">
+        <i class="ic i-moon" aria-hidden="true"></i><i class="ic i-sun" aria-hidden="true"></i>
+      </button>
       <a class="btn primary" href="mailto:info@atrium-ai.ru">Написать нам</a>
     </nav>
   </div>

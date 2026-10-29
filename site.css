@@ -39,6 +39,24 @@
   --panel:#393939; --panel-90:rgba(57,57,57,.9); --header:rgba(38,38,38,.9);
   --toast-bg:#525252; --toast-ink:#f4f4f4; --shadow:rgba(0,0,0,.6); --dot-off:#6f6f6f; --sel-ink:#fff;
 }
+/* переключение вариантов: системная настройка плюс ручной выбор */
+@media (prefers-color-scheme:dark){
+  :root:not([data-scheme="light"]) .brand .logo-l{display:none}
+  :root:not([data-scheme="light"]) .brand .logo-d{display:block}
+  :root:not([data-scheme="light"]) .theme .i-moon{display:none}
+  :root:not([data-scheme="light"]) .theme .i-sun{display:inline-block}
+  :root:not([data-scheme="light"]) .scene .still-d{display:block}
+  :root:not([data-scheme="light"]) .scene .still-l{display:none}
+}
+[data-scheme="dark"] .brand .logo-l{display:none}
+[data-scheme="dark"] .brand .logo-d{display:block}
+[data-scheme="dark"] .theme .i-moon{display:none}
+[data-scheme="dark"] .theme .i-sun{display:inline-block}
+[data-scheme="dark"] .scene .still-l{display:none}
+[data-scheme="dark"] .scene .still-d{display:block}
+[data-scheme="light"] .scene .still-l{display:block}
+[data-scheme="light"] .scene .still-d{display:none}
+
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-padding-top:80px;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--text);font:400 18px/1.6 "Plex",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -61,6 +79,18 @@ p{text-wrap:pretty}
 .i-offline{--m:url(icons/wifi-slash.svg)} .i-check{--m:url(icons/check.svg)} .i-plus{--m:url(icons/plus.svg)}
 .i-caret{--m:url(icons/caret-down.svg)} .i-hand{--m:url(icons/handshake.svg)} .i-truck{--m:url(icons/truck.svg)}
 .i-stack{--m:url(icons/stack.svg)} .i-flag{--m:url(icons/flag-checkered.svg)}
+.i-sun{--m:url(icons/sun.svg)} .i-moon{--m:url(icons/moon.svg)}
+
+/* логотип в двух вариантах: светлый и для тёмной темы */
+.brand{display:inline-flex;align-items:center}
+.brand .logo-d{display:none}
+
+/* кнопка переключения темы: тихая, в один размер с иконками */
+.theme{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;
+  margin-right:4px;background:none;border:0;color:var(--text-2);cursor:pointer;transition:color .15s,background .15s}
+.theme:hover{color:var(--accent);background:var(--bg-2)}
+.theme .ic{font-size:20px}
+.theme .i-sun{display:none}
 
 /* сетка */
 .w{max-width:calc(var(--max) + 2*var(--gut));margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
@@ -156,6 +186,7 @@ footer nav a[aria-current]{color:var(--text)}
 @keyframes ping{0%{transform:scale(.6);opacity:.9}80%,100%{transform:scale(2.4);opacity:0}}
 .scene .cap{position:absolute;right:0;bottom:20px;font-size:13px;color:var(--text-3)}
 .scene .still{display:none}
+.scene .still picture{display:none}
 /* запасной снимок: WebGL недоступен или сцена не загрузилась */
 .scene.still-on{opacity:1}
 /* снимок снят с запасом 140px сверху под верхние метки */

@@ -15,6 +15,14 @@
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#ffffff">
+<script>
+/* выбор темы применяем до первой отрисовки: иначе у тех, кто выбрал тёмную,
+   страница успевает мигнуть светлой */
+try {
+  var t = localStorage.getItem('atrium-theme');
+  if (t === 'dark' || t === 'light') document.documentElement.dataset.scheme = t;
+} catch (e) {}
+</script>
 <link rel="preload" href="fonts/plex-cyrillic-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
 </head>
@@ -22,11 +30,14 @@
 <a class="skip" href="#main">Перейти к содержимому</a>
 <header class="top">
   <div class="w">
-    <a class="brand" href="./"><img src="brand/atrium-horizontal-ru.svg" width="108" height="28" alt="Атриум"></a>
+    <a class="brand" href="./"><img class="logo-l" src="brand/atrium-horizontal-ru.svg" width="108" height="28" alt="Атриум"><img class="logo-d" src="brand/atrium-horizontal-ru-dark.svg" width="108" height="28" alt="" aria-hidden="true"></a>
     <nav class="nav" aria-label="Основное меню">
       <a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a>
       <details class="drop"><summary>Партнёрам</summary><div><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и разработчикам ПО</a></div></details>
       <details class="burger"><summary>Меню</summary><div><a href="scenarios.html">Сценарии</a><a href="it.html">Для ИТ и безопасности</a><a href="partners-servers.html">Производителям серверов</a><a href="partners-integrators.html">Интеграторам и разработчикам ПО</a></div></details>
+      <button class="theme" type="button" aria-pressed="false" aria-label="Включить тёмную тему">
+        <i class="ic i-moon" aria-hidden="true"></i><i class="ic i-sun" aria-hidden="true"></i>
+      </button>
       <a class="btn primary" href="mailto:info@atrium-ai.ru?subject=%D0%90%D1%82%D1%80%D0%B8%D1%83%D0%BC%3A%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0">Написать нам</a>
     </nav>
   </div>
@@ -42,7 +53,7 @@
   </div>
   <div class="w">
   <div class="scene" data-view="all" role="img" aria-label="Схема: внутри периметра компании стоят серверы, Атриум, журнал, модели и рабочие места команд; связь с интернетом оборвана">
-    <canvas></canvas><picture class="still"><source media="(prefers-color-scheme:dark) and (max-width:560px)" srcset="assets/scene/index-dark-m.webp"><source media="(prefers-color-scheme:dark) and (max-width:1100px)" srcset="assets/scene/index-dark-t.webp"><source media="(prefers-color-scheme:dark)" srcset="assets/scene/index-dark.webp"><source media="(max-width:560px)" srcset="assets/scene/index-m.webp"><source media="(max-width:1100px)" srcset="assets/scene/index-t.webp"><img src="assets/scene/index.webp" alt="" loading="lazy"></picture>
+    <canvas></canvas><span class="still"><picture class="still-l"><source media="(max-width:560px)" srcset="assets/scene/index-m.webp"><source media="(max-width:1100px)" srcset="assets/scene/index-t.webp"><img src="assets/scene/index.webp" alt="" loading="lazy"></picture><picture class="still-d"><source media="(max-width:560px)" srcset="assets/scene/index-dark-m.webp"><source media="(max-width:1100px)" srcset="assets/scene/index-dark-t.webp"><img src="assets/scene/index-dark.webp" alt="" loading="lazy"></picture></span>
     <div class="pin l" data-a="data"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-data"></i><div><b>Данные</b><span>на внутренних серверах</span></div></div></div>
     <div class="pin l d" data-a="access"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-key"></i><div><b>Доступ</b><span>права и токены</span></div></div></div>
     <div class="pin" data-a="model"><i class="dot"></i><i class="stem"></i><div class="tag"><i class="ic i-model"></i><div><b>Модель</b><span>открытая или своя</span></div></div></div>
@@ -220,6 +231,6 @@
 <script src="site.js" defer></script>
 <script type="module" src="scene.js"></script>
 <script>setTimeout(function(){var s=document.querySelector('.scene');if(!s.classList.contains('ready'))s.classList.add('still-on')},4000)</script>
-<noscript><style>.scene{opacity:1}.scene .still{display:block;position:absolute;inset:-140px 0 0}.scene .still img{width:100%;height:100%;object-fit:contain}.scene .pin{display:none}</style></noscript>
+<noscript><style>.scene{opacity:1}.scene .still{display:block;position:absolute;inset:-140px 0 0}.scene .still-l{display:block}.scene .still img{width:100%;height:100%;object-fit:contain}.scene .pin{display:none}</style></noscript>
 </body>
 </html>
