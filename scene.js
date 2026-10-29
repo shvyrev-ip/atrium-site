@@ -101,13 +101,11 @@ ring.rotation.x = Math.PI / 2; ring.position.set(1.2, P + 0.56, 0.2); scene.add(
 const log = new THREE.Group();
 for (let k = 0; k < 6; k++) { const s = box(1.8, 0.12, 2.3, k % 2 ? clay2 : clay, 4.4, P + 0.5 + k * 0.17, 1.6); log.add(s); }
 
-// модели: кубы на постаментах
-const models = [];
+// модели: кубы на постаментах (стоят неподвижно — движение в сцене одно, по периметру)
 [[6.6, -4.2], [8.6, -4.2], [6.6, -1.9], [8.6, -1.9], [7.6, 0.4]].forEach(([x, z], i) => {
   box(1.4, 0.35, 1.4, clay2, x, P, z);
   const c = new THREE.Mesh(new THREE.BoxGeometry(1.0, 1.0, 1.0), i === 4 ? glassSoft : glass);
   c.position.set(x, P + 1.35, z); c.castShadow = true; scene.add(c);
-  models.push({ m: c, y: c.position.y, ph: i * 1.3 });
 });
 
 // команды: рабочие места
@@ -221,8 +219,8 @@ let running = false, visible = true, slow = false, n = 0, t0 = 0;
 function frame(now) {
   if (!visible || slow) { running = false; return; }
   const t = clock.getElapsedTime();
-  models.forEach(o => { o.m.position.y = o.y + Math.sin(t * 1.1 + o.ph) * 0.12; o.m.rotation.y = Math.sin(t * 0.4 + o.ph) * 0.25; });
-  ring.scale.setScalar(1 + Math.sin(t * 1.6) * 0.04);
+  // В сцене остаётся один смысловой ритм — движение по периметру (посылки и пунктир).
+  // Модели и кольцо стояли бы неподвижно: два лишних ритма спорили с этим (аудит движения).
   pulses.forEach(p => { p.s.position.copy(p.c.getPointAt(((t * 0.18 + p.t) % 1))); });
   lineMat.dashOffset = -t * 0.6;
   renderer.render(scene, cam);
