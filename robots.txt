@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://atrium-ai.ru/sitemap.xml
+# llms.txt: https://atrium-ai.ru/llms.txt
