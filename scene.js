@@ -43,7 +43,7 @@ async function init(THREE) {
     ? { clay: 0xd0d0d0, clay2: 0xb5b5b5, slot: 0x8d8d8d, edge: 0x393939, edgeOp: 0.8,
         line: 0x78a9ff, cut: 0x8d8d8d, hemiSky: 0xffffff, hemiGround: 0x6f6f6f,
         hemiI: 1.5, sunI: 2.4, shadowOp: 0.55 }
-    : { clay: 0x8d8d8d, clay2: 0xa3a3a3, slot: 0xb8b8b8, edge: 0x6f6f6f, edgeOp: 0.45,
+    : { clay: 0xa8a8a8, clay2: 0xc1c1c1, slot: 0xf4f4f4, edge: 0x6f6f6f, edgeOp: 0.45,
         line: 0x4589ff, cut: 0x8d8d8d, hemiSky: 0xffffff, hemiGround: 0xd0d7e2,
         hemiI: 1.4, sunI: 2.6, shadowOp: 0.2 };
 
