@@ -47,6 +47,8 @@
   :root:not([data-scheme="light"]) .theme .i-sun{display:inline-block}
   :root:not([data-scheme="light"]) .scene .still-d{display:block}
   :root:not([data-scheme="light"]) .scene .still-l{display:none}
+  :root:not([data-scheme="light"]) .how-shot .shot-l{display:none}
+  :root:not([data-scheme="light"]) .how-shot .shot-d{display:block}
 }
 [data-scheme="dark"] .brand .logo-l{display:none}
 [data-scheme="dark"] .brand .logo-d{display:block}
@@ -54,6 +56,10 @@
 [data-scheme="dark"] .theme .i-sun{display:inline-block}
 [data-scheme="dark"] .scene .still-l{display:none}
 [data-scheme="dark"] .scene .still-d{display:block}
+[data-scheme="dark"] .how-shot .shot-l{display:none}
+[data-scheme="dark"] .how-shot .shot-d{display:block}
+[data-scheme="light"] .how-shot .shot-l{display:block}
+[data-scheme="light"] .how-shot .shot-d{display:none}
 [data-scheme="light"] .scene .still-l{display:block}
 [data-scheme="light"] .scene .still-d{display:none}
 
@@ -264,8 +270,9 @@ footer nav a[aria-current]{color:var(--text)}
 .flow li b{display:block;font-weight:500;color:var(--text);margin-bottom:4px}
 .flow li div{color:var(--text-2)}
 .how-shot{grid-column:1/-1;margin-top:80px;position:relative;padding:40px}
-.how-shot::before{content:"";position:absolute;inset:0;background:var(--bg-3)}
+.how-shot::before{content:"";position:absolute;inset:0;background:var(--bg-2)}
 .how-shot img{position:relative;display:block;width:100%;height:auto;box-shadow:0 24px 48px -20px rgba(0,29,108,.3)}
+.how-shot .shot-d{display:none}
 .how-shot figcaption{position:relative}
 
 /* готовое или своё */
