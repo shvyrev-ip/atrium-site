@@ -43,9 +43,9 @@ async function init(THREE) {
     ? { clay: 0xd0d0d0, clay2: 0xb5b5b5, slot: 0x8d8d8d, edge: 0x393939, edgeOp: 0.8,
         line: 0x78a9ff, cut: 0x8d8d8d, hemiSky: 0xffffff, hemiGround: 0x6f6f6f,
         hemiI: 1.5, sunI: 2.4, shadowOp: 0.55 }
-    : { clay: 0x1f1f1f, clay2: 0x2e2e2e, slot: 0x4a4a4a, edge: 0x8d8d8d, edgeOp: 0.5,
+    : { clay: 0x8d8d8d, clay2: 0xa3a3a3, slot: 0xb8b8b8, edge: 0x6f6f6f, edgeOp: 0.45,
         line: 0x4589ff, cut: 0x8d8d8d, hemiSky: 0xffffff, hemiGround: 0xd0d7e2,
-        hemiI: 1.5, sunI: 2.6, shadowOp: 0.22 };
+        hemiI: 1.4, sunI: 2.6, shadowOp: 0.2 };
 
   let renderer;
   try {
@@ -86,6 +86,21 @@ async function init(THREE) {
   scene.add(sun);
 
   const BLUE = 0x0f62fe;
+  // Подбор оттенка светлой модели: ?clay=6f6f6f. Нужен, чтобы примерить
+  // несколько ступеней серого, не пересобирая сайт.
+  const clayTune = new URLSearchParams(location.search).get('clay');
+  if (clayTune && /^[0-9a-fA-F]{6}$/.test(clayTune)) {
+    const base = parseInt(clayTune, 16);
+    const shift = (hex, k) => {
+      const r = Math.min(255, Math.round(((hex >> 16) & 255) * k));
+      const g = Math.min(255, Math.round(((hex >> 8) & 255) * k));
+      const b = Math.min(255, Math.round((hex & 255) * k));
+      return (r << 16) | (g << 8) | b;
+    };
+    C.clay = base;
+    C.clay2 = shift(base, 1.15);
+    C.slot = shift(base, 1.45);
+  }
   const clay = new THREE.MeshStandardMaterial({ color: C.clay, roughness: 0.92, metalness: 0 });
   const clay2 = new THREE.MeshStandardMaterial({ color: C.clay2, roughness: 0.9 });
   const slot = new THREE.MeshStandardMaterial({ color: C.slot, roughness: 0.8 });
