@@ -372,3 +372,10 @@ main:has(> .start:last-child) + footer{margin-top:0}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.scene{opacity:1}}
 .sec-head:has(.ic) + .sec-body{align-self:end}
+
+/* страницы документов: политика и согласие — текст абзацами, а не плитками */
+.doc .sec-body p{margin:0 0 18px}
+.doc .sec-body ul{margin:0 0 18px;padding-left:20px}
+.doc .sec-body li{margin:0 0 6px}
+.doc .sec-body b{font-weight:500}
+.doc .sec-body p:last-child,.doc .sec-body ul:last-child{margin-bottom:0}
